@@ -740,64 +740,60 @@ class Jmesse_Action_EnFairListSearch extends Jmesse_ActionClass
 		$pager = '';
 		if (1 < $page) {
 			$n = $page - 1;
-			$pager .= '<a href="'.$url.$n.'">back'.'</a>';
+			$pager .= '<li><a href="'.$url.$n.'">back'.'</a></li>';
 		}
 		if (5 >= $max_page) {
-			$this->backend->getLogger()->log(LOG_DEBUG, '■TYPE : 1 2 3 4 5');
 			// 1 2 3 4 5
 			for ($i = 1; $i <= $max_page; $i++) {
 				if ($page == $i) {
-					$pager .= '<span class="current_page">'.$i.'</span>';
+					$pager .= '<li><span class="current_page">'.$i.'</span></li>';
 				} else {
-					$pager .= '<a href="'.$url.$i.'">'.$i.'</a>';
+					$pager .= '<li><a href="'.$url.$i.'">'.$i.'</a></li>';
 				}
 			}
 		} else {
 			if ($page <= 3) {
-				$this->backend->getLogger()->log(LOG_DEBUG, '■TYPE : 1 2 3 4 ... E');
 				// 1 2 3 4 ... E
 				for ($i = 1; $i <= 4; $i++) {
 					if ($page == $i) {
-						$pager .= '<span class="current_page">'.$i.'</span>';
+						$pager .= '<li><span class="current_page">'.$i.'</span></li>';
 					} else {
-						$pager .= '<a href="'.$url.$i.'">'.$i.'</a>';
+						$pager .= '<li><a href="'.$url.$i.'">'.$i.'</a></li>';
 					}
 				}
-				$pager .= '...';
-				$pager .= '<a href="'.$url.$max_page.'">'.$max_page.'</a>';
+				$pager .= '<li>...</li>';
+				$pager .= '<li><a href="'.$url.$max_page.'">'.$max_page.'</a></li>';
 			} elseif ($max_page - 2 <= $page) {
-				$this->backend->getLogger()->log(LOG_DEBUG, '■TYPE : 1 ... E-3 E-2 E-1 E');
 				// 1 ... E-3 E-2 E-1 E
-				$pager .= '<a href="'.$url.'1">1</a>';
-				$pager .= '...';
+				$pager .= '<li><a href="'.$url.'1">1</a></li>';
+				$pager .= '<li>...</li>';
 				for ($i = $max_page - 3; $i <= $max_page; $i++) {
 					if ($page == $i) {
-						$pager .= '<span class="current_page">'.$i.'</span>';
+						$pager .= '<li><span class="current_page">'.$i.'</span></li>';
 					} else {
-						$pager .= '<a href="'.$url.$i.'">'.$i.'</a>';
+						$pager .= '<li><a href="'.$url.$i.'">'.$i.'</a></li>';
 					}
 				}
 			} elseif (4 <= $page && $page <= $max_page - 3) {
-				$this->backend->getLogger()->log(LOG_DEBUG, '■TYPE : 1 ... 3 4 5 ... E');
 				// 1 ... 3 4 5 ... E
-				$pager .= '<a href="'.$url.'1">1</a>';
-				$pager .= '...';
+				$pager .= '<li><a href="'.$url.'1">1</a></li>';
+				$pager .= '<li>...</li>';
 
 				for ($i = $page - 1; $i <= $page + 1; $i++) {
 					if ($page == $i) {
-						$pager .= '<span class="current_page">'.$i.'</span>';
+						$pager .= '<li><span class="current_page">'.$i.'</span></li>';
 					} else {
-						$pager .= '<a href="'.$url.$i.'">'.$i.'</a>';
+						$pager .= '<li><a href="'.$url.$i.'">'.$i.'</a></li>';
 					}
 				}
 
-				$pager .= '...';
-				$pager .= '<a href="'.$url.$max_page.'">'.$max_page.'</a>';
+				$pager .= '<li>...</li>';
+				$pager .= '</li><a href="'.$url.$max_page.'">'.$max_page.'</a></li>';
 			}
 		}
 		if ($page < $max_page) {
 			$n = $page + 1;
-			$pager .= '<a href="'.$url.$n.'">next'.'</a>';
+			$pager .= '<li><a href="'.$url.$n.'">next'.'</a></li>';
 		}
 
 		return $pager;
