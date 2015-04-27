@@ -19,34 +19,27 @@ class Jmesse_CommonManager extends Ethna_AppManager
 
 
 	/**
-	 * 外部htmlの設定(https用日本語ページ)。
-	 *
-	 */
-	function setExtHtml() {
-		$this->af->setAppNe('header', @file_get_contents($this->config->get('header_url')));
-		$this->af->setAppNe('footer', @file_get_contents($this->config->get('footer_url')).@file_get_contents($this->config->get('footer_script_rul')));
-		$this->af->setAppNe('left_menu', @file_get_contents($this->config->get('left_menu_url')));
-	}
-
-	/**
-	 * 外部htmlの設定(https用英語ページ)。
-	 *
-	 */
-	function setEnExtHtml() {
-		$this->af->setAppNe('header', @file_get_contents($this->config->get('header_url_en')));
-		$this->af->setAppNe('footer', @file_get_contents($this->config->get('footer_url_en')).@file_get_contents($this->config->get('footer_script_rul_en')));
-		$this->af->setAppNe('left_menu', @file_get_contents($this->config->get('left_menu_url_en')));
-	}
-
-
-	/**
 	 * 外部htmlの設定(http用日本語ページ)。
 	 *
 	 */
 	function setExtHtmlHttp() {
-		$this->af->setAppNe('header', @file_get_contents($this->config->get('http_header_url')));
-		$this->af->setAppNe('footer', @file_get_contents($this->config->get('http_footer_url')).@file_get_contents($this->config->get('http_footer_script_rul')));
-		$this->af->setAppNe('left_menu', @file_get_contents($this->config->get('left_menu_url')));
+		$this->af->setAppNe('headtagu', @file_get_contents($this->config->get('http_ja_headtagu')));
+		$this->af->setAppNe('jetroheader', @file_get_contents($this->config->get('http_ja_jetro_header')));
+		$this->af->setAppNe('jetrofooter', @file_get_contents($this->config->get('http_ja_jetro_footer')));
+		$this->af->setAppNe('jmessetop', @file_get_contents($this->config->get('http_ja_jmesse_top')));
+		$this->af->setAppNe('jmessefaqlogin', @file_get_contents($this->config->get('http_ja_jmesse_faq_login')));
+	}
+
+	/**
+	 * 外部htmlの設定(https用日本語ページ)。
+	 *
+	 */
+	function setExtHtml() {
+		$this->af->setAppNe('headtagu', @file_get_contents($this->config->get('https_ja_headtagu')));
+		$this->af->setAppNe('jetroheader', @file_get_contents($this->config->get('https_ja_jetro_header')));
+		$this->af->setAppNe('jetrofooter', @file_get_contents($this->config->get('https_ja_jetro_footer')));
+		$this->af->setAppNe('jmessetop', @file_get_contents($this->config->get('https_ja_jmesse_top')));
+		$this->af->setAppNe('jmessefaqlogin', @file_get_contents($this->config->get('https_ja_jmesse_faq_login')));
 	}
 
 	/**
@@ -54,9 +47,23 @@ class Jmesse_CommonManager extends Ethna_AppManager
 	 *
 	 */
 	function setEnExtHtmlHttp() {
-		$this->af->setAppNe('header', @file_get_contents($this->config->get('http_header_url_en')));
-		$this->af->setAppNe('footer', @file_get_contents($this->config->get('http_footer_url_en')).@file_get_contents($this->config->get('http_footer_script_rul_en')));
-		$this->af->setAppNe('left_menu', @file_get_contents($this->config->get('left_menu_url_en')));
+		$this->af->setAppNe('headtagu', @file_get_contents($this->config->get('http_en_headtagu')));
+		$this->af->setAppNe('jetroheader', @file_get_contents($this->config->get('http_en_jetro_header')));
+		$this->af->setAppNe('jetrofooter', @file_get_contents($this->config->get('http_en_jetro_footer')));
+		$this->af->setAppNe('jmessetop', @file_get_contents($this->config->get('http_en_jmesse_top')));
+		$this->af->setAppNe('jmessefaqlogin', @file_get_contents($this->config->get('http_en_jmesse_faq_login')));
+	}
+
+	/**
+	 * 外部htmlの設定(https用英語ページ)。
+	 *
+	 */
+	function setEnExtHtml() {
+		$this->af->setAppNe('headtagu', @file_get_contents($this->config->get('https_en_headtagu')));
+		$this->af->setAppNe('jetroheader', @file_get_contents($this->config->get('https_en_jetro_header')));
+		$this->af->setAppNe('jetrofooter', @file_get_contents($this->config->get('https_en_jetro_footer')));
+		$this->af->setAppNe('jmessetop', @file_get_contents($this->config->get('https_en_jmesse_top')));
+		$this->af->setAppNe('jmessefaqlogin', @file_get_contents($this->config->get('https_en_jmesse_faq_login')));
 	}
 
 }
