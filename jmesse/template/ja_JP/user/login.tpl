@@ -1,152 +1,135 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<meta http-equiv="Content-Style-Type" content="text/css" />
-<meta http-equiv="Content-Script-Type" content="text/javascript" />
-<meta name="Keywords" content="見本市登録,展示会登録,見本市PR,展示会PR" />
-{include file="user/header.tpl"}
+{$app_ne.headtagu}
+{include file="user/include_common_head.tpl"}
 <title>ユーザーログイン - 世界の見本市・展示会 -ジェトロ</title>
+{include file="user/jetro_gtm_snippet.tpl"}
 </head>
+<body class="layout-C" id="PageTop">
 
-<body class="layout-LC highlight-match j-messe">
-	<!-- header -->
-	{$app_ne.header}
-	<!-- /header -->
+	<!-- **************** jetro_header **************** -->
+	{$app_ne.jetroheader}
 
-	<!-- bread -->
-	<div id="bread">
-		<ul>
-			<li><a href="http://www.jetro.go.jp/indexj.html">HOME</a></li>
-			<li><a href="{$config.url_pub}">見本市・展示会データベース（J-messe）</a></li>
-			<li>ユーザログイン</li>
-		</ul>
-	</div>
-	<!-- /bread -->
+	<div id="area_content_wrap">
+		<div id="elem_topic_path">
+			<div id="elem_topic_path_pad">
+				<ul>
+					<li><a href="http://www.jetro.go.jp/indexj.html"><img alt="home" src="http://www.jetro.go.jp/images/en/new/content_images/icon/icon_home.gif" /></a></li>
+					<li><a href="http://www.jetro.go.jp/j-messe">見本市・展示会データベース（J-messe）</a></li>
+					<li>ユーザログイン</li>
+				</ul>
+			</div>
+		</div>
 
-	<!-- contents -->
-	<div id="contents">
+		<!-- **************** jmesse_top **************** -->
+		{$app_ne.jmessetop}
 
-		<div class="area">
-			<!-- left -->
-			{$app_ne.left_menu}
-			<!-- /left -->
-
-			<!-- center -->
-			<div id="center">
-				<div id="main">
-					<div class="bgbox_set">
-						<div class="bgbox_base">
-
-							<div class="h1">
-								<h1>見本市・展示会データベース</h1>
-							</div>
-
-							<div class="h2">
-								<h2>主催者向け見本市登録</h2>
-							</div>
-
-							<div class="in_main">
-
-								<div class="left" style="width: 360px;">
-
-									<p>世界の見本市・展示会データベース(J-messe)の主催者向け管理ページにログインします。</p>
-
-									<div class="login">
-										<form name="form_user_login" id="form_user_login" method="post" action="">
-
-											<input type="hidden" name="action_user_loginDo" id="action_user_loginDo" value="dummy" />
-											<input type="hidden" name="function" id="function" value="{$form.function}" />
-
-											{* エラー表示 *}
-											{if count($errors)}
+		<div id="area_content_main">
+			<div id="elem_heading_lv1">
+				<h1>ユーザログイン</h1>
+			</div>
+			<div class="elem_content_divide_block">
+				<div class="color_base content_divide_col2 elem_content_divide_block_pad">
+					<div class="elem_content_divide_box">
+						<div class="elem_column_block">
+							<div class="color_base elem_column_block_pad">
+								<div class="box_text">
+									<div class="elem_heading_lv3">
+										<h3>ユーザーログイン</h3>
+									</div>
+									<div class="elem_paragraph">
+										<p class="text">
+											世界の見本市・展示会データベース(J-messe)の主催者向け管理ページにログインします。
+										</p>
+									</div>
+									<form name="form_user_login" id="form_user_login" method="post" action="">
+										<input type="hidden" name="action_user_loginDo" id="action_user_loginDo" value="dummy" />
+										<input type="hidden" name="function" id="function" value="{$form.function}" />
+										{* エラー表示 *}
+										{if count($errors)}
 											<p class="error-message" id="error-pagetop">入力に誤りがあります。再度、入力ください。</p>
+										{/if}
+										<div class="elem_custom_input">
+											<label>ユーザー名（メールアドレス） </label>
+											<input type="text" name="email" id="email" value="{$form.email}" class="var_bg_white" />
+											{if is_error('email')}
+												<span class="error-message">{message name="email"}</span>
 											{/if}
-
-											<table id="registration">
-												<tbody>
-													{if is_error('email')}
-													<tr class="errorcheck">
-													{else}
-													<tr>
-													{/if}
-														<th class="item">ユーザー名<br />（メールアドレス）
-														</th>
-														<td>
-															<input type="text" name="email" id="email" size="26" value="{$form.email}" /><br/>
-															{if is_error('email')}
-															<span class="error-message">{message name="email"}</span><br />
-															{/if}
-														</td>
-													</tr>
-													{if is_error('password')}
-													<tr class="errorcheck">
-													{else}
-													<tr>
-													{/if}
-														<th class="item">パスワード<br />
-														</th>
-														<td>
-															<input type="password" name="password" id="password" size="26" value="" autocomplete="off" /><br/>
-															{if is_error('password')}
-															<span class="error-message">{message name="password"}</span><br />
-															{/if}
-														</td>
-													</tr>
-
-												</tbody>
-											</table>
-											<p class="t_right">
-												<input type="image" src="/j-messe/images/db/btn-login.gif" alt="ログイン" class="over" width="180" height="37" />
-											</p>
-										</form>
-										<div class="line_dot">
+											<label class="pt10">パスワード</label>
+											<input type="password" name="password" id="password" value="" autocomplete="off" class="var_bg_white" />
+											{if is_error('password')}
+												<span class="error-message">{message name="password"}</span><br />
+											{/if}
+										</div>
+										<div class="elem_linkBox_list">
+											<ul>
+												<li>
+													<div class="linkBox">
+														<a href="" onclick="document.form_user_login.submit();return false;" class="var_small"><span>ログイン</span></a>
+													</div>
+												</li>
+											</ul>
+										</div>
+										<div class="elem_separate">
 											<hr />
 										</div>
-										<p>
-											<strong>パスワードを忘れた方</strong><br /> <a href="{$config.url}?action_user_reissuePassword=true" class="icon_arrow">パスワードお問い合わせ</a>
-										</p>
-
-									</div>
-								</div>
-								<div class="right" style="width: 360px;">
-									<div class="entry">
-										<h3>初めてご利用の方</h3>
-										<p>
-											<strong>貴方の主催する見本市・展示会を世界に向けてPR！<br /> 国内のみならず海外からの来場誘致、出展社募集のお役に立ちます。
-											</strong>
-										</p>
-										<p>
-											<strong><span class="red">登録は無料。</span> </strong>見本市主催者ご自身で、登録情報を更新・削除することも可能です。今後開催される見本市・展示会の広報手段として、ぜひご活用下さい。
-										</p>
-										<p class="clearfix">
-											見本市登録をご利用いただく場合は、ユーザー登録をお願いします。<br /> <a href="{$config.url}?action_user_userTerms=true"><img class="over imgright" src="/j-messe/images/db/btn-user-regist.gif" /> </a>
-										</p>
-									</div>
+										<div class="elem_heading_lv4">
+											<h4>パスワードを忘れた方</h4>
+										</div>
+										<div class="elem_text_list">
+											<ul>
+												<li><a href="{$config.url}?action_user_reissuePassword=true">パスワードお問い合わせ</a></li>
+											</ul>
+										</div>
+									</form>
 								</div>
 							</div>
-							<div class="line_dot"><hr /></div>
-							<!-- ssl area-->
-							<script language="JavaScript" src="https://www.jetro.go.jp/js/jetro_seal_ja.js"></script>
-							<!-- /ssl area-->
 						</div>
 					</div>
-
+					<div class="elem_content_divide_box">
+						<div class="elem_column_block"><div class="elem_column_block_pad">
+							<div class="box_text">
+								<div class="elem_heading_lv3">
+									<h3>初めてご利用の方</h3>
+								</div>
+								<div class="elem_paragraph">
+									<p class="text">
+										貴方の主催する見本市・展示会を世界に向けてPR！<br />国内のみならず海外からの来場誘致、出展社募集のお役に立ちます。
+									</p>
+								</div>
+								<div class="elem_paragraph">
+									<p class="text">
+										<span class="font_red">登録は無料。 </span>見本市主催者ご自身で、登録情報を更新・削除することも可能です。
+										今後開催される見本市・展示会の広報手段として、ぜひご活用下さい。
+									</p>
+								</div>
+								<div class="elem_paragraph">
+									<p class="text">
+										見本市登録をご利用いただく場合は、ユーザー登録をお願いします。
+									</p>
+								</div>
+								<div class="elem_linkBox_list">
+									<ul>
+										<li>
+											<div class="linkBox">
+												<a href="{$config.url}?action_user_userTerms=true" class="var_small"><span>ユーザー登録</span></a>
+											</div>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
 				</div>
-				<p class="totop">
-{*
-					<a href="javascript:window.open('{$config.url}?action_user_login=true&print=1', 'print')" target="print"><img src="/images/jp/btn-print.gif" alt="印刷" height="23" width="71" /></a>
-*}
-					<a href="javascript:window.scrollTo(0, 0);"><img src="/images/jp/btn-totop.gif" alt="このページの上へ" height="23" width="110" /></a>
-				</p>
 			</div>
-			<!-- /center -->
 		</div>
+		<!-- ** include START jetro_ssl_ja **  -->
+		{include file="user/jetro_ssl_ja.tpl"}
+		<!-- ** include END jetro_ssl_ja **  -->
 	</div>
-	<!-- /contents -->
-	<!-- footer -->
-	{$app_ne.footer}
-	<!-- /footer -->
-
+	<!-- **************** jetro_footer **************** -->
+	{$app_ne.jetrofooter}
 </body>
 </html>
+

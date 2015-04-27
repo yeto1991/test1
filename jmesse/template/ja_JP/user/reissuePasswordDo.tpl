@@ -1,63 +1,55 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<meta http-equiv="Content-Style-Type" content="text/css" />
-<meta http-equiv="Content-Script-Type" content="text/javascript" />
-<meta name="Keywords" content="" />
-{include file="user/header.tpl"}
+{$app_ne.headtagu}
+{include file="user/include_common_head.tpl"}
 <title>パスワードお問い合わせ - 世界の見本市・展示会 -ジェトロ</title>
+{include file="user/jetro_gtm_snippet.tpl"}
 </head>
+<body class="layout-C" id="PageTop">
 
-<body class="layout-LC highlight-match j-messe">
-	<!-- header -->
-	{$app_ne.header}
-	<!-- /header -->
+	<!-- **************** jetro_header **************** -->
+	{$app_ne.jetroheader}
 
-	<!-- bread -->
-{*
-	<div id="bread">
-		<ul>
-			<li><a href="http://www.jetro.go.jp/indexj.html">HOME</a></li>
-			<li><a href="{$config.url_pub}">見本市・展示会データベース（J-messe）</a></li>
-			<li>パスワードお問い合わせ</li>
-		</ul>
-	</div>
-*}
-	<!-- /bread -->
+	<div id="area_content_wrap">
+		<div id="elem_topic_path">
+			<div id="elem_topic_path_pad">
+				<ul>
+					<li><a href="http://www.jetro.go.jp/indexj.html"><img alt="home" src="http://www.jetro.go.jp/images/en/new/content_images/icon/icon_home.gif" /></a></li>
+					<li><a href="http://www.jetro.go.jp/j-messe">見本市・展示会データベース（J-messe）</a></li>
+					<li>パスワードお問い合わせ完了</li>
+				</ul>
+			</div>
+		</div>
 
-	<!-- contents -->
-	<div id="contents">
-		<div class="area">
-			<!-- left -->
-			{$app_ne.left_menu}
-			<!-- /left -->
-			<!-- center -->
-			<div id="center">
-				<div id="main">
-					<div class="bgbox_set">
-						<div class="bgbox_base">
-							<div class="h1"><h1>見本市・展示会データベース</h1></div>
-							<div class="h2"><h2>パスワードお問い合わせ完了</h2></div>
-							<div class="in_main">
-								<p>{$form.email} 宛に「J-messe パスワード再発行のお知らせ」メールを送信しましたので、ご確認ください。<br />数分経ってもメールが届かない場合は、メールアドレスが正しいかどうかご確認をお願いします。</p>
-							</div>
+		<!-- **************** jmesse_top **************** -->
+		{$app_ne.jmessetop}
+
+		<div id="area_content_main">
+			<div id="elem_heading_lv1">
+				<h1>パスワードお問い合わせ完了</h1>
+			</div>
+			<div class="elem_pic_text_block">
+				<div class="elem_pic_text_block_pad">
+					<div class="box_text pr30" style="width:70%">
+						<div class="elem_heading_lv2">
+							<h2></h2>
+						</div>
+						<div class="elem_paragraph">
+							<p>{$form.email} 宛に「J-messe パスワード再発行のお知らせ」メールを送信しましたので、ご確認ください。<br />数分経ってもメールが届かない場合は、メールアドレスが正しいかどうかご確認をお願いします。</p>
+							<!-- ** include START jetro_ssl_ja **  -->
+							{include file="user/jetro_ssl_ja.tpl"}
+							<!-- ** include END jetro_ssl_ja **  -->
 						</div>
 					</div>
 				</div>
-				<p class="totop">
-{*
-					<a href="javascript:window.open('{$config.url}?action_user_reissuePasswordDo=true&print=1', 'print')" target="print"><img src="/images/jp/btn-print.gif" alt="印刷" height="23" width="71" /></a>
-*}
-					<a href="javascript:window.scrollTo(0, 0);"><img src="/images/jp/btn-totop.gif" alt="このページの上へ" height="23" width="110" /></a>
-				</p>
 			</div>
-			<!-- /center -->
+			<!-- **************** jmesse_faqlogin **************** -->
+			{$app_ne.jmessefaqlogin}
 		</div>
 	</div>
-	<!-- /contents -->
-	<!-- footer -->
-	{$app_ne.footer}
-	<!-- /footer -->
+	<!-- **************** jetro_footer **************** -->
+	{$app_ne.jetrofooter}
 </body>
 </html>
+

@@ -1,94 +1,89 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<meta http-equiv="Content-Style-Type" content="text/css" />
-<meta http-equiv="Content-Script-Type" content="text/javascript" />
-<meta name="Keywords" content="見本市登録,展示会登録,見本市PR,展示会PR" />
-{include file="user/header.tpl"}
+{$app_ne.headtagu}
+{include file="user/include_common_head.tpl"}
 <title>パスワードお問い合わせ - 世界の見本市・展示会 -ジェトロ</title>
+{include file="user/jetro_gtm_snippet.tpl"}
 </head>
+<body class="layout-C" id="PageTop">
 
-<body class="layout-LC highlight-match j-messe">
-	<!-- header -->
-	{$app_ne.header}
-	<!-- /header -->
+	<!-- **************** jetro_header **************** -->
+	{$app_ne.jetroheader}
 
-	<!-- bread -->
-{*
-	<div id="bread">
-		<ul>
-			<li><a href="http://www.jetro.go.jp/indexj.html">HOME</a></li>
-			<li><a href="{$config.url_pub}">見本市・展示会データベース（J-messe）</a></li>
-			<li><a href="/database/j-messe/tradefair/">世界の見本市・展示会</a></li>
-			<li>パスワードお問い合わせ</li>
-		</ul>
-	</div>
-*}
-	<!-- /bread -->
+	<div id="area_content_wrap">
+		<div id="elem_topic_path">
+			<div id="elem_topic_path_pad">
+				<ul>
+					<li><a href="http://www.jetro.go.jp/indexj.html"><img alt="home" src="http://www.jetro.go.jp/images/en/new/content_images/icon/icon_home.gif" /></a></li>
+					<li><a href="http://www.jetro.go.jp/j-messe">見本市・展示会データベース（J-messe）</a></li>
+					<li>パスワードお問い合わせ</li>
+				</ul>
+			</div>
+		</div>
 
-	<!-- contents -->
-	<div id="contents">
-		<div class="area">
-			<!-- left -->
-			{$app_ne.left_menu}
-			<!-- /left -->
-			<!-- center -->
-			<div id="center">
-				<div id="main">
-					<div class="bgbox_set">
-						<div class="bgbox_base">
-							<div class="h1"><h1>見本市・展示会データベース</h1></div>
-							<div class="h2"><h2>パスワードお問い合わせ</h2></div>
-							<div class="in_main">
-								<p>ご登録いただいているメールアドレスを入力してください。</p>
-								<div class="login">
-									<form name="form_user_reissuePassword" id="form_user_reissuePassword" method="post" action="">
-										<input type="hidden" name="action_user_reissuePasswordDo" id="action_user_reissuePasswordDo" value="dummy" />
-										{* エラー表示 *}
-										{if count($errors)}
-										<p class="error-message" id="error-pagetop">入力に誤りがあります。再度、入力ください。</p>
-										{/if}
-										<table id="registration">
-											<tbody>
-												{if is_error('email')}
-												<tr class="errorcheck">
-												{else}
-												<tr>
-												{/if}
-													<th nowrap class="item">ご登録メールアドレス</th>
-													<td><input name="email" id="email" size="60" type="text" value="{form.email}" /><br />
-													{if is_error('email')}
-													<span class="error-message">{message name="email"}</span><br />
-													{/if}
-													</td>
-												</tr>
-											</tbody>
-										</table>
-										<p class="t_right"><input type="image" src="/j-messe/images/db/btn-send.gif"" alt="送信"  class="over" width="110" height="37"  /></p>
-									</form>
+		<!-- **************** jmesse_top **************** -->
+		{$app_ne.jmessetop}
+
+		<div id="area_content_main">
+			<div id="elem_heading_lv1">
+				<h1>パスワードお問い合わせ</h1>
+			</div>
+			<div class="elem_pic_text_block">
+				<div class="elem_pic_text_block_pad">
+					<div class="box_text pr30" style="width:70%">
+						<div class="elem_heading_lv2">
+							<h2></h2>
+						</div>
+						<div class="elem_paragraph">
+							<p>ご登録いただいているメールアドレスを入力してください。</p>
+							<form name="form_user_reissuePassword" id="form_user_reissuePassword" method="post" action="">
+								<input type="hidden" name="action_user_reissuePasswordDo" id="action_user_reissuePasswordDo" value="dummy" />
+								{* エラー表示 *}
+								{if count($errors)}
+									<p class="error-message" id="error-pagetop">入力に誤りがあります。再度、入力ください。</p>
+								{/if}
+								<div class="elem_table_basic">
+									<table id="registration" class="var_there_boder var_base_color elem_table_basic var_ptb8">
+										<tbody>
+											<tr>
+												<th class="bg_gray_lv1 nobdr">メールアドレス</th>
+												<td class="bg_gray_lv2">
+													<div class="elem_custom_input pt0 pb0">
+														<input type="text" name="email" id="email" size="60" value="{$form.email}" class="var_bg_white" />
+														{if is_error('email')}
+															<span class="error-message">{message name="email"}</span>
+														{/if}
+													</div>
+												</td>
+											</tr>
+										</tbody>
+									</table>
 								</div>
-							</div>
-							<div class="line_dot"><hr /></div>
-							<!-- ssl area-->
-							<script language="JavaScript" src="https://www.jetro.go.jp/js/jetro_seal_ja.js"></script>
-							<!-- /ssl area-->
+								<div class="elem_linkBox_list">
+									<ul>
+										<li>
+											<div class="linkBox">
+												<a href="" onclick="document.form_user_reissuePassword.submit();return false;" class="var_small"><span>送信</span></a>
+											</div>
+										</li>
+									</ul>
+								</div>
+							</form>
+							<!-- ** include START jetro_ssl_ja **  -->
+							{include file="user/jetro_ssl_ja.tpl"}
+							<!-- ** include END jetro_ssl_ja **  -->
 						</div>
 					</div>
 				</div>
-				<p class="totop">
-{*
-					<a href="javascript:window.open('{$config.url}?action_user_reissuePassword=true&print=1', 'print')" target="print"><img src="/images/jp/btn-print.gif" alt="印刷" height="23" width="71" /></a>
-*}
-					<a href="javascript:window.scrollTo(0, 0);"><img src="/images/jp/btn-totop.gif" alt="このページの上へ" height="23" width="110" /></a>
-				</p>
 			</div>
-			<!-- /center -->
+			<!-- **************** jmesse_faqlogin **************** -->
+			{$app_ne.jmessefaqlogin}
 		</div>
 	</div>
-	<!-- /contents -->
-	<!-- footer -->
-	{$app_ne.footer}
-	<!-- /footer -->
+	<!-- **************** jetro_footer **************** -->
+	{$app_ne.jetrofooter}
 </body>
 </html>
+
+
