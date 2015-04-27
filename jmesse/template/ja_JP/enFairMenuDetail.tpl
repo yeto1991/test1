@@ -28,62 +28,70 @@
 {section name=it loop=$form.check_city}
 <input type="hidden" name="check_city[]" id="check_city_{$smarty.section.it.index}" value="{$form.check_city[it]}" />
 {/section}
-
-<div id="breakdown" class="right">
-	<h4>Refine the Search</h4>
-	{* エラー表示 *}
-	{if count($errors)}
-	<p class="error-message" id="error-pagetop">The data you have entered is invalid. Please re-enter.</p>
-	{/if}
-	<table class="detail">
-		<tr>
-			<th>Industry</th>
-			<td>
-				<div id="industory_disp">
-					{section name=it loop=$app.industory_list}
-						・{$app.industory_list[it]}<br/>
-					{sectionelse}
-						No selected<br/>
-					{/section}
-				</div>
-				<button class="modalInputIndustory" rel="#prompt_industory">Change Industory</button>
-			</td>
-		</tr>
-		<tr>
-			<th>Location</th>
-			<td>
-				<div id="venue_disp">
-					{section name=it loop=$app.vanue_list}
-						・{$app.vanue_list[it]}<br/>
-					{sectionelse}
-						No selected<br/>
-					{/section}
-				</div>
-				<button class="modalInputVenue" rel="#prompt_venue">Select Location</button>
-			</td>
-		</tr>
-		<tr>
-			<th>Date</th>
-			<td>
-				<input type="radio" name="year" id="year_u" value="u" {if ('u' == $form.year || '' == $form.year)}checked{/if} onclick="fSelectDisabled('u')"/>Upcoming Trade Fairs View All<br />
-				<input type="radio" name="year" id="year_a" value="a" {if ('a' == $form.year)}checked{/if} onclick="fSelectDisabled('a')"/>Including Past Trade Fairs View All<br/>
-				<input type="radio" name="year" id="year_e" value="e" {if ('e' == $form.year)}checked{/if} onclick="fSelectDisabled('e')"/>Select Date<br/>
-				&nbsp;&nbsp;&nbsp;
-				{if ('e' != $form.year)}
+<div class="right_box elem_content_divide_box">
+	<div class="elem_column_block">
+		<div class="color_base elem_column_block_pad">
+			<div class="elem_heading_lv3"><h3>Refine the Search</h3></div>
+			{* エラー表示 *}
+			{if count($errors)}
+				<p class="error-message" id="error-pagetop">The data you have entered is invalid. Please re-enter.</p>
+			{/if}
+			<div class="elem_heading_lv4"><h4>Industory</h4></div>
+			<div id="industory_disp">
+				{section name=it loop=$app.industory_list}
+					・{$app.industory_list[it]}<br />
+				{sectionelse}
+					No selected<br />
+				{/section}
+			</div>
+			<div class="elem_linkBox_list">
+				<ul>
+					<li>
+						<div class="linkBox">
+							<button class="modalInputIndustory"rel="#prompt_industory" /><span>Select Industory</span></button>
+						</div>
+					</li>
+				</ul>
+			</div>
+			<br/>
+			<div class="elem_heading_lv4"><h4>Location</h4></div>
+			<div id="venue_disp">
+				{section name=it loop=$app.vanue_list}
+					・{$app.vanue_list[it]}<br/>
+				{sectionelse}
+					No selected<br/>
+				{/section}
+			</div>
+			<div class="elem_linkBox_list">
+				<ul>
+					<li>
+						<div class="linkBox">
+							<button class="modalInputVenue"rel="#prompt_venue" /><span>Select Location</span></button>
+						</div>
+					</li>
+				</ul>
+			</div>
+			<br/>
+			<div class="elem_heading_lv4"><h4>Date</h4></div>
+			<input type="radio" name="year" id="year_u" value="u" {if ('u' == $form.year || '' == $form.year)}checked{/if} onclick="fSelectDisabled('u')"/>Upcoming Trade Fairs View All<br />
+			<input type="radio" name="year" id="year_a" value="a" {if ('a' == $form.year)}checked{/if} onclick="fSelectDisabled('a')"/>Including Past Trade Fairs View All<br />
+			<input type="radio" name="year" id="year_e" value="e" {if ('e' == $form.year)}checked{/if} onclick="fSelectDisabled('e')"/>Select Date<br />
+			{if ('e' != $form.year)}
 				<select name="date_from_yyyy" id="date_from_yyyy" disabled="disabled">
-				{else}
+			{else}
 				<select name="date_from_yyyy" id="date_from_yyyy">
-				{/if}
+			{/if}
 					<option value=""></option>
 					{section name=it loop=$app.year_list}
-					<option value="{$app.year_list[it]}" {if ($app.year_list[it] == $form.date_from_yyyy)}selected{/if}>{$app.year_list[it]}</option>
+						<option value="{$app.year_list[it]}" {if ($app.year_list[it] == $form.date_from_yyyy)}selected{/if}>{$app.year_list[it]}</option>
 					{/section}
-				</select>/
-				{if ('e' != $form.year)}
+				</select>
+				/
+			{if ('e' != $form.year)}
 				<select name="date_from_mm" id="date_from_mm" disabled="disabled">
-				{else}
+			{else}
 				<select name="date_from_mm" id="date_from_mm">
-				{/if}
+			{/if}
 					<option value=""></option>
 					<option value="01" {if ('01' == $form.date_from_mm)}selected{/if}>Jan</option>
 					<option value="02" {if ('02' == $form.date_from_mm)}selected{/if}>Feb</option>
@@ -97,23 +105,24 @@
 					<option value="10" {if ('10' == $form.date_from_mm)}selected{/if}>Oct</option>
 					<option value="11" {if ('11' == $form.date_from_mm)}selected{/if}>Nov</option>
 					<option value="12" {if ('12' == $form.date_from_mm)}selected{/if}>Dec</option>
-				</select>～<br />
-				&nbsp;&nbsp;&nbsp;
-				{if ('e' != $form.year)}
+				</select>
+				～<br />
+			{if ('e' != $form.year)}
 				<select name="date_to_yyyy" id="date_to_yyyy" disabled="disabled">
-				{else}
+			{else}
 				<select name="date_to_yyyy" id="date_to_yyyy">
-				{/if}
+			{/if}
 					<option value=""></option>
 					{section name=it loop=$app.year_list}
-					<option value="{$app.year_list[it]}" {if ($app.year_list[it] == $form.date_to_yyyy)}selected{/if}>{$app.year_list[it]}</option>
+						<option value="{$app.year_list[it]}" {if ($app.year_list[it] == $form.date_to_yyyy)}selected{/if}>{$app.year_list[it]}</option>
 					{/section}
-				</select>/
-				{if ('e' != $form.year)}
+				</select>
+				/
+			{if ('e' != $form.year)}
 				<select name="date_to_mm" id="date_to_mm" disabled="disabled">
-				{else}
+			{else}
 				<select name="date_to_mm" id="date_to_mm">
-				{/if}
+			{/if}
 					<option value=""></option>
 					<option value="01" {if ('01' == $form.date_from_mm)}selected{/if}>Jan</option>
 					<option value="02" {if ('02' == $form.date_from_mm)}selected{/if}>Feb</option>
@@ -127,30 +136,35 @@
 					<option value="10" {if ('10' == $form.date_from_mm)}selected{/if}>Oct</option>
 					<option value="11" {if ('11' == $form.date_from_mm)}selected{/if}>Nov</option>
 					<option value="12" {if ('12' == $form.date_from_mm)}selected{/if}>Dec</option>
-				</select><br/>
+				</select>
+				<br/>
 				{if is_error('date_from_yyyy')}
-				<span class="error-message">{message name="date_from_yyyy"}</span><br />
+					<span class="error-message">{message name="date_from_yyyy"}</span><br />
 				{/if}
 				{if is_error('date_from_mm')}
-				<span class="error-message">{message name="date_from_mm"}</span><br />
+					<span class="error-message">{message name="date_from_mm"}</span><br />
 				{/if}
 				{if is_error('date_to_yyyy')}
-				<span class="error-message">{message name="date_to_yyyy"}</span><br />
+					<span class="error-message">{message name="date_to_yyyy"}</span><br />
 				{/if}
 				{if is_error('date_to_mm')}
-				<span class="error-message">{message name="date_to_mm"}</span><br />
+					<span class="error-message">{message name="date_to_mm"}</span><br />
 				{/if}
-			</td>
-		</tr>
-		<tr>
-			<th>Keywords</th>
-			<td>
+			<div class="elem_heading_lv4"><h4>Keywords</h4></div>
+			<p>
 				Please create a one-byte space between keywords (trade fair name, exhibit name, etc.)<br />
 				<input type="text" name="keyword" id="keyword" value="{$form.keyword}" size="30" />
-			</td>
-		</tr>
-	</table>
-	<a href="javascript:search('form_enFairMenuDetail');"><img width="93" height="34" alt="Refine" src="/en/database/j-messe/images/db/btn-narrow.gif" class="over"></a>
+			</p>
+			<div class="elem_linkBox_list">
+				<ul>
+					<li>
+						<div class="linkBox">
+							<a href="javascript:search('form_enFairMenuDetail');" class="var_small"><span>Narrow</span></a>
+						</div>
+					</li>
+				</ul>
+			</div>
+
 
 	<!-- 業種選択 -->
 	<script type="text/javascript">
@@ -193,25 +207,25 @@
 	{/literal}
 	</script>
 	<div class="modal" id="prompt_industory">
-		<a class="close" id="btn_close"></a>
-		<h2>
-			Industry <span>you can select up to some Industrys.</span>
-		</h2>
+		<a class="close" id="jmesse_btn_close"></a>
+		<div class="elem_heading_lv4">
+			<h4>Select Industry<span class="font_red">&nbsp;you can select up to some Industrys.</span></h4>
+		</div>
 		<div class="industries clearfix">
-			<div class="column">
+			<div class="elem_jmesse_column">
 				<h5>General Exhibition</h5>
 				<ul>
 					{section name=it loop=$app.main_sub_industory_list}
 						{if ('001' == $app.main_sub_industory_list[it].kbn_2)}
-					<li>
-						<input type="checkbox" value="{$app.main_sub_industory_list[it].sub_industory_code}" name="check_main_sub_industory[]" id="check_main_sub_industory_{$app.main_sub_industory_list[it].kbn_2}{$app.main_sub_industory_list[it].kbn_3}"
-							{section name=it2 loop=$form.check_main_sub_industory}
-								{if ($app.main_sub_industory_list[it].sub_industory_code == $form.check_main_sub_industory[it2])}
-						checked
-								{/if}
-							{/section}
-						/> {$app.main_sub_industory_list[it].sub_industory_name}
-					</li>
+							<li>
+								<input type="checkbox" value="{$app.main_sub_industory_list[it].sub_industory_code}" name="check_main_sub_industory[]" id="check_main_sub_industory_{$app.main_sub_industory_list[it].kbn_2}{$app.main_sub_industory_list[it].kbn_3}"
+									{section name=it2 loop=$form.check_main_sub_industory}
+										{if ($app.main_sub_industory_list[it].sub_industory_code == $form.check_main_sub_industory[it2])}
+											checked
+										{/if}
+									{/section}
+								/> {$app.main_sub_industory_list[it].sub_industory_name}
+							</li>
 						{/if}
 					{/section}
 				</ul>
@@ -219,15 +233,15 @@
 				<ul>
 					{section name=it loop=$app.main_sub_industory_list}
 						{if ('002' == $app.main_sub_industory_list[it].kbn_2)}
-					<li>
-						<input type="checkbox" value="{$app.main_sub_industory_list[it].sub_industory_code}" name="check_main_sub_industory[]" id="check_main_sub_industory{$app.main_sub_industory_list[it].kbn_2}{$app.main_sub_industory_list[it].kbn_3}"
-							{section name=it2 loop=$form.check_main_sub_industory}
-								{if ($app.main_sub_industory_list[it].sub_industory_code == $form.check_main_sub_industory[it2])}
-						checked
-								{/if}
-							{/section}
-						/> {$app.main_sub_industory_list[it].sub_industory_name}
-					</li>
+							<li>
+								<input type="checkbox" value="{$app.main_sub_industory_list[it].sub_industory_code}" name="check_main_sub_industory[]" id="check_main_sub_industory{$app.main_sub_industory_list[it].kbn_2}{$app.main_sub_industory_list[it].kbn_3}"
+									{section name=it2 loop=$form.check_main_sub_industory}
+										{if ($app.main_sub_industory_list[it].sub_industory_code == $form.check_main_sub_industory[it2])}
+											checked
+										{/if}
+									{/section}
+								/> {$app.main_sub_industory_list[it].sub_industory_name}
+							</li>
 						{/if}
 					{/section}
 				</ul>
@@ -235,15 +249,15 @@
 				<ul>
 					{section name=it loop=$app.main_sub_industory_list}
 						{if ('003' == $app.main_sub_industory_list[it].kbn_2)}
-					<li>
-						<input type="checkbox" value="{$app.main_sub_industory_list[it].sub_industory_code}" name="check_main_sub_industory[]" id="check_main_sub_industory{$app.main_sub_industory_list[it].kbn_2}{$app.main_sub_industory_list[it].kbn_3}"
-							{section name=it2 loop=$form.check_main_sub_industory}
-								{if ($app.main_sub_industory_list[it].sub_industory_code == $form.check_main_sub_industory[it2])}
-						checked
-								{/if}
-							{/section}
-						/> {$app.main_sub_industory_list[it].sub_industory_name}
-					</li>
+							<li>
+								<input type="checkbox" value="{$app.main_sub_industory_list[it].sub_industory_code}" name="check_main_sub_industory[]" id="check_main_sub_industory{$app.main_sub_industory_list[it].kbn_2}{$app.main_sub_industory_list[it].kbn_3}"
+									{section name=it2 loop=$form.check_main_sub_industory}
+										{if ($app.main_sub_industory_list[it].sub_industory_code == $form.check_main_sub_industory[it2])}
+											checked
+										{/if}
+									{/section}
+								/> {$app.main_sub_industory_list[it].sub_industory_name}
+							</li>
 						{/if}
 					{/section}
 				</ul>
@@ -251,15 +265,15 @@
 				<ul>
 					{section name=it loop=$app.main_sub_industory_list}
 						{if ('004' == $app.main_sub_industory_list[it].kbn_2)}
-					<li>
-						<input type="checkbox" value="{$app.main_sub_industory_list[it].sub_industory_code}" name="check_main_sub_industory[]" id="check_main_sub_industory{$app.main_sub_industory_list[it].kbn_2}{$app.main_sub_industory_list[it].kbn_3}"
-							{section name=it2 loop=$form.check_main_sub_industory}
-								{if ($app.main_sub_industory_list[it].sub_industory_code == $form.check_main_sub_industory[it2])}
-						checked
-								{/if}
-							{/section}
-						/> {$app.main_sub_industory_list[it].sub_industory_name}
-					</li>
+							<li>
+								<input type="checkbox" value="{$app.main_sub_industory_list[it].sub_industory_code}" name="check_main_sub_industory[]" id="check_main_sub_industory{$app.main_sub_industory_list[it].kbn_2}{$app.main_sub_industory_list[it].kbn_3}"
+									{section name=it2 loop=$form.check_main_sub_industory}
+										{if ($app.main_sub_industory_list[it].sub_industory_code == $form.check_main_sub_industory[it2])}
+											checked
+										{/if}
+									{/section}
+								/> {$app.main_sub_industory_list[it].sub_industory_name}
+							</li>
 						{/if}
 					{/section}
 				</ul>
@@ -267,52 +281,49 @@
 				<ul>
 					{section name=it loop=$app.main_sub_industory_list}
 						{if ('005' == $app.main_sub_industory_list[it].kbn_2)}
-					<li>
-						<input type="checkbox" value="{$app.main_sub_industory_list[it].sub_industory_code}" name="check_main_sub_industory[]" id="check_main_sub_industory{$app.main_sub_industory_list[it].kbn_2}{$app.main_sub_industory_list[it].kbn_3}"
-							{section name=it2 loop=$form.check_main_sub_industory}
-								{if ($app.main_sub_industory_list[it].sub_industory_code == $form.check_main_sub_industory[it2])}
-						checked
-								{/if}
-							{/section}
-						/> {$app.main_sub_industory_list[it].sub_industory_name}
-					</li>
+							<li>
+								<input type="checkbox" value="{$app.main_sub_industory_list[it].sub_industory_code}" name="check_main_sub_industory[]" id="check_main_sub_industory{$app.main_sub_industory_list[it].kbn_2}{$app.main_sub_industory_list[it].kbn_3}"
+									{section name=it2 loop=$form.check_main_sub_industory}
+										{if ($app.main_sub_industory_list[it].sub_industory_code == $form.check_main_sub_industory[it2])}
+											checked
+										{/if}
+									{/section}
+								/> {$app.main_sub_industory_list[it].sub_industory_name}
+							</li>
 						{/if}
 					{/section}
 				</ul>
-
 			</div>
-
-			<div class="column">
+			<div class="elem_jmesse_column">
 				<h5>Transportation, Logistics, Packaging</h5>
 				<ul>
 					{section name=it loop=$app.main_sub_industory_list}
 						{if ('006' == $app.main_sub_industory_list[it].kbn_2)}
-					<li>
-						<input type="checkbox" value="{$app.main_sub_industory_list[it].sub_industory_code}" name="check_main_sub_industory[]" id="check_main_sub_industory{$app.main_sub_industory_list[it].kbn_2}{$app.main_sub_industory_list[it].kbn_3}"
-							{section name=it2 loop=$form.check_main_sub_industory}
-								{if ($app.main_sub_industory_list[it].sub_industory_code == $form.check_main_sub_industory[it2])}
-						checked
-								{/if}
-							{/section}
-						/> {$app.main_sub_industory_list[it].sub_industory_name}
-					</li>
+							<li>
+								<input type="checkbox" value="{$app.main_sub_industory_list[it].sub_industory_code}" name="check_main_sub_industory[]" id="check_main_sub_industory{$app.main_sub_industory_list[it].kbn_2}{$app.main_sub_industory_list[it].kbn_3}"
+									{section name=it2 loop=$form.check_main_sub_industory}
+										{if ($app.main_sub_industory_list[it].sub_industory_code == $form.check_main_sub_industory[it2])}
+											checked
+										{/if}
+									{/section}
+								/> {$app.main_sub_industory_list[it].sub_industory_name}
+							</li>
 						{/if}
 					{/section}
 				</ul>
-
 				<h5>Medical Care, Health</h5>
 				<ul>
 					{section name=it loop=$app.main_sub_industory_list}
 						{if ('007' == $app.main_sub_industory_list[it].kbn_2)}
-					<li>
-						<input type="checkbox" value="{$app.main_sub_industory_list[it].sub_industory_code}" name="check_main_sub_industory[]" id="check_main_sub_industory{$app.main_sub_industory_list[it].kbn_2}{$app.main_sub_industory_list[it].kbn_3}"
-							{section name=it2 loop=$form.check_main_sub_industory}
-								{if ($app.main_sub_industory_list[it].sub_industory_code == $form.check_main_sub_industory[it2])}
-						checked
-								{/if}
-							{/section}
-						/> {$app.main_sub_industory_list[it].sub_industory_name}
-					</li>
+							<li>
+								<input type="checkbox" value="{$app.main_sub_industory_list[it].sub_industory_code}" name="check_main_sub_industory[]" id="check_main_sub_industory{$app.main_sub_industory_list[it].kbn_2}{$app.main_sub_industory_list[it].kbn_3}"
+									{section name=it2 loop=$form.check_main_sub_industory}
+										{if ($app.main_sub_industory_list[it].sub_industory_code == $form.check_main_sub_industory[it2])}
+											checked
+										{/if}
+									{/section}
+								/> {$app.main_sub_industory_list[it].sub_industory_name}
+							</li>
 						{/if}
 					{/section}
 				</ul>
@@ -320,15 +331,15 @@
 				<ul>
 					{section name=it loop=$app.main_sub_industory_list}
 						{if ('010' == $app.main_sub_industory_list[it].kbn_2)}
-					<li>
-						<input type="checkbox" value="{$app.main_sub_industory_list[it].sub_industory_code}" name="check_main_sub_industory[]" id="check_main_sub_industory{$app.main_sub_industory_list[it].kbn_2}{$app.main_sub_industory_list[it].kbn_3}"
-							{section name=it2 loop=$form.check_main_sub_industory}
-								{if ($app.main_sub_industory_list[it].sub_industory_code == $form.check_main_sub_industory[it2])}
-						checked
-								{/if}
-							{/section}
-						/> {$app.main_sub_industory_list[it].sub_industory_name}
-					</li>
+							<li>
+								<input type="checkbox" value="{$app.main_sub_industory_list[it].sub_industory_code}" name="check_main_sub_industory[]" id="check_main_sub_industory{$app.main_sub_industory_list[it].kbn_2}{$app.main_sub_industory_list[it].kbn_3}"
+									{section name=it2 loop=$form.check_main_sub_industory}
+										{if ($app.main_sub_industory_list[it].sub_industory_code == $form.check_main_sub_industory[it2])}
+											checked
+										{/if}
+									{/section}
+								/> {$app.main_sub_industory_list[it].sub_industory_name}
+							</li>
 						{/if}
 					{/section}
 				</ul>
@@ -336,34 +347,33 @@
 				<ul>
 					{section name=it loop=$app.main_sub_industory_list}
 						{if ('012' == $app.main_sub_industory_list[it].kbn_2)}
-					<li>
-						<input type="checkbox" value="{$app.main_sub_industory_list[it].sub_industory_code}" name="check_main_sub_industory[]" id="check_main_sub_industory{$app.main_sub_industory_list[it].kbn_2}{$app.main_sub_industory_list[it].kbn_3}"
-							{section name=it2 loop=$form.check_main_sub_industory}
-								{if ($app.main_sub_industory_list[it].sub_industory_code == $form.check_main_sub_industory[it2])}
-						checked
-								{/if}
-							{/section}
-						/> {$app.main_sub_industory_list[it].sub_industory_name}
-					</li>
+							<li>
+								<input type="checkbox" value="{$app.main_sub_industory_list[it].sub_industory_code}" name="check_main_sub_industory[]" id="check_main_sub_industory{$app.main_sub_industory_list[it].kbn_2}{$app.main_sub_industory_list[it].kbn_3}"
+									{section name=it2 loop=$form.check_main_sub_industory}
+										{if ($app.main_sub_industory_list[it].sub_industory_code == $form.check_main_sub_industory[it2])}
+											checked
+										{/if}
+									{/section}
+								/> {$app.main_sub_industory_list[it].sub_industory_name}
+							</li>
 						{/if}
 					{/section}
 				</ul>
 			</div>
-
-			<div class="column">
+			<div class="elem_jmesse_column">
 				<h5>Living</h5>
 				<ul>
 					{section name=it loop=$app.main_sub_industory_list}
 						{if ('008' == $app.main_sub_industory_list[it].kbn_2)}
-					<li>
-						<input type="checkbox" value="{$app.main_sub_industory_list[it].sub_industory_code}" name="check_main_sub_industory[]" id="check_main_sub_industory{$app.main_sub_industory_list[it].kbn_2}{$app.main_sub_industory_list[it].kbn_3}"
-							{section name=it2 loop=$form.check_main_sub_industory}
-								{if ($app.main_sub_industory_list[it].sub_industory_code == $form.check_main_sub_industory[it2])}
-						checked
-								{/if}
-							{/section}
-						/> {$app.main_sub_industory_list[it].sub_industory_name}
-					</li>
+							<li>
+								<input type="checkbox" value="{$app.main_sub_industory_list[it].sub_industory_code}" name="check_main_sub_industory[]" id="check_main_sub_industory{$app.main_sub_industory_list[it].kbn_2}{$app.main_sub_industory_list[it].kbn_3}"
+									{section name=it2 loop=$form.check_main_sub_industory}
+										{if ($app.main_sub_industory_list[it].sub_industory_code == $form.check_main_sub_industory[it2])}
+											checked
+										{/if}
+									{/section}
+								/> {$app.main_sub_industory_list[it].sub_industory_name}
+							</li>
 						{/if}
 					{/section}
 				</ul>
@@ -371,15 +381,15 @@
 				<ul>
 					{section name=it loop=$app.main_sub_industory_list}
 						{if ('009' == $app.main_sub_industory_list[it].kbn_2)}
-					<li>
-						<input type="checkbox" value="{$app.main_sub_industory_list[it].sub_industory_code}" name="check_main_sub_industory[]" id="check_main_sub_industory{$app.main_sub_industory_list[it].kbn_2}{$app.main_sub_industory_list[it].kbn_3}"
-							{section name=it2 loop=$form.check_main_sub_industory}
-								{if ($app.main_sub_industory_list[it].sub_industory_code == $form.check_main_sub_industory[it2])}
-						checked
-								{/if}
-							{/section}
-						/> {$app.main_sub_industory_list[it].sub_industory_name}
-					</li>
+							<li>
+								<input type="checkbox" value="{$app.main_sub_industory_list[it].sub_industory_code}" name="check_main_sub_industory[]" id="check_main_sub_industory{$app.main_sub_industory_list[it].kbn_2}{$app.main_sub_industory_list[it].kbn_3}"
+									{section name=it2 loop=$form.check_main_sub_industory}
+										{if ($app.main_sub_industory_list[it].sub_industory_code == $form.check_main_sub_industory[it2])}
+											checked
+										{/if}
+									{/section}
+								/> {$app.main_sub_industory_list[it].sub_industory_name}
+							</li>
 						{/if}
 					{/section}
 				</ul>
@@ -387,26 +397,34 @@
 				<ul>
 					{section name=it loop=$app.main_sub_industory_list}
 						{if ('011' == $app.main_sub_industory_list[it].kbn_2)}
-					<li>
-						<input type="checkbox" value="{$app.main_sub_industory_list[it].sub_industory_code}" name="check_main_sub_industory[]" id="check_main_sub_industory{$app.main_sub_industory_list[it].kbn_2}{$app.main_sub_industory_list[it].kbn_3}"
-							{section name=it2 loop=$form.check_main_sub_industory}
-								{if ($app.main_sub_industory_list[it].sub_industory_code == $form.check_main_sub_industory[it2])}
-						checked
-								{/if}
-							{/section}
-						/> {$app.main_sub_industory_list[it].sub_industory_name}
-					</li>
+							<li>
+								<input type="checkbox" value="{$app.main_sub_industory_list[it].sub_industory_code}" name="check_main_sub_industory[]" id="check_main_sub_industory{$app.main_sub_industory_list[it].kbn_2}{$app.main_sub_industory_list[it].kbn_3}"
+									{section name=it2 loop=$form.check_main_sub_industory}
+										{if ($app.main_sub_industory_list[it].sub_industory_code == $form.check_main_sub_industory[it2])}
+											checked
+										{/if}
+									{/section}
+								/> {$app.main_sub_industory_list[it].sub_industory_name}
+							</li>
 						{/if}
 					{/section}
 				</ul>
-
 			</div>
 		</div>
-		<div class="btn">
-			<button type="button" id="fin_select_industory">OK</button>
-			<button type="button" class="close">Cancel</button>
+		<div class="elem_linkBox_list right">
+			<ul>
+				<li>
+					<div class="linkBox">
+						<button type="button" id="fin_select_industory"><span>OK</span></button>
+					</div>
+				</li>
+				<li>
+					<div class="linkBox">
+						<button type="button" class="var_mini var_gray close"><span class="noarrow">Cancel</span></button>
+					</div>
+				</li>
+			</ul>
 		</div>
-		<br />
 	</div>
 	<!-- /業種選択 -->
 
@@ -522,48 +540,55 @@
 	{/literal}
 	</script>
 	<div class="modal" id="prompt_venue">
-		<a class="close" id="btn_close"></a>
-		<h2>
-			Select location<span>&nbsp;Please select it in order of the Region. the Country / Area, and the City.</span>
-		</h2>
+		<a class="close" id="jmesse_btn_close"></a>
+		<div class="elem_heading_lv4">
+			<h4>Select location<span class="font_red">&nbsp;Please select it in order of the Region. the Country / Area, and the City.</span></h4>
+		</div>
 		<div class="venue clearfix">
-
-		<table style="font-size:1.2em;">
-			<tr>
-				<th>Region</th>
-				<td>
-					<select name="select_region" id="select_region" onchange="set_country('{$config.url_pub}')" style="width:200px;">
-						<option value="">ALL</option>
-						{section name=it loop=$app.region_list}
-						<option value="{$app.region_list[it].kbn_2}" {if $app.region_list[it].kbn_2 == $form.select_region}selected{/if}>{$app.region_list[it].discription_en}</option>
-						{/section}
-					</select>
-				</td>
-			</tr>
-			<tr>
-				<th>Country/Area</th>
-				<td>
-					<select name="select_country" id="select_country" onchange="set_city('{$config.url_pub}')" style="width:200px;">
-						<option value="">ALL</option>
-					</select>
-				</td>
-			</tr>
-			<tr>
-				<th>City</th>
-				<td>
-					<select name="select_city" id="select_city" style="width:200px;">
-						<option value="">ALL</option>
-					</select>
-				</td>
-			</tr>
-		</table>
-
+			<table style="font-size:1.2em;">
+				<tr>
+					<th>Region</th>
+					<td>
+						<select name="select_region" id="select_region" onchange="set_country('{$config.url_pub}')" style="width:200px;">
+							<option value="">ALL</option>
+							{section name=it loop=$app.region_list}
+							<option value="{$app.region_list[it].kbn_2}" {if $app.region_list[it].kbn_2 == $form.select_region}selected{/if}>{$app.region_list[it].discription_en}</option>
+							{/section}
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<th>Country/Area</th>
+					<td>
+						<select name="select_country" id="select_country" onchange="set_city('{$config.url_pub}')" style="width:200px;">
+							<option value="">ALL</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<th>City</th>
+					<td>
+						<select name="select_city" id="select_city" style="width:200px;">
+							<option value="">ALL</option>
+						</select>
+					</td>
+				</tr>
+			</table>
 		</div>
-		<div class="btn">
-			<button type="button" id="fin_select_venue">OK</button>
-			<button type="button" class="close">Cancel</button>
+		<div class="elem_linkBox_list right">
+			<ul>
+				<li>
+					<div class="linkBox">
+						<button type="button" id="fin_select_venue"><span>OK</span></button>
+					</div>
+				</li>
+				<li>
+					<div class="linkBox">
+						<button type="button" class="var_mini var_gray close"><span class="noarrow">Cancel</span></button>
+					</div>
+				</li>
+			</ul>
 		</div>
-		<br />
 	</div>
 	<!-- /開催地選択 -->
 
