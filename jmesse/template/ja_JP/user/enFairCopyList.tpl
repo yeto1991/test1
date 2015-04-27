@@ -1,81 +1,93 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<meta http-equiv="Content-Style-Type" content="text/css" />
-<meta http-equiv="Content-Script-Type" content="text/javascript" />
-{include file="user/enHeader.tpl"}
+{$app_ne.headtagu}
+{include file="user/include_common_head.tpl"}
 <title>Registration of New Trade Fair Info - Online Trade Fair Database (J-messe) - JETRO</title>
+{include file="user/jetro_gtm_snippet.tpl"}
 </head>
+<body class="layout-C" id="PageTop">
 
-<body class="layout-LC highlight-database j-messe">
-	<!-- header -->
-	{$app_ne.header}
-	<!-- /header -->
-	<!-- bread -->
-	<div id="bread">
-		<ul class="clearfix">
-			<li><a href="http://www.jetro.go.jp/">HOME</a></li>
-			<li><a href="http://www.jetro.go.jp/en/database/j-messe/">Online Trade Fair Database (J-messe)</a></li>
-			<li><a href="{$config.url}?action_user_enTop=true">Administration Menus</a></li>
-			<li>Copying registered information</li>
-		</ul>
-	</div>
-	<!-- /bread -->
+	<!-- **************** jetro_header **************** -->
+	{$app_ne.jetroheader}
 
-	<!-- contents -->
-	<div id="contents">
-		<!-- main -->
-		<div id="main">
-			<h1>Online Trade Fair Database (J-messe)</h1>
-			<div class="h2">
-				<h2>Registration of New Trade Fair Info</h2>
+	<div id="area_content_wrap">
+		<div id="elem_topic_path">
+			<div id="elem_topic_path_pad">
+				<ul>
+					<li><a href="http://www.jetro.go.jp/"><img alt="home" src="http://www.jetro.go.jp/images/en/new/content_images/icon/icon_home.gif" /></a></li>
+					<li><a href="http://www.jetro.go.jp/en/database/j-messe/">Online Trade Fair Database (J-messe)</a></li>
+					<li><a href="{$config.url}?action_user_enTop=true">Administration Menus</a></li>
+					<li>Copying registered information</li>
+				</ul>
 			</div>
-			<div class="in_main">
-				<p class="t_right">User：{$session.email}</p>
-				<p>
+		</div>
+
+		<!-- **************** jmesse_top **************** -->
+		{$app_ne.jmessetop}
+
+		<div id="area_content_main">
+			<div id="elem_heading_lv1">
+				<h1>Registration of New Trade Fair Info</h1>
+			</div>
+
+			<div class="elem_paragraph">
+				<p class="text right">User：{$session.email}</p>
+			</div>
+
+			<div class="elem_paragraph">
+				<p class="text">
 					You can register new trade fair information here by copying previously recorded information from My Trade Fair List.<br />
 					Click the fair title which you would like to copy.<br />
 				</p>
-				<h4>My Trade Fair List</h4>
-				<p>Result：{$app.cnt}</p>
-				{section name=it loop=$app.fair_list}
-				{if (0 == $smarty.section.it.index%2)}
-				<div class="list0">
-				{else}
-				<div class="list1">
-				{/if}
-					<dl>
-						<dt style="word-break: break-all;">
-							<a href="{$config.url}?action_user_enFairDetail=true&mode=p&mihon_no={$app.fair_list[it].mihon_no}">
-							{if ('' != $app.fair_list[it].abbrev_title)}
-							{$app.fair_list[it].abbrev_title} -
-							{/if}
-							{$app.fair_list[it].fair_title_en}
-							</a>
-						</dt>
-						<dd style="word-break: break-all;">
-							{$app.fair_list[it].date_from_format} to {$app.fair_list[it].date_to_format}<br />
-							{if $app.fair_list[it].city_name_en == ""}Other({$app.fair_list[it].other_city_en}){else}{$app.fair_list[it].city_name_en}{/if} / {$app.fair_list[it].country_name_en} / {$app.fair_list[it].region_name_en}<br />
-							{$app.fair_list[it].exhibits_en|replace:'&lt;br/&gt;':'<br/>'}
-						</dd>
-					</dl>
-				</div>
-				{/section}
 			</div>
-			<p class="totop">
-				<a href="{$config.url}?action_user_enFairCopyList=true&print=1" target="print"><img src="/images/en/btn-print.gif"  alt="Print" height="14" width="46" /></a>
-				<a href="javascript:window.scrollTo(0, 0);"><img src="/images/en/totop.gif" alt="Return to PAGETOP" width="103" height="14" /></a>
-			</p>
+			<div class="elem_table_basic">
+				<div class="elem_table_heading">
+					<p><strong>My Trade Fair List</strong></p>
+				</div>
+				<div class="elem_paragraph">
+					<p class="text">
+						Result：{$app.cnt}
+					</p>
+				</div>
+				<div class="elem_text_list_news">
+					{section name=it loop=$app.fair_list}
+						<div class="var_ptb10 elem_text_list_news_pad">
+							<dl>
+								<dd>
+									<div class="elem_heading_lv3">
+										<h3>
+											<a href="{$config.url}?action_user_enFairDetail=true&mode=p&mihon_no={$app.fair_list[it].mihon_no}">
+												{if ('' != $app.fair_list[it].abbrev_title)}
+													{$app.fair_list[it].abbrev_title} -
+												{/if}
+												{$app.fair_list[it].fair_title_en}
+											</a>
+										</h3>
+									</div>
+									<p>{$app.fair_list[it].date_from_format} to {$app.fair_list[it].date_to_format}</p>
+									<p>
+										{if $app.fair_list[it].city_name_en == ""}
+											Other({$app.fair_list[it].other_city_en})
+										{else}
+											{$app.fair_list[it].city_name_en}
+										{/if}
+										 / {$app.fair_list[it].country_name_en} / {$app.fair_list[it].region_name_en}
+									</p>
+									<p>{$app.fair_list[it].exhibits_en|replace:'&lt;br/&gt;':'<br/>'}</p>
+								</dd>
+							</dl>
+						</div>
+					{/section}
+				</div>
+			</div>
+			<!-- ** include START jetro_ssl_en **  -->
+			{include file="user/jetro_ssl_en.tpl"}
+			<!-- ** include END jetro_ssl_en **  -->
 		</div>
-		<!-- /main -->
-		<!-- submenu -->
-		{$app_ne.left_menu}
-		<!-- /submenu -->
 	</div>
-	<!-- /contents -->
-	<!-- footer -->
-	{$app_ne.footer}
-	<!-- /footer -->
+	<!-- **************** jetro_footer **************** -->
+	{$app_ne.jetrofooter}
 </body>
 </html>
+

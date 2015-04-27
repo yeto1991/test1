@@ -1,11 +1,8 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<meta http-equiv="Content-Style-Type" content="text/css" />
-<meta http-equiv="Content-Script-Type" content="text/javascript" />
-<meta name="Keywords" content="" />
-{include file="user/enHeader.tpl"}
+{$app_ne.headtagu}
+{include file="user/include_common_head.tpl"}
 <script type="text/javascript">
 <!--
 {literal}
@@ -50,39 +47,38 @@
 {else}
 <title>Fair Detail - Online Trade Fair Database (J-messe) - JETRO</title>
 {/if}
+{include file="user/jetro_gtm_snippet.tpl"}
 </head>
+<body class="layout-C" id="PageTop" onload="init('{$form.select_language_info}', '{$from.mode}')">
 
-<body class="layout-LC highlight-database j-messe" onload="init('{$form.select_language_info}', '{$from.mode}')">
-	<!-- header -->
-	{$app_ne.header}
-	<!-- /header -->
-	<!-- bread -->
-	<div id="bread">
-		<ul class="clearfix">
-			<li><a href="http://www.jetro.go.jp/">HOME</a></li>
-			<li><a href="http://www.jetro.go.jp/en/database/j-messe/">Online Trade Fair Database (J-messe)</a></li>
-			<li><a href="{$config.url}?action_user_enTop=true">Administration Menus</a></li>
-			{if ('' == $form.mode) || ('e' == $form.mode)}
-			<li><a href="{$config.url}?action_user_enFairRegistStep1=true&back=1">Fair Registration(step1)</a></li>
-			<li><a href="{$config.url}?action_user_enFairRegistStep2=true&back=1">Fair Registration(step2)</a></li>
-			<li>Fair Registration Confirm</li>
-			{elseif ('c' == $form.mode)}
-			<li><a href="{$config.url}?action_user_enFairRegistStep1=true&back=1">Fair Editing(step1)</a></li>
-			<li><a href="{$config.url}?action_user_enFairRegistStep2=true&back=1">Fair Editing(step2)</a></li>
-			<li>Fair Editing Confirm</li>
-			{else}
-			<li>Fair Detail</li>
-			{/if}
-		</ul>
-	</div>
-	<!-- /bread -->
+	<!-- **************** jetro_header **************** -->
+	{$app_ne.jetroheader}
 
-	<!-- contents -->
-	<div id="contents">
-		<!-- main -->
-		<div id="main">
-			<h1>Online Trade Fair Database (J-messe)</h1>
-			<div class="h2">
+	<div id="area_content_wrap">
+		<div id="elem_topic_path">
+			<div id="elem_topic_path_pad">
+				<ul>
+					<li><a href="http://www.jetro.go.jp/"><img alt="home" src="http://www.jetro.go.jp/images/en/new/content_images/icon/icon_home.gif" /></a></li>
+					<li><a href="http://www.jetro.go.jp/en/database/j-messe/">Online Trade Fair Database (J-messe)</a></li>
+					<li><a href="{$config.url}?action_user_enTop=true">Administration Menus</a></li>
+					{if ('' == $form.mode) || ('e' == $form.mode)}
+						<li><a href="{$config.url}?action_user_enFairRegistStep1=true&back=1">Fair Registration(step1)</a></li>
+						<li><a href="{$config.url}?action_user_enFairRegistStep2=true&back=1">Fair Registration(step2)</a></li>
+						<li>Fair Registration Confirm</li>
+					{elseif ('c' == $form.mode)}
+						<li><a href="{$config.url}?action_user_enFairRegistStep1=true&back=1">Fair Editing(step1)</a></li>
+						<li><a href="{$config.url}?action_user_enFairRegistStep2=true&back=1">Fair Editing(step2)</a></li>
+						<li>Fair Editing Confirm</li>
+					{else}
+						<li>Fair Detail</li>
+					{/if}
+				</ul>
+			</div>
+		</div>
+
+		<!-- **************** jmesse_top **************** -->
+		{$app_ne.jmessetop}
+
 {*
 $form.mode
 ''  : 新規登録モードStep.3 → 確認画面 (→ 登録)
@@ -91,15 +87,30 @@ $form.mode
 'e' : 修正登録モードStep.3 → 確認画面 (→ 登録)
 'p' : 修正登録一覧         → 詳細表示 (→ 修正登録モードStep.1)
 *}
+
+		<div id="area_content_main">
+			<div id="elem_heading_lv1">
 				{if ('' == $form.mode) || ('e' == $form.mode)}
-				<h2>New Fair Registration</h2>
+					<h1>New Fair Registration</h1>
 				{elseif ('c' == $form.mode)}
-				<h2>Fair Editing</h2>
+					<h1>Fair Editing</h1>
 				{else}
-				<h2>Details of Your Registered Fairs</h2>
+					<h1>Details of Your Registered Fairs</h1>
 				{/if}
 			</div>
-			<form name="form_user_enFairDetail" id="form_user_enFairDetail" method="post" action="" >
+		{if ('d' != $form.mode && 'p' != $form.mode)}
+			<div class="elem_pic">
+				<div class="center elem_pic_pad">
+					<img src="http://www.jetro.go.jp/library/en/database/j-messe/images/db/fair04.jpg" alt="userdetail" />
+				</div>
+			</div>
+		{/if}
+
+			<div class="elem_paragraph">
+				<p class="text right">user：{$session.email}</p>
+			</div>
+
+			<form name="form_user_enFairDetail" id="form_user_enFairDetail" method="post" action="" enctype="multipart/form-data">
 				{uniqid}
 				{if ('d' == $form.mode)}
 				<input type="hidden" name="action_user_enFairChangeStep1" id="action_user_enFairChangeStep1" value="dummy" />
@@ -116,365 +127,692 @@ $form.mode
 				{/if}
 				<input type="hidden" name="" mihon_no"" id="mihon_no" value="{$form.mihon_no}" />
 
-				<div class="in_main">
-					{if ('d' != $form.mode && 'p' != $form.mode)}
-					<h3 class="img t_center">
-						<img src="/en/database/j-messe/images/db/fair04.jpg" alt="見本市登録確認" />
-					</h3>
-					{/if}
-					<p class="t_right">user：{$session.email}</p>
-
-					{if ('' == $form.mode)}
-					<p><strong><span class="red">Do you wish to register the trade fair information as follows?</span></strong></p>
-					<p>
-						<a href="{$config.url}?action_user_enFairRegistStep2=true&back=1"><img width="110" height="37" class="over" alt="back" src="/en/database/j-messe/images/db/btn-back.gif" /></a>
-						<input type="image" width="110" height="37" class="over" alt="Yes" src="/en/database/j-messe/images/db/btn-yes.gif" />
+				<div class="elem_paragraph">
+					<p class="text">
+						<font color="red">
+							{if ('' == $form.mode)}
+								Do you wish to register the trade fair information as follows?
+							{elseif ('e' == $form.mode)}
+								Do you wish to register the trade fair information as follows?
+							{elseif ('c' == $form.mode)}
+								Do you wish to edit the trade fair information as follows?
+							{elseif ('d' == $form.mode)}
+								{if ('0' != $app.fair_start_past_flag)}
+									<p><font color="red">To update the registered information of your trade fair in line with the upcoming event, use the "Copying registered information" page.</font></p>
+								{/if}
+							{else}
+							{/if}
+						</font>
 					</p>
-					{elseif ('e' == $form.mode)}
-					<p><strong><span class="red">Do you wish to register the trade fair information as follows?</span></strong></p>
-					<p>
-						<a href="{$config.url}?action_user_enFairRegistStep2=true&mode=e&mihon_no={$form.mihon_no}&back=1"><img width="110" height="37" class="over" alt="back" src="/en/database/j-messe/images/db/btn-back.gif" /></a>
-						<input type="image" width="110" height="37" class="over" alt="Yes" src="/en/database/j-messe/images/db/btn-yes.gif" />
-					</p>
-					{elseif ('c' == $form.mode)}
-					<p><strong><span class="red">Do you wish to edit the trade fair information as follows?</span></strong></p>
-					<p>
-						<a href="{$config.url}?action_user_enFairRegistStep2=true&mode=c&mihon_no={$form.mihon_no}&back=1"><img width="110" height="37" class="over" alt="back" src="/en/database/j-messe/images/db/btn-back.gif" /></a>
-						<input type="image" width="110" height="37" class="over" alt="はい" src="/en/database/j-messe/images/db/btn-yes.gif" />
-					</p>
-					{elseif ('d' == $form.mode)}
-					<p></p>
-					<p>
-						<a href="{$config.url}?action_user_enFairList=true"><img width="110" height="37" class="over" alt="back" src="/en/database/j-messe/images/db/btn-back.gif" /></a>
-						{if ('0' == $app.fair_start_past_flag)}
-							Delete<a href="javascript:fair_delete('{$config.url}', '{$form.mihon_no}', '{$form.mode}')"><img src="/en/database/j-messe/images/db/btn-yes.gif" alt="Delete" class="over" /></a>
-							Edit<a href="{$config.url}?action_user_enFairRegistStep1=true&mode=c&mihon_no={$form.mihon_no}"><img src="/en/database/j-messe/images/db/btn-yes.gif" alt="Edit" class="over" /></a>
-						{else}
-							<p>
-								<font color="red">To update the registered information of your trade fair in line with the upcoming event, use the "<a href="{$config.url}?action_user_enFairCopyList=true">Copying registered information</a>" page.</font><br />
-							</p>
-						{/if}
-					</p>
-					{elseif ('p' == $form.mode)}
-					<p></p>
-					<p>
-						<a href="{$config.url}?action_user_enFairCopyList=true"><img width="110" height="37" class="over" alt="back" src="/en/database/j-messe/images/db/btn-back.gif" /></a>
-						EditRegist<a href="{$config.url}?action_user_enFairRegistStep1=true&mode=e&mihon_no={$form.mihon_no}"><img src="/en/database/j-messe/images/db/btn-yes.gif" alt="Edit" class="over" /></a>
-					</p>
-					{else}
-					{/if}
-					<div class="line_dot">
-						<hr />
-					</div>
 				</div>
-				<div class="in_main"  style="word-break: break-all;">
-					<h4>Basic Information</h4>
-					<table id="registration">
-						<tr>
-							<th class="item">Fair title</th>
-							<th class="required"><img src="/en/database/j-messe/images/db/required.gif " height="18" width="40" /></th>
-							<td>{$form.fair_title_en}</td>
-						</tr>
-						<tr>
-							<th class="item">Fair title (abbreviation)</th>
-							<th class="required"></th>
-							<td>{$form.abbrev_title}</td>
-						</tr>
-						<tr>
-							<th class="item">URL</th>
-							<th class="required"><img src="/en/database/j-messe/images/db/required.gif " height="18" width="40" /></th>
-							<td>{$form.fair_url}</td>
-						</tr>
-						<tr>
-							<th class="item">Date</th>
-							<th class="required"><img src="/en/database/j-messe/images/db/required.gif " height="18" width="40" /></th>
-							<td>{$form.date_from_yyyy}/{$form.date_from_mm}/{$form.date_from_dd}～{$form.date_to_yyyy}/{$form.date_to_mm}/{$form.date_to_dd}</td>
-						</tr>
-						<tr>
-							<th class="item">Frequency of exhibition</th>
-							<th class="required"><img src="/en/database/j-messe/images/db/required.gif " height="18" width="40" /></th>
-							<td>{$app.frequency_name.discription_en}</td>
-						</tr>
-					</table>
-					<h4>Industries/Products Covered</h4>
-					<table id="registration">
-						<tr>
-							<th class="item">Main/Sub Industry</th>
-							<th class="required"><img src="/en/database/j-messe/images/db/required.gif " height="18" width="40" /></th>
-							<td>
-								{$form.main_industory_name_1}/{$form.sub_industory_name_1}<br />
-								{if ('' != $form.main_industory_name_2)}
-								{$form.main_industory_name_2}/{$form.sub_industory_name_2}<br />
+				<p class="t_center">
+					<div class="elem_content_divide_block">
+						<div class="content_divide_col3 elem_content_divide_block_pad">
+							{if ('' == $form.mode)}
+								<div class="elem_content_divide_box">
+									<div class="elem_linkBox_list">
+										<ul class="var_large_pad">
+											<li>
+												<div class="linkBox">
+													<a href="{$config.url}?action_user_enFairRegistStep2=true&back=1" class="var_small"><span class="left">Back</span></a>
+												</div>
+											</li>
+										</ul>
+									</div>
+								</div>
+								<div class="elem_content_divide_box">
+									<div class="elem_linkBox_list">
+										<ul class="var_large_pad">
+											<li>
+												<div class="linkBox">
+													<div id="next_btn">
+														<a href="" onclick="document.form_user_enFairDetail.submit();return false;" class="var_small"><span>Yes</span></a>
+													</div>
+												</div>
+											</li>
+										</ul>
+									</div>
+								</div>
+							{elseif ('e' == $form.mode)}
+								<div class="elem_content_divide_box">
+									<div class="elem_linkBox_list">
+										<ul class="var_large_pad">
+											<li>
+												<div class="linkBox">
+													<a href="{$config.url}?action_user_enFairRegistStep2=true&mode=e&mihon_no={$form.mihon_no}&back=1"><span class="left">Back</span></a>
+												</div>
+											</li>
+										</ul>
+									</div>
+								</div>
+								<div class="elem_content_divide_box">
+									<div class="elem_linkBox_list">
+										<ul class="var_large_pad">
+											<li>
+												<div class="linkBox">
+													<div id="next_btn">
+														<a href="" onclick="document.form_user_enFairDetail.submit();return false;" class="var_small"><span>Yes</span></a>
+													</div>
+												</div>
+											</li>
+										</ul>
+									</div>
+								</div>
+							{elseif ('c' == $form.mode)}
+								<div class="elem_content_divide_box">
+									<div class="elem_linkBox_list">
+										<ul class="var_large_pad">
+											<li>
+												<div class="linkBox">
+													<a href="{$config.url}?action_user_enFairRegistStep2=true&mode=c&mihon_no={$form.mihon_no}&back=1" class="var_small"><span class="left">Back</span></a>
+												</div>
+											</li>
+										</ul>
+									</div>
+								</div>
+								<div class="elem_content_divide_box">
+									<div class="elem_linkBox_list">
+										<ul class="var_large_pad">
+											<li>
+												<div class="linkBox">
+													<div id="next_btn">
+														<a href="" onclick="document.form_user_enFairDetail.submit();return false;" class="var_small"><span>Yes</span></a>
+													</div>
+												</div>
+											</li>
+										</ul>
+									</div>
+								</div>
+							{elseif ('d' == $form.mode)}
+								{if ('0' == $app.fair_start_past_flag)}
+									<div class="elem_content_divide_box">
+										<div class="elem_linkBox_list">
+											<ul class="var_large_pad">
+												<li>
+													<div class="linkBox">
+														<a href="{$config.url}?action_user_enFairList=true" class="var_small"><span class="left">Back</span></a>
+													</div>
+												</li>
+											</ul>
+										</div>
+									</div>
+									<div class="elem_content_divide_box">
+										<div class="elem_linkBox_list">
+											<ul class="var_large_pad">
+												<li>
+													<div class="linkBox">
+														<div id="next_btn">
+															<a href="javascript:fair_delete('{$config.url}', '{$form.mihon_no}', '{$form.mode}')" class="var_small"><span>Delete</span></a>
+														</div>
+													</div>
+												</li>
+											</ul>
+										</div>
+									</div>
+									<div class="elem_content_divide_box">
+										<div class="elem_linkBox_list">
+											<ul class="var_large_pad">
+												<li>
+													<div class="linkBox">
+														<div id="next_btn">
+															<a href="{$config.url}?action_user_enFairRegistStep1=true&mode=c&mihon_no={$form.mihon_no}" class="var_small"><span>Edit</span></a>
+														</div>
+													</div>
+												</li>
+											</ul>
+										</div>
+									</div>
+								{else}
+									<div class="elem_content_divide_box">
+										<div class="elem_linkBox_list">
+											<ul class="var_large_pad">
+												<li>
+													<div class="linkBox">
+														<a href="{$config.url}?action_user_enFairList=true" class="var_small"><span class="left">Back</span></a>
+													</div>
+												</li>
+											</ul>
+										</div>
+									</div>
+									<div class="elem_content_divide_box">
+										<div class="elem_linkBox_list">
+											<ul>
+												<li>
+													<div class="linkBox">
+														<a href="{$config.url}?action_user_enFairCopyList=true" class="var_small"><span>EditRegist</span></a>
+													</div>
+												</li>
+											</ul>
+										</div>
+									</div>
 								{/if}
-								{if ('' != $form.main_industory_name_3)}
-								{$form.main_industory_name_3}/{$form.sub_industory_name_3}<br />
-								{/if}
-								{if ('' != $form.main_industory_name_4)}
-								{$form.main_industory_name_4}/{$form.sub_industory_name_4}<br />
-								{/if}
-								{if ('' != $form.main_industory_name_5)}
-								{$form.main_industory_name_5}/{$form.sub_industory_name_5}<br />
-								{/if}
-								{if ('' != $form.main_industory_name_6)}
-								{$form.main_industory_name_6}/{$form.sub_industory_name_6}<br />
-								{/if}
-							</td>
-						</tr>
-						<tr>
-							<th class="item">Exhibits</th>
-							<th class="required"><img src="/en/database/j-messe/images/db/required.gif " height="18" width="40" /></th>
-							<td style="word-break: break-all;">{$form.exhibits_en|nl2br|replace:"&lt;br/&gt;":"<br/>"}</td>
-						</tr>
-					</table>
-					<h4>Location/Venue</h4>
-					<table id="registration">
-						<tr>
-							<th class="item">Location</th>
-							<th class="required"><img src="/en/database/j-messe/images/db/required.gif " height="18" width="40" /></th>
-							<td>
-								{$app.region_name.discription_en}
-								/ {$app.country_name.discription_en}
-								{if ('' != $app.city_name)}
-								/ {$app.city_name.discription_en}
-								{/if}
-								{if ('' != $form.other_city_en)}
-								/ {$form.other_city_en}
-								{/if}
-							<br /></td>
-						</tr>
-						<tr>
-							<th class="item">Venue</th>
-							<th class="required"><img src="/en/database/j-messe/images/db/required.gif " height="18" width="40" /></th>
-							<td>{$form.venue_en}</td>
-						</tr>
-						<tr>
-							<th class="item">Net square meters</th>
-							<th class="required"></th>
-							<td>
-							{if ('' != $form.gross_floor_area)}
-								{$form.gross_floor_area} sq.m.
+							{elseif ('p' == $form.mode)}
+								<div class="elem_content_divide_box">
+									<div class="elem_linkBox_list">
+										<ul class="var_large_pad">
+											<li>
+												<div class="linkBox">
+													<a href="{$config.url}?action_user_enFairCopyList=true" class="var_small"><span class="left">back</span></a>
+												</div>
+											</li>
+										</ul>
+									</div>
+								</div>
+								<div class="elem_content_divide_box">
+									<div class="elem_linkBox_list">
+										<ul class="var_large_pad">
+											<li>
+												<div class="linkBox">
+													<div id="next_btn">
+														<a href="{$config.url}?action_user_enFairRegistStep1=true&mode=e&mihon_no={$form.mihon_no}" class="var_small"><span>EditRegist</span></a>
+													</div>
+												</div>
+											</li>
+										</ul>
+									</div>
+								</div>
+							{else}
 							{/if}
-							</td>
-						</tr>
-						<tr>
-							<th class="item">Data verified by</th>
-							<th class="required"></th>
-							<td>
-							{if ('' != $form.spare_field1)}
-								{$form.spare_field1}
-							{/if}
-							</td>
-						</tr>
-{*
-						<tr>
-							<th class="item">会場までの交通手段</th>
-							<td>{$form.transportation_en}</td>
-						</tr>
-*}
-						<tr>
-							<th class="item">Eligibility </th>
-							<th class="required"><img src="/en/database/j-messe/images/db/required.gif " height="18" width="40" /></th>
-							<td>{$app.open_to_name.discription_en}</td>
-						</tr>
-						<tr>
-							<th class="item">Method of admission</th>
-							<th class="required"><img src="/en/database/j-messe/images/db/required.gif " height="18" width="40" /></th>
-							<td>
-								{if ('1' == $form.admission_ticket_1)}
-								Free<br />
-								{/if}
-								{if ('1' == $form.admission_ticket_2)}
-								Apply/register online<br />
-								{/if}
-								{if ('1' == $form.admission_ticket_3)}
-								Contact organizer/agency in Japan<br />
-								{/if}
-								{if ('1' == $form.admission_ticket_4)}
-								Tickets available at event<br />
-								{/if}
-								{if ('1' == $form.admission_ticket_5)}
-								Other ({$form.other_admission_ticket_en})<br />
-								{/if}
-							</td>
-						</tr>
-{*
-						<tr>
-							<th class="item">出展申込締切日</th>
-							<td>
-								{if ('' != $form.app_dead_yyyy)}
-								{$form.app_dead_yyyy}年{$form.app_dead_mm}月{$form.app_dead_dd}日
-								{/if}
-							</td>
-						</tr>
-*}
+						</div>
+					</div>
+				</p>
+				<hr />
+				<div class="elem_table_basic">
+					<div class="elem_table_heading">
+						<p><strong>Basic Information</strong></p>
+					</div>
+					<table id="registration" class="var_there_boder var_base_color elem_table_basic var_ptb8">
+						<colgroup>
+							<col width="15%">
+							<col width="7%">
+							<col width="78%">
+						</colgroup>
+						<tbody>
+							<tr>
+								<th class="bg_gray_lv1 nobdr">Fair title</th>
+								<th class="bg_gray_lv1"><span class="cate">Required</span></th>
+								<td class="bg_gray_lv2">{$form.fair_title_en}</td>
+							</tr>
+							<tr>
+								<th class="bg_gray_lv1 nobdr">Fair title (abbreviation)</th>
+								<th class="bg_gray_lv1"></th>
+								<td class="bg_gray_lv2">{$form.abbrev_title}</td>
+							</tr>
+							<tr>
+								<th class="bg_gray_lv1 nobdr">URL</th>
+								<th class="bg_gray_lv1"><span class="cate">Required</span></th>
+								<td class="bg_gray_lv2">{$form.fair_url}</td>
+							</tr>
+							<tr>
+								<th class="bg_gray_lv1 nobdr"></th>
+								<th class="bg_gray_lv1"><span class="cate">Required</span></th>
+								<td class="bg_gray_lv2">{$form.date_from_yyyy}/{$form.date_from_mm}/{$form.date_from_dd}～{$form.date_to_yyyy}/{$form.date_to_mm}/{$form.date_to_dd}</td>
+							</tr>
+							<tr>
+								<th class="bg_gray_lv1 nobdr">Frequency of exhibition</th>
+								<th class="bg_gray_lv1"><span class="cate">Required</span></th>
+								<td class="bg_gray_lv2">{$app.frequency_name.discription_en}</td>
+							</tr>
+						</tbody>
 					</table>
-					<h4>Information from latest fair</h4>
-					<table id="registration">
-						<tr>
-							<th class="item">year</th>
-							<th class="required"></th>
-							<td>
-								{if ('' != $form.year_of_the_trade_fair)}
-								{$form.year_of_the_trade_fair} year
-								{/if}
-							</td>
-						</tr>
-						<tr>
-							<th class="item">Total number of visitors</th>
-							<th class="required"></th>
-							<td>
-								{if ('' != $form.total_number_of_visitor || '' != $form.number_of_foreign_visitor)}
-								{$form.total_number_of_visitor} (including {$form.number_of_foreign_visitor} foreign visitors)
-								{/if}
-							</td>
-						</tr>
-						<tr>
-							<th class="item">Total number of exhibitors</th>
-							<th class="required"></th>
-							<td>
-								{if ('' != $form.total_number_of_exhibitors || '' != $form.number_of_foreign_exhibitors)}
-								{$form.total_number_of_exhibitors} (including {$form.number_of_foreign_exhibitors} foreign exhibitors)
-								{/if}
-							</td>
-						</tr>
-						<tr>
-							<th class="item">Net square meters</th>
-							<th class="required"></th>
-							<td>
-								{if ('' != $form.net_square_meters)}
-								{$form.net_square_meters} sq.m.
-								{/if}
-							</td>
-						</tr>
+				</div>
+
+				<div class="elem_table_basic">
+					<div class="elem_table_heading">
+						<p><strong>Industries/Products Covered</strong></p>
+					</div>
+					<table id="registration" class="var_there_boder var_base_color elem_table_basic var_ptb8">
+						<colgroup>
+							<col width="15%">
+							<col width="7%">
+							<col width="78%">
+						</colgroup>
+						<tbody>
+							<tr>
+								<th class="bg_gray_lv1 nobdr">Main/Sub Industry</th>
+								<th class="bg_gray_lv1"><span class="cate">Required</span></th>
+								<td class="bg_gray_lv2">
+									{$form.main_industory_name_1}/{$form.sub_industory_name_1}<br />
+									{if ('' != $form.main_industory_name_2)}
+										{$form.main_industory_name_2}/{$form.sub_industory_name_2}<br />
+									{/if}
+									{if ('' != $form.main_industory_name_3)}
+										{$form.main_industory_name_3}/{$form.sub_industory_name_3}<br />
+									{/if}
+									{if ('' != $form.main_industory_name_4)}
+										{$form.main_industory_name_4}/{$form.sub_industory_name_4}<br />
+									{/if}
+									{if ('' != $form.main_industory_name_5)}
+										{$form.main_industory_name_5}/{$form.sub_industory_name_5}<br />
+									{/if}
+									{if ('' != $form.main_industory_name_6)}
+										{$form.main_industory_name_6}/{$form.sub_industory_name_6}<br />
+									{/if}
+								</td>
+							</tr>
+							<tr>
+								<th class="bg_gray_lv1 nobdr">Exhibits</th>
+								<th class="bg_gray_lv1"><span class="cate">Required</span></th>
+								<td class="bg_gray_lv2" style="word-break: break-all;">{$form.exhibits_en|nl2br|replace:"&lt;br/&gt;":"<br/>"}</td>
+							</tr>
+						</tbody>
 					</table>
-					<h4>Catchphrase</h4>
-					<table id="registration">
-						<tr>
-							<th class="item">Catchphrase</th>
-							<th class="required"></th>
-							<td style="word-break: break-all;">{$form.profile_en|nl2br|replace:"&lt;br/&gt;":"<br/>"}</td>
-						</tr>
-						<tr>
-							<th class="item">PR</th>
-							<th class="required"></th>
-							<td style="word-break: break-all;">{$form.detailed_information_en|nl2br|replace:"&lt;br/&gt;":"<br/>"}</td>
-						</tr>
-						<tr>
-							<th class="item">Photos</th>
-							<th class="required"></th>
-							<td>
-								{section name=it loop=$session.display_photos_path}
-									Photo({$session.display_photos_no[it]})：{$session.display_photos_name[it]}<br />
-									<img src="{$config.url}{$session.display_photos_path[it]}" alt="{$session.display_photos_name[it]}" width="150" /><br /><br />
-								{/section}
-								{if ('' == $form.mode) || ('c' == $form.mode) || ('e' == $form.mode)}
+				</div>
+				<div class="elem_table_basic">
+					<div class="elem_table_heading">
+						<p><strong>Location/Venue</strong></p>
+					</div>
+					<table id="registration" class="var_there_boder var_base_color elem_table_basic var_ptb8">
+						<colgroup>
+							<col width="15%">
+							<col width="7%">
+							<col width="78%">
+						</colgroup>
+						<tbody>
+							<tr>
+								<th class="bg_gray_lv1 nobdr">Location</th>
+								<th class="bg_gray_lv1"><span class="cate">Required</span></th>
+								<td class="bg_gray_lv2">
+									{$app.region_name.discription_en}/ {$app.country_name.discription_en}
+									{if ('' != $app.city_name)}
+										/ {$app.city_name.discription_en}
+									{/if}
+									{if ('' != $form.other_city_en)}
+										/ {$form.other_city_en}
+									{/if}
+								</td>
+							</tr>
+							<tr>
+								<th class="bg_gray_lv1 nobdr">Venue</th>
+								<th class="bg_gray_lv1"><span class="cate">Required</span></th>
+								<td class="bg_gray_lv2">{$form.venue_en}</td>
+							</tr>
+							<tr>
+								<th class="bg_gray_lv1 nobdr">Net square meters</th>
+								<th class="bg_gray_lv1"></th>
+								<td class="bg_gray_lv2">
+									{if ('' != $form.gross_floor_area)}
+										{$form.gross_floor_area} sq.m.
+									{/if}
+								</td>
+							</tr>
+							<tr>
+								<th class="bg_gray_lv1 nobdr">Data verified by</th>
+								<th class="bg_gray_lv1"></th>
+								<td class="bg_gray_lv2">{$form.spare_field1}</td>
+							</tr>
+							<tr>
+								<th class="bg_gray_lv1 nobdr">Eligibility</th>
+								<th class="bg_gray_lv1"><span class="cate">Required</span></th>
+								<td class="bg_gray_lv2">{$app.open_to_name.discription_en}</td>
+							</tr>
+							<tr>
+								<th class="bg_gray_lv1 nobdr">Method of admission</th>
+								<th class="bg_gray_lv1"><span class="cate">Required</span></th>
+								<td class="bg_gray_lv2">
+									{if ('1' == $form.admission_ticket_1)}
+										Free<br />
+									{/if}
+									{if ('1' == $form.admission_ticket_2)}
+										Apply/register online<br />
+									{/if}
+									{if ('1' == $form.admission_ticket_3)}
+										Contact organizer/agency in Japan<br />
+									{/if}
+									{if ('1' == $form.admission_ticket_4)}
+										Tickets available at event<br />
+									{/if}
+									{if ('1' == $form.admission_ticket_5)}
+										Other ({$form.other_admission_ticket_en})<br />
+									{/if}
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+
+				<div class="elem_table_basic">
+					<div class="elem_table_heading">
+						<p><strong>Information from latest fair</strong></p>
+					</div>
+					<table id="registration" class="var_there_boder var_base_color elem_table_basic var_ptb8">
+						<colgroup>
+							<col width="15%">
+							<col width="7%">
+							<col width="78%">
+						</colgroup>
+						<tbody>
+							<tr>
+								<th class="bg_gray_lv1 nobdr">year</th>
+								<th class="bg_gray_lv1"></th>
+								<td class="bg_gray_lv2">
+									{if ('' != $form.year_of_the_trade_fair)}
+										{$form.year_of_the_trade_fair}year
+									{/if}
+								</td>
+							</tr>
+							<tr>
+								<th class="bg_gray_lv1 nobdr">Total number of visitors</th>
+								<th class="bg_gray_lv1"></th>
+								<td class="bg_gray_lv2">
+									{if ('' != $form.total_number_of_visitor || '' != $form.number_of_foreign_visitor)}
+										{$form.total_number_of_visitor} (including {$form.number_of_foreign_visitor} foreign visitors)
+									{/if}
+								</td>
+							</tr>
+							<tr>
+								<th class="bg_gray_lv1 nobdr">Total number of exhibitors</th>
+								<th class="bg_gray_lv1"></th>
+								<td class="bg_gray_lv2">
+									{if ('' != $form.total_number_of_exhibitors || '' != $form.number_of_foreign_exhibitors)}
+										{$form.total_number_of_exhibitors} (including {$form.number_of_foreign_exhibitors} foreign exhibitors)
+									{/if}
+								</td>
+							</tr>
+							<tr>
+								<th class="bg_gray_lv1 nobdr">Net square meters</th>
+								<th class="bg_gray_lv1"></th>
+								<td class="bg_gray_lv2">
+									{if ('' != $form.net_square_meters)}
+										{$form.net_square_meters} sq.m.
+									{/if}
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+
+				<div class="elem_table_basic">
+					<div class="elem_table_heading">
+						<p><strong>Catchphrase</strong></p>
+					</div>
+					<table id="registration" class="var_there_boder var_base_color elem_table_basic var_ptb8">
+						<colgroup>
+							<col width="15%">
+							<col width="7%">
+							<col width="78%">
+						</colgroup>
+						<tbody>
+							<tr>
+								<th class="bg_gray_lv1 nobdr">Catchphrase</th>
+								<th class="bg_gray_lv1"></th>
+								<td class="bg_gray_lv2" style="word-break: break-all;">
+									{$form.profile_en|nl2br|replace:"&lt;br/&gt;":"<br/>"}
+								</td>
+							</tr>
+							<tr>
+								<th class="bg_gray_lv1 nobdr">PR</th>
+								<th class="bg_gray_lv1"></th>
+								<td class="bg_gray_lv2" style="word-break: break-all;">
+									{$form.detailed_information_en|nl2br|replace:"&lt;br/&gt;":"<br/>"}
+								</td>
+							</tr>
+							<tr>
+								<th class="bg_gray_lv1 nobdr">Photos</th>
+								<th class="bg_gray_lv1"></th>
+								<td class="bg_gray_lv2" style="word-break: break-all;">
+									{section name=it loop=$session.display_photos_path}
+										Photo({$session.display_photos_no[it]})：{$session.display_photos_name[it]}<br />
+										<img src="{$config.url}{$session.display_photos_path[it]}" alt="{$session.display_photos_name[it]}" width="150" /><br /><br />
+									{/section}
+									{if ('' == $form.mode) || ('c' == $form.mode) || ('e' == $form.mode)}
 									If the selected image file is not displayed correctly, it will not be registered correctly. <br />
-									In that case, return to the Step 2 for registration, see the instructions regarding image files, and select an image  again.<br />
-								{/if}
-							</td>
-						</tr>
-						<tr>
-							<th class="item">Search Keyword</th>
-							<th class="required"></th>
-							<td>{$form.keyword}</td>
-						</tr>
+									In that case, return to the Step 2 for registration, see the instructions regarding image files, and select an image  again.
+									{/if}
+								</td>
+							</tr>
+							<tr>
+								<th class="bg_gray_lv1 nobdr">Search Keyword</th>
+								<th class="bg_gray_lv1"></th>
+								<td class="bg_gray_lv2">{$form.keyword}</td>
+							</tr>
+						</tbody>
 					</table>
-					<h4>Organizer</h4>
-					<table id="registration">
-						<tr>
-							<th class="item">Name of the organizer</th>
-							<th class="required"><img src="/en/database/j-messe/images/db/required.gif " height="18" width="40" /></th>
-							<td>
-								{$form.organizer_en}
-							</td>
-						</tr>
-						<tr>
-							<th class="item">Information of the organizer</th>
-							<th class="required"><img src="/en/database/j-messe/images/db/required.gif " height="18" width="40" /></th>
-							<td>
-								<strong>Address: </strong>{$form.organizer_addr}<br />
-								<strong>Department: </strong>{$form.organizer_div}<br />
-								<strong>Person: </strong>{$form.organizer_pers}<br />
-								<img src="/en/database/j-messe/images/db/required.gif " height="18" width="40" /><strong>TEL: </strong>{$form.organizer_tel}<br />
-								<strong>FAX: </strong>{$form.organizer_fax}<br />
-								<strong>Email: </strong>{$form.organizer_email}<br />
-							</td>
-						</tr>
-						<tr>
-							<th class="item">The representative office, person or agency in Japan</th>
-							<th class="required"></th>
-							<td>
-								<strong>Name of representative office or agency in Japan: </strong>{$form.agency_in_japan_en}<br />
-								<strong>Address of the office or agency: </strong>{$form.agency_in_japan_addr}<br />
-								<strong>Department in charge: </strong>{$form.agency_in_japan_div}<br />
-								<strong>Person in charge: </strong>{$form.agency_in_japan_pers}<br />
-								<strong>TEL: </strong>{$form.agency_in_japan_tel}<br />
-								<strong>FAX: </strong>{$form.agency_in_japan_fax}<br />
-								<strong>Email: </strong>{$form.agency_in_japan_email}<br />
-							</td>
-						</tr>
-					</table>
-					<div class="line_dot">
-						<hr />
-					</div>
 				</div>
-				<div class="in_main">
-					{if ('' == $form.mode)}
-					<p><strong><span class="red">Do you regist this fair?</span></strong></p>
-					<p>
-						<a href="{$config.url}?action_user_enFairRegistStep2=true&back=1"><img width="110" height="37" class="over" alt="back" src="/en/database/j-messe/images/db/btn-back.gif" /></a>
-						<input type="image" width="110" height="37" class="over" alt="Yes" src="/en/database/j-messe/images/db/btn-yes.gif" />
-					</p>
-					{elseif ('e' == $form.mode)}
-					<p><strong><span class="red">Do you regist on a base the fair? </span></strong></p>
-					<p>
-						<a href="{$config.url}?action_user_enFairRegistStep2=true&mode=e&mihon_no={$form.mihon_no}&back=1"><img width="110" height="37" class="over" alt="back" src="/en/database/j-messe/images/db/btn-back.gif" /></a>
-						<input type="image" width="110" height="37" class="over" alt="Yes" src="/en/database/j-messe/images/db/btn-yes.gif" />
-					</p>
-					{elseif ('c' == $form.mode)}
-					<p><strong><span class="red">Do you edit this fair?</span></strong></p>
-					<p>
-						<a href="{$config.url}?action_user_enFairRegistStep2=true&mode=c&mihon_no={$form.mihon_no}&back=1"><img width="110" height="37" class="over" alt="back" src="/en/database/j-messe/images/db/btn-back.gif" /></a>
-						<input type="image" width="110" height="37" class="over" alt="はい" src="/en/database/j-messe/images/db/btn-yes.gif" />
-					</p>
-					{elseif ('d' == $form.mode)}
-					<p></p>
-					<p>
-						<a href="{$config.url}?action_user_enFairList=true"><img width="110" height="37" class="over" alt="back" src="/en/database/j-messe/images/db/btn-back.gif" /></a>
-						{if ('0' == $app.fair_start_past_flag)}
-							Delete<a href="javascript:fair_delete('{$config.url}', '{$form.mihon_no}', '{$form.mode}')"><img src="/en/database/j-messe/images/db/btn-yes.gif" alt="Delete" class="over" /></a>
-							Edit<a href="{$config.url}?action_user_enFairRegistStep1=true&mode=c&mihon_no={$form.mihon_no}"><img src="/en/database/j-messe/images/db/btn-yes.gif" alt="Edit" class="over" /></a>
-						{/if}
-					</p>
-					{elseif ('p' == $form.mode)}
-					<p></p>
-					<p>
-						<a href="{$config.url}?action_user_enFairCopyList=true"><img width="110" height="37" class="over" alt="back" src="/en/database/j-messe/images/db/btn-back.gif" /></a>
-						EditRegist<a href="{$config.url}?action_user_enFairRegistStep1=true&mode=e&mihon_no={$form.mihon_no}"><img src="/en/database/j-messe/images/db/btn-yes.gif" alt="Edit" class="over" /></a>
-					</p>
-					{else}
-					{/if}
-				</div>
-{* テキストエリアの改行コード *}
-			<textarea name="br" id="br" style="display:none;">
 
-			</textarea>
+				<div class="elem_table_basic">
+					<div class="elem_table_heading">
+						<p><strong>Organizer</strong></p>
+					</div>
+					<table id="registration" class="var_there_boder var_base_color elem_table_basic var_ptb8">
+						<colgroup>
+							<col width="15%">
+							<col width="7%">
+							<col width="78%">
+						</colgroup>
+						<tbody>
+							<tr>
+								<th class="bg_gray_lv1 nobdr">Name of the organizer</th>
+								<th class="bg_gray_lv1"><span class="cate">Required</span></th>
+								<td class="bg_gray_lv2">{$form.organizer_en}</td>
+							</tr>
+							<tr>
+								<th class="bg_gray_lv1 nobdr">Information of the organizer</th>
+								<th class="bg_gray_lv1"><span class="cate">Required</span></th>
+								<td class="bg_gray_lv2">
+									<strong>Address: </strong>{$form.organizer_addr}<br />
+									<strong>Department: </strong>{$form.organizer_div}<br />
+									<strong>Person: </strong>{$form.organizer_pers}<br />
+									<span class="cate">Required</span>TEL: </strong>{$form.organizer_tel}<br />
+									<strong>FAX: </strong>{$form.organizer_fax}<br />
+									<strong>Email: </strong>{$form.organizer_email}
+								</td>
+							</tr>
+							<tr>
+								<th class="bg_gray_lv1 nobdr">The representative office, person or agency in Japan</th>
+								<th class="bg_gray_lv1"></th>
+								<td class="bg_gray_lv2">
+									<strong>Name of representative office or agency in Japan: </strong>{$form.agency_in_japan_en}<br />
+									<strong>Address of the office or agency: </strong>{$form.agency_in_japan_addr}<br />
+									<strong>Department in charge: </strong>{$form.agency_in_japan_div}<br />
+									<strong>Person in charge: </strong>{$form.agency_in_japan_pers}<br />
+									<strong>TEL: </strong>{$form.agency_in_japan_tel}<br />
+									<strong>FAX: </strong>{$form.agency_in_japan_fax}<br />
+									<strong>Email: </strong>{$form.agency_in_japan_email}
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<div class="elem_paragraph">
+					<p class="text">
+						<font color="red">
+							{if ('' == $form.mode)}
+								Do you wish to register the trade fair information as follows?
+							{elseif ('e' == $form.mode)}
+								Do you wish to register the trade fair information as follows?
+							{elseif ('c' == $form.mode)}
+								Do you wish to edit the trade fair information as follows?
+							{elseif ('d' == $form.mode)}
+								{if ('0' != $app.fair_start_past_flag)}
+									<p><font color="red">To update the registered information of your trade fair in line with the upcoming event, use the "Copying registered information" page.</font></p>
+								{/if}
+							{else}
+							{/if}
+						</font>
+					</p>
+				</div>
+				<p class="t_center">
+					<div class="elem_content_divide_block">
+						<div class="content_divide_col3 elem_content_divide_block_pad">
+							{if ('' == $form.mode)}
+								<div class="elem_content_divide_box">
+									<div class="elem_linkBox_list">
+										<ul class="var_large_pad">
+											<li>
+												<div class="linkBox">
+													<a href="{$config.url}?action_user_enFairRegistStep2=true&back=1" class="var_small"><span class="left">Back</span></a>
+												</div>
+											</li>
+										</ul>
+									</div>
+								</div>
+								<div class="elem_content_divide_box">
+									<div class="elem_linkBox_list">
+										<ul class="var_large_pad">
+											<li>
+												<div class="linkBox">
+													<div id="next_btn">
+														<a href="" onclick="document.form_user_enFairDetail.submit();return false;" class="var_small"><span>Yes</span></a>
+													</div>
+												</div>
+											</li>
+										</ul>
+									</div>
+								</div>
+							{elseif ('e' == $form.mode)}
+								<div class="elem_content_divide_box">
+									<div class="elem_linkBox_list">
+										<ul class="var_large_pad">
+											<li>
+												<div class="linkBox">
+													<a href="{$config.url}?action_user_enFairRegistStep2=true&mode=e&mihon_no={$form.mihon_no}&back=1"><span class="left">Back</span></a>
+												</div>
+											</li>
+										</ul>
+									</div>
+								</div>
+								<div class="elem_content_divide_box">
+									<div class="elem_linkBox_list">
+										<ul class="var_large_pad">
+											<li>
+												<div class="linkBox">
+													<div id="next_btn">
+														<a href="" onclick="document.form_user_enFairDetail.submit();return false;" class="var_small"><span>Yes</span></a>
+													</div>
+												</div>
+											</li>
+										</ul>
+									</div>
+								</div>
+							{elseif ('c' == $form.mode)}
+								<div class="elem_content_divide_box">
+									<div class="elem_linkBox_list">
+										<ul class="var_large_pad">
+											<li>
+												<div class="linkBox">
+													<a href="{$config.url}?action_user_enFairRegistStep2=true&mode=c&mihon_no={$form.mihon_no}&back=1" class="var_small"><span class="left">Back</span></a>
+												</div>
+											</li>
+										</ul>
+									</div>
+								</div>
+								<div class="elem_content_divide_box">
+									<div class="elem_linkBox_list">
+										<ul class="var_large_pad">
+											<li>
+												<div class="linkBox">
+													<div id="next_btn">
+														<a href="" onclick="document.form_user_enFairDetail.submit();return false;" class="var_small"><span>Yes</span></a>
+													</div>
+												</div>
+											</li>
+										</ul>
+									</div>
+								</div>
+							{elseif ('d' == $form.mode)}
+								{if ('0' == $app.fair_start_past_flag)}
+									<div class="elem_content_divide_box">
+										<div class="elem_linkBox_list">
+											<ul class="var_large_pad">
+												<li>
+													<div class="linkBox">
+														<a href="{$config.url}?action_user_enFairList=true" class="var_small"><span class="left">Back</span></a>
+													</div>
+												</li>
+											</ul>
+										</div>
+									</div>
+									<div class="elem_content_divide_box">
+										<div class="elem_linkBox_list">
+											<ul class="var_large_pad">
+												<li>
+													<div class="linkBox">
+														<div id="next_btn">
+															<a href="javascript:fair_delete('{$config.url}', '{$form.mihon_no}', '{$form.mode}')" class="var_small"><span>Delete</span></a>
+														</div>
+													</div>
+												</li>
+											</ul>
+										</div>
+									</div>
+									<div class="elem_content_divide_box">
+										<div class="elem_linkBox_list">
+											<ul class="var_large_pad">
+												<li>
+													<div class="linkBox">
+														<div id="next_btn">
+															<a href="{$config.url}?action_user_enFairRegistStep1=true&mode=c&mihon_no={$form.mihon_no}" class="var_small"><span>Edit</span></a>
+														</div>
+													</div>
+												</li>
+											</ul>
+										</div>
+									</div>
+								{else}
+									<div class="elem_content_divide_box">
+										<div class="elem_linkBox_list">
+											<ul class="var_large_pad">
+												<li>
+													<div class="linkBox">
+														<a href="{$config.url}?action_user_enFairList=true" class="var_small"><span class="left">Back</span></a>
+													</div>
+												</li>
+											</ul>
+										</div>
+									</div>
+									<div class="elem_content_divide_box">
+										<div class="elem_linkBox_list">
+											<ul>
+												<li>
+													<div class="linkBox">
+														<a href="{$config.url}?action_user_enFairCopyList=true" class="var_small"><span>EditRegist</span></a>
+													</div>
+												</li>
+											</ul>
+										</div>
+									</div>
+								{/if}
+							{elseif ('p' == $form.mode)}
+								<div class="elem_content_divide_box">
+									<div class="elem_linkBox_list">
+										<ul class="var_large_pad">
+											<li>
+												<div class="linkBox">
+													<a href="{$config.url}?action_user_enFairCopyList=true" class="var_small"><span class="left">back</span></a>
+												</div>
+											</li>
+										</ul>
+									</div>
+								</div>
+								<div class="elem_content_divide_box">
+									<div class="elem_linkBox_list">
+										<ul class="var_large_pad">
+											<li>
+												<div class="linkBox">
+													<div id="next_btn">
+														<a href="{$config.url}?action_user_enFairRegistStep1=true&mode=e&mihon_no={$form.mihon_no}" class="var_small"><span>EditRegist</span></a>
+													</div>
+												</div>
+											</li>
+										</ul>
+									</div>
+								</div>
+							{else}
+							{/if}
+						</div>
+					</div>
+				</p>
+				{* テキストエリアの改行コード *}
+				<textarea name="br" id="br" style="display:none;"></textarea>
 			</form>
-			<p class="totop">
-				{if ('d' == $form.mode || 'p' == $form.mode)}
-					<a href="javascript:window.open('{$config.url}?action_user_enFairDetail=true&mode={$form.mode}&mihon_no={$form.mihon_no}&print=1', 'print')"  target="print"><img src="/images/en/btn-print.gif" alt="Print" height="14" width="46" /></a>
-				{/if}
-				<a href="javascript:window.scrollTo(0, 0);"><img src="/images/en/totop.gif" alt="Return to PAGETOP" width="103" height="14" /></a>
-			</p>
+			<!-- ** include START jetro_ssl_en **  -->
+			{include file="user/jetro_ssl_en.tpl"}
+			<!-- ** include END jetro_ssl_en **  -->
 		</div>
-		<!-- /main -->
-		<!-- submenu -->
-		{$app_ne.left_menu}
-		<!-- /submenu -->
 	</div>
-	<!-- /contents -->
-	<!-- footer -->
-	{$app_ne.footer}
-	<!-- /footer -->
+	<!-- **************** jetro_footer **************** -->
+	{$app_ne.jetrofooter}
 </body>
 </html>
+
