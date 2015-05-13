@@ -40,10 +40,9 @@
 		<div id="area_content_main">
 			<div id="elem_heading_lv1">
 				{if ('' != $app.fair_detail.abbrev_title)}
-					<span class="sub_text">{$app.fair_detail.abbrev_title}</span>
-					<h1>{$app.fair_detail.fair_title_en}</h1>
+					<h1>{$app.fair_detail.fair_title_en}<br/>({$app.fair_detail.abbrev_title})</h1>
 				{else}
-					<span class="sub_text"><h1>{$app.fair_detail.fair_title_en}</h1></span>
+					<h1>{$app.fair_detail.fair_title_en}</h1>
 				{/if}
 			</div>
 			<div class="elem_heading_lv3">
