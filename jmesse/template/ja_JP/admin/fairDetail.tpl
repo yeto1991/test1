@@ -80,6 +80,14 @@
 						{/if}
 					<hr/>
 					{/if}
+
+					展示会に係わる画像(3点) ({$app.photos|@count}ファイル)<br/>
+					<!-- 展示会に係わる画像(3点) -->
+					{section name=it loop=$app.photos}
+						<img src="{$config.url}{$config.img_path}{$app.photos_dir}/{$form.mihon_no}/{$app.photos[it]}" alt="{$app.photos[it]}" width="150" />
+					{/section}
+					<hr/>
+
 					<table border="1" style="word-break: break-all;">
 						<tr>
 							<td nowrap>見本市番号</td>
@@ -618,14 +626,6 @@
 							<td>{$form.jetro_suport_url}</td>
 						</tr>
 					</table>
-					<hr/>
-
-					展示会に係わる画像(3点) ({$app.photos|@count}ファイル)<br/>
-					<!-- 展示会に係わる画像(3点) -->
-					{section name=it loop=$app.photos}
-						<img src="{$config.url}{$config.img_path}{$app.photos_dir}/{$form.mihon_no}/{$app.photos[it]}" alt="{$app.photos[it]}" width="150" />
-					{/section}
-					<hr/>
 
 					<!-- 履歴 -->
 					<table border="1">
