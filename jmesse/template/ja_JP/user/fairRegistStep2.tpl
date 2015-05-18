@@ -332,7 +332,7 @@
 								<td class="bg_gray_lv2">
 									<div class="elem_custom_input pt0 pb0">
 										<textarea cols="60" rows="3" name="profile_jp" id="profile_jp" class="var_bg_white">{$form.profile_jp}</textarea><br />
-										500文字以内で簡潔に。例：20年の歴史をもつ○○で最大の環境機器の展示会。
+										半角100文字（全角50文字）以内で簡潔に。例：20年の歴史をもつ○○で最大の環境機器の展示会。
 									</div>
 									{if is_error('profile_jp')}
 										<span class="error-message">{message name="profile_jp"}</span><br />

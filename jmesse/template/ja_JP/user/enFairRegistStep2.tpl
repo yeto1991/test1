@@ -343,7 +343,7 @@
 								<td class="bg_gray_lv2">
 									<div class="elem_custom_input pt0 pb0">
 										<textarea cols="60" rows="3" name="profile_en" id="profile_en" class="var_bg_white">{$form.profile_en}</textarea><br />
-										Maximum of 500 letters (about 70 words)
+										Maximum of 150 letters
 									</div>
 									{if is_error('profile_en')}
 										<span class="error-message">{message name="profile_en"}</span><br />
@@ -360,7 +360,7 @@
 								<td class="bg_gray_lv2">
 									<div class="elem_custom_input pt0 pb0">
 										<textarea cols="60" rows="5" name="detailed_information_en" id="detailed_information_en" class="var_bg_white">{$form.detailed_information_en}</textarea><br/>
-										If there is a concurrent/joint exhibit, please fill it in here.  Maximum of 1000 letters (about 140 words)
+										If there is a concurrent/joint exhibit, please fill it in here.  Maximum of 1000 letters
 									</div>
 									{if is_error('detailed_information_en')}
 										<span class="error-message">{message name="detailed_information_en"}</span><br />

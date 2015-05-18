@@ -182,7 +182,7 @@
 									<div class="elem_custom_input pt0 pb0">
 									<div class="elem_custom_input pt0 pb0">
 										<textarea cols="60" rows="3" name="profile_en" id="profile_en" class="var_bg_white">{$form.profile_en}</textarea>
-										<br/>500文字以内で簡潔に。
+										<br/>150文字以内で簡潔に。
 									</div>
 									{if is_error('profile_en')}
 										<span class="error-message">{message name="profile_en"}</span><br />
@@ -285,7 +285,6 @@
 								<td class="bg_gray_lv2">
 									<div class="elem_custom_input pt0 pb0">
 										<input type="text" value="{$form.venue_en}" size="50" name="venue_en" id="venue_en" maxlength="255" class="var_bg_white" />
-										<br />「開催都市」でその他にチェックをした方のみ入力してください。
 									</div>
 									{if is_error('venue_en')}
 										<span class="error-message">{message name="venue_en"}</span><br />

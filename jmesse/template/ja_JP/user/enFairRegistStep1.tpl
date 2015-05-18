@@ -508,7 +508,7 @@
 									<td class="bg_gray_lv2">
 										<div class="elem_custom_input pt0 pb0">
 											<textarea cols="60" rows="3" name="exhibits_en" id="exhibits_en "class="var_bg_white">{$form.exhibits_en}</textarea><br />
-											Maximum of 300 letters (about 30 words)
+											Maximum of 300 letters
 										</div>
 										{if is_error('exhibits_en')}
 											<span class="error-message">{message name="exhibits_en"}</span><br />
