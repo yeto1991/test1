@@ -45,7 +45,7 @@
 					<h1>{$app.fair_detail.fair_title_en}</h1>
 				{/if}
 			</div>
-			<div class="elem_heading_lv3">
+			<div class="elem_paragraph">
 				<h3>{$app.fair_detail.profile_en|replace:"&lt;br/&gt;":"<br/>"}</h3>
 			</div>
 			{if ('2' == $app.fair_detail.jecc_flag)}
@@ -69,10 +69,8 @@
 				</div>
 			{/if}
 			{if ('' != $app.fair_detail.fair_url)}
-				<div class="elem_text_list">
-					<ul>
-						<li><strong><a class="link_blank" target="_blank" href="{$app.fair_detail.fair_url}">official site</a></strong></li>
-					</ul>
+				<div class="elem_heading_lv3">
+					<h3><a class="link_blank" target="_blank" href="{$app.fair_detail.fair_url}">official site</a></h3>
 				</div>
 			{/if}
 			<div class="elem_pic_text_block">
