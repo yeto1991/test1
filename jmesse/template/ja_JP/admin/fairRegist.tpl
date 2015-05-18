@@ -271,7 +271,93 @@
 	}
 
 	/**
-	 * 登録。
+	 * 新規登録（キャッチフレーズ文字数チェックの違い日100英150）
+	 */
+	function registFairFirst() {
+		// 業種設定
+		var i = 0;
+		var value;
+		var text;
+		var no;
+		var use_language_flag;
+		for (i = 0; i < document.getElementsByName('use_language_flag').length; i++) {
+			if (document.getElementsByName('use_language_flag')[i].checked) {
+				use_language_flag = document.getElementsByName('use_language_flag')[i].value;
+				break;
+			}
+		}
+//		if ("0" == use_language_flag) {
+			for (i = 0; i < document.getElementById('industory_list_jp').length; i++) {
+				value = document.getElementById('industory_list_jp').options[i].value.split(":");
+				text = document.getElementById('industory_list_jp').options[i].text.split("／");
+				no = i + 1;
+				document.getElementById('main_industory_' + String(no)).value = value[0];
+				document.getElementById('sub_industory_' + String(no)).value = value[1];
+				document.getElementById('main_industory_name_' + String(no)).value = text[0];
+				document.getElementById('sub_industory_name_' + String(no)).value = text[1];
+			}
+//		} else {
+// 			for (i = 0; i < document.getElementById('industory_list_en').length; i++) {
+// 				value = document.getElementById('industory_list_en').options[i].value.split(":");
+// 				text = document.getElementById('industory_list_en').options[i].text.split("／");
+// 				no = i + 1;
+// 				document.getElementById('main_industory_' + String(no)).value = value[0];
+// 				document.getElementById('sub_industory_' + String(no)).value = value[1];
+// 				document.getElementById('main_industory_name_' + String(no)).value = text[0];
+// 				document.getElementById('sub_industory_name_' + String(no)).value = text[1];
+// 			}
+// 		}
+		for (; i < 6; i++) {
+			no = i + 1;
+			document.getElementById('main_industory_' + String(no)).value = '';
+			document.getElementById('sub_industory_' + String(no)).value = '';
+			document.getElementById('main_industory_name_' + String(no)).value = '';
+			document.getElementById('sub_industory_name_' + String(no)).value = '';
+		}
+
+		// TEXTAREAの文字数チェック
+		// キャッチフレーズ
+		if (100 < document.getElementById('profile_jp').value.length) {
+			window.alert('キャッチフレーズ（日）は半角100文字（全角50文字）以内（改行を含む）で入力して下さい。(' + document.getElementById('profile_jp').value.length + ')');
+			return;
+		}
+		if (150 < document.getElementById('profile_en').value.length) {
+			window.alert('キャッチフレーズ（英）は半角150文字以内（改行を含む）で入力して下さい。(' + document.getElementById('profile_en').value.length + ')');
+			return;
+		}
+		// ＰＲ・紹介文
+		if (1000 < document.getElementById('detailed_information_jp').value.length) {
+			window.alert('ＰＲ・紹介文（日）は1000文字以内（改行を含む）で入力して下さい。(' + document.getElementById('detailed_information_jp').value.length + ')');
+			return;
+		}
+		if (1000 < document.getElementById('detailed_information_en').value.length) {
+			window.alert('ＰＲ・紹介文（英）は1000文字以内（改行を含む）で入力して下さい。(' + document.getElementById('detailed_information_en').value.length + ')');
+			return;
+		}
+		// 出品物
+		if (300 < document.getElementById('exhibits_jp').value.length) {
+			window.alert('出品物（日）は300文字以内（改行を含む）で入力して下さい。(' + document.getElementById('exhibits_jp').value.length + ')');
+			return;
+		}
+		if (300 < document.getElementById('exhibits_en').value.length) {
+			window.alert('出品物（英）は300文字以内（改行を含む）で入力して下さい。(' + document.getElementById('exhibits_en').value.length + ')');
+			return;
+		}
+
+		// 展示会に係わる画像(3点)
+		for (i = 0; i < document.getElementById('photos_list').length; i++) {
+			no = i + 1;
+			document.getElementById('photos_name_' + String(no)).value = document.getElementById('photos_list').options[i].value;
+		}
+
+		if (!window.confirm('登録します。よろしいですか？')) {
+			return;
+		}
+		document.getElementById('form_admin_fairRegist').submit();
+	}
+
+	/**
+	 * 登録(修正、コピー登録)
 	 */
 	function registFair() {
 		// 業種設定
@@ -318,11 +404,11 @@
 		// TEXTAREAの文字数チェック
 		// キャッチフレーズ
 		if (500 < document.getElementById('profile_jp').value.length) {
-			window.alert('キャッチフレーズ（日）は500文字以内（改行を含む）で入力して下さい。(' + document.getElementById('profile_jp').value.length + ')');
+			window.alert('キャッチフレーズ（日）は半角500文字（全角250文字）以内（改行を含む）で入力して下さい。(' + document.getElementById('profile_jp').value.length + ')');
 			return;
 		}
 		if (500 < document.getElementById('profile_en').value.length) {
-			window.alert('キャッチフレーズ（英）は500文字以内（改行を含む）で入力して下さい。(' + document.getElementById('profile_en').value.length + ')');
+			window.alert('キャッチフレーズ（英）は半角500文字以内（改行を含む）で入力して下さい。(' + document.getElementById('profile_en').value.length + ')');
 			return;
 		}
 		// ＰＲ・紹介文
@@ -1266,7 +1352,11 @@
 						</tr>
 					</table>
 					<hr>
-					<input type="button" value="登録" onclick="registFair()" />
+					{if ("regist" == $form.mode)}
+						<input type="button" value="登録" onclick="registFairFirst()" />
+					{else}
+						<input type="button" value="登録" onclick="registFair()" />
+					{/if}
 				</td>
 			</tr>
 		</table>
