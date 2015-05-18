@@ -103,9 +103,9 @@ class Jmesse_Action_UserFairRegistStep3 extends Jmesse_ActionClass
 // 		if ('' == $this->af->get('profile_jp')) {
 // 			$this->ae->add('profile_jp', 'キャッチフレーズが入力されていません');
 // 		}
-// 		if (500 < mb_strlen($this->af->get('profile_jp'))) {
-// 			$this->ae->add('error', 'キャッチフレーズは500文字以内にして下さい');
-// 		}
+		if (100 < mb_strlen($this->af->get('profile_jp'))) {
+			$this->ae->add('profile_jp', 'キャッチフレーズは半角100文字（全角50文字）以内で入力して下さい');
+		}
 
 		// MOD-S 2012.01.23 必須チェック削除 PR・紹介文
 		// PR・紹介文

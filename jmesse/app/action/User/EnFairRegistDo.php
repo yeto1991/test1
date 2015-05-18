@@ -101,6 +101,9 @@ class Jmesse_Action_UserEnFairRegistDo extends Jmesse_ActionClass
 // 		if ('' == $this->af->get('profile_en')) {
 // 			$this->ae->add('profile_en', 'The catchphrase has not been entered.');
 // 		}
+		if (150 < mb_strlen($this->af->get('profile_en'))) {
+			$this->ae->add('profile_en', 'Catchphrase maximum is 150 letters.');
+		}
 
 		// MOD-S 2012.01.23 必須チェック削除 PR・紹介文
 		// PR・紹介文

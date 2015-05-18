@@ -92,6 +92,9 @@ class Jmesse_Action_UserFairRegistDo extends Jmesse_ActionClass
 // 			if ('' == $this->af->get('profile_en')) {
 // 				$this->ae->add('profile_en', 'Teaser Copy が入力されていません');
 // 			}
+			if (150 < mb_strlen($this->af->get('profile_en'))) {
+				$this->ae->add('profile_en', 'Teaser Copy は半角150文字以内で入力して下さい');
+			}
 // 			if (500 < mb_strlen($this->af->get('profile_en'))) {
 // 				$this->ae->add('error', 'Teaser Copy は500文字以内にして下さい');
 // 			}
