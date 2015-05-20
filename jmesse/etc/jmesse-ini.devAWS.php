@@ -276,69 +276,6 @@ $config = array(
 	'industry_009_010_009' => '010009', //産業安全、労災、労務管理
 	// ADD-E 2015.02.07 産業区分コード設定
 
-// 	// ADD-S 2015.03.01 2014年度保守対応No.64(JETRO広報課ソース外部参照 IDSenv）
-// 	// headタグ内CSSリンク部
-// 	'http_ja_headtagu'           => 'http://www.jetro.go.jp/static/newparts/j-messe/ja_head.html',
-// 	'https_ja_headtagu'          => 'http://www.jetro.go.jp/static/newparts/j-messe/ja_head.html',
-// 	'http_en_headtagu'           => 'http://www.jetro.go.jp/static/newparts/j-messe/en_head.html',
-// 	'https_en_headtagu'          => 'http://www.jetro.go.jp/static/newparts/j-messe/en_head.html',
-
-// 	// (画面内)JETROフロントヘッダー部
-// 	'http_ja_jetro_header'       => 'http://www.jetro.go.jp/static/newparts/ja_header.html',
-// 	'https_ja_jetro_header'      => 'http://www.jetro.go.jp/static/newparts/ja_header.html',
-// 	'http_en_jetro_header'       => 'http://www.jetro.go.jp/static/newparts/en_header.html',
-// 	'https_en_jetro_header'      => 'http://www.jetro.go.jp/static/newparts/en_header.html',
-
-// 	// (画面内)JETROフロントヘッダー部
-// 	'http_ja_jetro_footer'       => 'http://www.jetro.go.jp/static/newparts/ja_footer.html',
-// 	'https_ja_jetro_footer'      => 'http://www.jetro.go.jp/static/newparts/ja_footer.html',
-// 	'http_en_jetro_footer'       => 'http://www.jetro.go.jp/static/newparts/en_footer.html',
-// 	'https_en_jetro_footer'      => 'http://www.jetro.go.jp/static/newparts/en_footer.html',
-
-// 	// (画面内)J-messeタイトルとメニュー部
-// 	'http_ja_jmesse_top'         => 'http://www.jetro.go.jp/static/newparts/j-messe/ja_localnavi.html',
-// 	'https_ja_jmesse_top'        => 'http://www.jetro.go.jp/static/newparts/j-messe/ja_localnavi.html',
-// 	'http_en_jmesse_top'         => 'http://www.jetro.go.jp/static/newparts/j-messe/en_localnavi.html',
-// 	'https_en_jmesse_top'        => 'http://www.jetro.go.jp/static/newparts/j-messe/en_localnavi.html',
-
-// 	// (フロント画面内)FAQとユーザ登録案内
-// 	'http_ja_jmesse_faq_login'   => 'http://www.jetro.go.jp/static/newparts/j-messe/ja_contact.html',
-// 	'https_ja_jmesse_faq_login'  => 'http://www.jetro.go.jp/static/newparts/j-messe/ja_contact.html',
-// 	'http_en_jmesse_faq_login'   => 'http://www.jetro.go.jp/static/newparts/j-messe/en_contact.html',
-// 	'https_en_jmesse_faq_login'  => 'http://www.jetro.go.jp/static/newparts/j-messe/en_contact.html',
-// 	// ADD-E 2015.03.01 2014年度保守対応No.64(JETRO広報課ソース外部参照 IDSenv）
-
-// 	// ADD-S 2015.04.21 2015年度保守対応No.1(JETRO広報課ソース外部参照 IDSenv）
-// 	// headタグ内CSSリンク部
-// 	'http_ja_headtagu'           => 'http://www.jetro.go.jp/asset/parts/j-messe/ja_head.html',
-// 	'https_ja_headtagu'          => 'http://www.jetro.go.jp/asset/parts/j-messe/ja_head.html',
-// 	'http_en_headtagu'           => 'http://www.jetro.go.jp/asset/parts/j-messe/en_head.html',
-// 	'https_en_headtagu'          => 'http://www.jetro.go.jp/asset/parts/j-messe/en_head.html',
-
-// 	// (画面内)JETROフロントヘッダー部
-// 	'http_ja_jetro_header'       => 'http://www.jetro.go.jp/asset/parts/ja_header.html',
-// 	'https_ja_jetro_header'      => 'http://www.jetro.go.jp/asset/parts/ja_header.html',
-// 	'http_en_jetro_header'       => 'http://www.jetro.go.jp/asset/parts/en_header.html',
-// 	'https_en_jetro_header'      => 'http://www.jetro.go.jp/asset/parts/en_header.html',
-
-// 	// (画面内)JETROフロントフッター部
-// 	'http_ja_jetro_footer'       => 'http://www.jetro.go.jp/asset/parts/ja_footer.html',
-// 	'https_ja_jetro_footer'      => 'http://www.jetro.go.jp/asset/parts/ja_footer.html',
-// 	'http_en_jetro_footer'       => 'http://www.jetro.go.jp/asset/parts/en_footer.html',
-// 	'https_en_jetro_footer'      => 'http://www.jetro.go.jp/asset/parts/en_footer.html',
-
-// 	// (画面内)J-messeタイトルとメニュー部
-// 	'http_ja_jmesse_top'         => 'http://www.jetro.go.jp/asset/parts/j-messe/ja_localnavi.html',
-// 	'https_ja_jmesse_top'        => 'http://www.jetro.go.jp/asset/parts/j-messe/ja_localnavi.html',
-// 	'http_en_jmesse_top'         => 'http://www.jetro.go.jp/asset/parts/j-messe/en_localnavi.html',
-// 	'https_en_jmesse_top'        => 'http://www.jetro.go.jp/asset/parts/j-messe/en_localnavi.html',
-
-// 	// (フロント画面内)FAQとユーザ登録案内
-// 	'http_ja_jmesse_faq_login'   => 'http://www.jetro.go.jp/asset/parts/j-messe/ja_contact.html',
-// 	'https_ja_jmesse_faq_login'  => 'http://www.jetro.go.jp/asset/parts/j-messe/ja_contact.html',
-// 	'http_en_jmesse_faq_login'   => 'http://www.jetro.go.jp/asset/parts/j-messe/en_contact.html',
-// 	'https_en_jmesse_faq_login'  => 'http://www.jetro.go.jp/asset/parts/j-messe/en_contact.html',
-// 	// ADD-E 2015.04.21 2015年度保守対応No.1(JETRO広報課ソース外部参照 IDSenv）
 
 	// ADD-S 2015.04.21 2015年度保守対応No.1(JETRO広報課ソース外部参照 hon）
 	// headタグ内CSSリンク部

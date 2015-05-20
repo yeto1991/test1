@@ -9,11 +9,12 @@ $config = array(
 	'url'         => 'https://localhost/jmesse/www/',
 	'url_pub'     => 'http://localhost/jmesse/www/',
 
-	// base
-	'base'        => 'https://www.jetro.go.jp/',
-	'base_en'     => 'https://www.jetro.go.jp/',
-	'base_pub'    => 'http://www.jetro.go.jp/',
-	'base_pub_en' => 'http://www.jetro.go.jp/',
+//2015/3廃止
+//	// base
+// 	'base'        => 'https://www.jetro.go.jp/',
+// 	'base_en'     => 'https://www.jetro.go.jp/',
+// 	'base_pub'    => 'http://www.jetro.go.jp/',
+// 	'base_pub_en' => 'http://www.jetro.go.jp/',
 
 	// css,js,base
 	'css_js_base'     => 'https://www.jetro.go.jp/',
@@ -63,24 +64,25 @@ $config = array(
 	'r4_en_top3' => 'ranking4_en_top3.json',
 	// MOD-E 2012.01.23 top3用ファイル作成
 
-	// 共通部分URL
-	'left_menu_url'        => 'ja_left_menu.html',
-	'left_menu_url_en'     => 'en_left_menu.html',
-	// MOD-S 2013.10.08 2013年度保守対応No.21
-	//https用
-	'header_url'           => 'ja_header.html ',
-	'footer_url'           => 'ja_footer.html',
-	'footer_script_rul'    => 'ja_footer_script.html',
-	'header_url_en'        => 'en_header.html',
-	'footer_url_en'        => 'en_footer.html',
-	'footer_script_rul_en' => 'en_footer_script.html',
-	//http用
-	'http_header_url'           => 'ja_header.html ',
-	'http_footer_url'           => 'ja_footer.html',
-	'http_footer_script_rul'    => 'ja_footer_script.html',
-	'http_header_url_en'        => 'en_header.html',
-	'http_footer_url_en'        => 'en_footer.html',
-	'http_footer_script_rul_en' => 'en_footer_script.html',
+//2015/3廃止
+//	// 共通部分URL
+// 	'left_menu_url'        => 'ja_left_menu.html',
+// 	'left_menu_url_en'     => 'en_left_menu.html',
+// 	// MOD-S 2013.10.08 2013年度保守対応No.21
+// 	//https用
+// 	'header_url'           => 'ja_header.html ',
+// 	'footer_url'           => 'ja_footer.html',
+// 	'footer_script_rul'    => 'ja_footer_script.html',
+// 	'header_url_en'        => 'en_header.html',
+// 	'footer_url_en'        => 'en_footer.html',
+// 	'footer_script_rul_en' => 'en_footer_script.html',
+// 	//http用
+// 	'http_header_url'           => 'ja_header.html ',
+// 	'http_footer_url'           => 'ja_footer.html',
+// 	'http_footer_script_rul'    => 'ja_footer_script.html',
+// 	'http_header_url_en'        => 'en_header.html',
+// 	'http_footer_url_en'        => 'en_footer.html',
+// 	'http_footer_script_rul_en' => 'en_footer_script.html',
 	// MOD-E 2013.10.08 2013年度保守対応No.21
 
 	// debug
@@ -172,7 +174,7 @@ $config = array(
 
 	'mail_from'        => mb_encode_mimeheader(mb_convert_encoding("J-messe 事務局", "ISO-2022-JP", "UTF-8"), "ISO-2022-JP").' <tanimoto@ids.co.jp>',
 	'mail_from_en'     => 'J-messe Administrator <tanimoto@ids.co.jp>',
-	'mail_bcc'         => 'tanimoto@ids.co.jp,a.komatsu@ids.co.jp',
+	'mail_bcc'         => 'tanimoto@ids.co.jp',
 	'mail_return-path' => 'tanimoto@ids.co.jp',
 
 	'mail_title_user_regist'  => 'J-messe 見本市ユーザー登録完了のお知らせ',
@@ -270,6 +272,37 @@ $config = array(
 	'industry_009_010_009' => '010009', //産業安全、労災、労務管理
 	// ADD-E 2015.02.07 産業区分コード設定
 
+	// ADD-S 2015.04.21 2015年度保守対応No.1(JETRO広報課ソース外部参照 IDS-AWS）
+	// headタグ内CSSリンク部
+	'http_ja_headtagu'           => 'http://www.jetro.go.jp/asset/parts/j-messe/ja_head.html',
+	'https_ja_headtagu'          => 'http://www.jetro.go.jp/asset/parts/j-messe/ja_head.html',
+	'http_en_headtagu'           => 'http://www.jetro.go.jp/asset/parts/j-messe/en_head.html',
+	'https_en_headtagu'          => 'http://www.jetro.go.jp/asset/parts/j-messe/en_head.html',
+
+	// (画面内)JETROフロントヘッダー部
+	'http_ja_jetro_header'       => 'http://www.jetro.go.jp/asset/parts/ja_header.html',
+	'https_ja_jetro_header'      => 'http://www.jetro.go.jp/asset/parts/ja_header.html',
+	'http_en_jetro_header'       => 'http://www.jetro.go.jp/asset/parts/en_header.html',
+	'https_en_jetro_header'      => 'http://www.jetro.go.jp/asset/parts/en_header.html',
+
+	// (画面内)JETROフロントフッター部
+	'http_ja_jetro_footer'       => 'http://www.jetro.go.jp/asset/parts/ja_footer.html',
+	'https_ja_jetro_footer'      => 'http://www.jetro.go.jp/asset/parts/ja_footer.html',
+	'http_en_jetro_footer'       => 'http://www.jetro.go.jp/asset/parts/en_footer.html',
+	'https_en_jetro_footer'      => 'http://www.jetro.go.jp/asset/parts/en_footer.html',
+
+	// (画面内)J-messeタイトルとメニュー部
+	'http_ja_jmesse_top'         => 'http://www.jetro.go.jp/asset/parts/j-messe/ja_localnavi.html',
+	'https_ja_jmesse_top'        => 'http://www.jetro.go.jp/asset/parts/j-messe/ja_localnavi.html',
+	'http_en_jmesse_top'         => 'http://www.jetro.go.jp/asset/parts/j-messe/en_localnavi.html',
+	'https_en_jmesse_top'        => 'http://www.jetro.go.jp/asset/parts/j-messe/en_localnavi.html',
+
+	// (フロント画面内)FAQとユーザ登録案内
+	'http_ja_jmesse_faq_login'   => 'http://www.jetro.go.jp/asset/parts/j-messe/ja_contact.html',
+	'https_ja_jmesse_faq_login'  => 'http://www.jetro.go.jp/asset/parts/j-messe/ja_contact.html',
+	'http_en_jmesse_faq_login'   => 'http://www.jetro.go.jp/asset/parts/j-messe/en_contact.html',
+	'https_en_jmesse_faq_login'  => 'http://www.jetro.go.jp/asset/parts/j-messe/en_contact.html',
+	// ADD-E 2015.04.21 2015年度保守対応No.1(JETRO広報課ソース外部参照 IDS-AWS）
 
 	//見本市移譲先ユーザID(AWS transfer1@y.com)
 	'transfer_user_id'      => '250',
