@@ -1089,7 +1089,7 @@ class Jmesse_Form_AdminFairRegist extends Jmesse_ActionForm
 		'admission_ticket_4_jp' => array(
 			'type'        => VAR_TYPE_STRING, // Input type
 			'form_type'   => FORM_TYPE_CHECKBOX,  // Form type
-			'name'        => '当日会場でチケット入手', // Display name
+			'name'        => '当日会場で登録もしくはチケット入手', // Display name
 			'required'    => false,           // Required Option(true/false)
 			'min'         => null,            // Minimum value
 			'max'         => null,            // Maximum value

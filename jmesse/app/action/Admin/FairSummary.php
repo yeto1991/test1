@@ -584,7 +584,7 @@ class Jmesse_Action_AdminFairSummary extends Jmesse_ActionClass
 		'1' => '登録の必要なし',
 		'2' => '公式ウェブサイトからの事前登録',
 		'3' => '主催者もしくは日本国内の連絡先への問い合わせ',
-		'4' => '当日会場でチケット入手',
+		'4' => '当日会場で登録もしくはチケット入手',
 		'5' => 'その他'
 	);
 	var $regist_category_name = array(

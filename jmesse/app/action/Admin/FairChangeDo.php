@@ -347,9 +347,11 @@ class Jmesse_Action_AdminFairChangeDo extends Jmesse_ActionClass
 		}
 		// MOD-E 2012.02.07 主催者(英)Step3へ移動対応
 		// チケット入手方法
-		if ('' == $this->af->get('admission_ticket_1_jp') && '' == $this->af->get('admission_ticket_2_jp') && '' == $this->af->get('admission_ticket_3_jp') && '' == $this->af->get('admission_ticket_4_jp') && '' == $this->af->get('admission_ticket_5_jp') && '' == $this->af->get('admission_ticket_5_en')) {
-			$this->ae->add('error', '入場方法が入力されていません');
-		}
+		// MOD-S 2015.05.20 2015-No.12対応 必須チェック廃止
+// 		if ('' == $this->af->get('admission_ticket_1_jp') && '' == $this->af->get('admission_ticket_2_jp') && '' == $this->af->get('admission_ticket_3_jp') && '' == $this->af->get('admission_ticket_4_jp') && '' == $this->af->get('admission_ticket_5_jp') && '' == $this->af->get('admission_ticket_5_en')) {
+// 			$this->ae->add('error', '入場方法が入力されていません');
+// 		}
+		// MOD-E 2015.05.20 2015-No.12対応 必須チェック廃止
 		if ('' != $this->af->get('admission_ticket_5_jp') && '' == $this->af->get('other_admission_ticket_jp')) {
 			$this->ae->add('error', '入場方法(その他)が入力されていません');
 		}
@@ -811,8 +813,8 @@ class Jmesse_Action_AdminFairChangeDo extends Jmesse_ActionClass
 		if ('1' == $this->af->get('admission_ticket_3')) {
 			$search_key .= '主催者もしくは日本国内の連絡先への問い合わせ ';
 		}
-		if ('1' == $this->af->get('admission_ticket_3')) {
-			$search_key .= '当日会場でチケット入手 ';
+		if ('1' == $this->af->get('admission_ticket_4')) {
+			$search_key .= '当日会場で登録もしくはチケット入手 ';
 		}
 		$search_key .= $this->af->get('other_admission_ticket_jp').' ';
 		$search_key .= $this->af->get('other_admission_ticket_en').' ';
