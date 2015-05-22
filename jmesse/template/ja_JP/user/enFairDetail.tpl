@@ -448,7 +448,7 @@ $form.mode
 							</tr>
 							<tr>
 								<th class="bg_gray_lv1 nobdr">Method of admission</th>
-								<th class="bg_gray_lv1"><span class="cate">Required</span></th>
+								<th class="bg_gray_lv1"></th>
 								<td class="bg_gray_lv2">
 									{if ('1' == $form.admission_ticket_1)}
 										Free<br />
@@ -456,11 +456,13 @@ $form.mode
 									{if ('1' == $form.admission_ticket_2)}
 										Apply/register online<br />
 									{/if}
+{*
 									{if ('1' == $form.admission_ticket_3)}
 										Contact organizer/agency in Japan<br />
 									{/if}
+*}
 									{if ('1' == $form.admission_ticket_4)}
-										Tickets available at event<br />
+										Registration/tickets available at event<br />
 									{/if}
 									{if ('1' == $form.admission_ticket_5)}
 										Other ({$form.other_admission_ticket_en})<br />

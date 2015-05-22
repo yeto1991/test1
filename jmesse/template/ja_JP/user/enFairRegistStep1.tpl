@@ -673,7 +673,7 @@
 							<tr>
 						{/if}
 								<th class="bg_gray_lv1 nobdr">Method of admission</th>
-								<th class="bg_gray_lv1"><span class="cate">Required</span></th>
+								<th class="bg_gray_lv1"></th>
 								<td class="bg_gray_lv2">
 									<div class="elem_form_list pt0 pb0">
 										<ul class="liner">
@@ -689,16 +689,18 @@
 													<span>Apply/register online</span>
 												</label>
 											</li>
+{*
 											<li>
 												<label>
 													<input name="admission_ticket_3" id="admission_ticket_3" value="1" type="checkbox" {if ('1' == $form.admission_ticket_3)}checked{/if} />
 													<span>Contact organizer/agency in Japan</span></label></li>
 												</label>
 											</li>
+*}
 											<li>
 												<label>
 													<input name="admission_ticket_4" id="admission_ticket_4" value="1" type="checkbox" {if ('1' == $form.admission_ticket_4)}checked{/if} />
-													<span>Tickets available at event</span>
+													<span>Registration/tickets available at event</span>
 												</label>
 											</li>
 											<li>
@@ -714,6 +716,7 @@
 											</li>
 										</ul>
 									</div>
+									"For details, please contact the organizer directly." will be shown automatically.<br />
 									{if is_error('admission_ticket_1')}
 										<span class="error-message">{message name="admission_ticket_1"}</span><br />
 									{/if}
