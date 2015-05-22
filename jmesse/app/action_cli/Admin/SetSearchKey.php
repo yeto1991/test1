@@ -196,8 +196,8 @@ class Jmesse_Cli_Action_AdminSetSearchKey extends Jmesse_ActionClass
 		if ('1' == $jm_fair->get('admission_ticket_3')) {
 			$search_key .= '主催者もしくは日本国内の連絡先への問い合わせ ';
 		}
-		if ('1' == $jm_fair->get('admission_ticket_3')) {
-			$search_key .= '当日会場でチケット入手 ';
+		if ('1' == $jm_fair->get('admission_ticket_4')) {
+			$search_key .= '当日会場で登録もしくはチケット入手 ';
 		}
 		$search_key .= $jm_fair->get('other_admission_ticket_jp').' ';
 		$search_key .= $jm_fair->get('other_admission_ticket_en').' ';
@@ -328,8 +328,8 @@ class Jmesse_Cli_Action_AdminSetSearchKey extends Jmesse_ActionClass
 		if ('1' == $jm_fair->get('admission_ticket_3')) {
 			$search_key .= 'Contact organizer/agency in Japan';
 		}
-		if ('1' == $jm_fair->get('admission_ticket_3')) {
-			$search_key .= 'Tickets available at event';
+		if ('1' == $jm_fair->get('admission_ticket_4')) {
+			$search_key .= 'Registration/tickets available at event';
 		}
 		// 		$search_key .= $jm_fair->get('other_admission_ticket_jp').' ';
 		$search_key .= $jm_fair->get('other_admission_ticket_en').' ';
