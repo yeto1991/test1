@@ -112,7 +112,7 @@
 										{/if}
 											<div style="padding-left: 15px;">
 												{if ('' != $app.fair_detail.gross_floor_area && 0 <$app.fair_detail.gross_floor_area)}
-												展示面積：{$app.fair_detail.gross_floor_area|number_format} sq.m.<br />
+												展示面積(Net)：{$app.fair_detail.gross_floor_area|number_format} sq.m.<br />
 												{/if}
 											</div>
 										</td>
@@ -126,7 +126,7 @@
 
 										<td>
 											入場資格:{$app.fair_detail.open_to_name}<br />
-											{if ('1' == $app.fair_detail.admission_ticket_1 || '1' == $app.fair_detail.admission_ticket_2 || '1' == $app.fair_detail.admission_ticket_3 || '1' == $app.fair_detail.admission_ticket_4 || '' != $app.fair_detail.other_admission_ticket_jp)}
+											{if ('1' == $app.fair_detail.admission_ticket_1 || '1' == $app.fair_detail.admission_ticket_2 || '1' == $app.fair_detail.admission_ticket_4 || '' != $app.fair_detail.other_admission_ticket_jp)}
 											入場方法:
 												{if ('1' == $app.fair_detail.admission_ticket_1)}
 												登録の必要なし
@@ -137,25 +137,28 @@
 												{if ('1' == $app.fair_detail.admission_ticket_2)}
 												公式ウェブサイトからの事前登録
 												{/if}
-												{if (('1' == $app.fair_detail.admission_ticket_1 || '1' == $app.fair_detail.admission_ticket_2) && '1' == $app.fair_detail.admission_ticket_3)}
+												{if (('1' == $app.fair_detail.admission_ticket_1 || '1' == $app.fair_detail.admission_ticket_2) && '1' == $app.fair_detail.admission_ticket_4)}
 												/
 												{/if}
+{*
 												{if ('1' == $app.fair_detail.admission_ticket_3)}
 												主催者もしくは日本国内の連絡先への問い合わせ
 												{/if}
 												{if (('1' == $app.fair_detail.admission_ticket_1 || '1' == $app.fair_detail.admission_ticket_2 || '1' == $app.fair_detail.admission_ticket_3) && '1' == $app.fair_detail.admission_ticket_4)}
 												/
 												{/if}
+*}
 												{if ('1' == $app.fair_detail.admission_ticket_4)}
-												当日会場でチケット入手
+												当日会場で登録もしくはチケット入手
 												{/if}
-												{if (('1' == $app.fair_detail.admission_ticket_1 || '1' == $app.fair_detail.admission_ticket_2 || '1' == $app.fair_detail.admission_ticket_3 || '1' == $app.fair_detail.admission_ticket_4) && '' != $app.fair_detail.other_admission_ticket_jp)}
+												{if (('1' == $app.fair_detail.admission_ticket_1 || '1' == $app.fair_detail.admission_ticket_2 || '1' == $app.fair_detail.admission_ticket_4) && '' != $app.fair_detail.other_admission_ticket_jp)}
 												/
 												{/if}
 												{if ('' != $app.fair_detail.other_admission_ticket_jp)}
 												{$app.fair_detail.other_admission_ticket_jp}
 												{/if}
 											{/if}
+										<br/>詳細は主催者へ直接お問い合わせください。
 										</td>
 									</tr>
 									<tr>

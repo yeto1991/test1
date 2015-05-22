@@ -1027,7 +1027,11 @@
 						<tr>
 							<td nowrap>開催予定規模 <font color="#CC3333">○</font></td>
 							<!-- 開催予定規模 -->
-							<td nowrap><input type="text" name="gross_floor_area" id="gross_floor_area" value="{$form.gross_floor_area}" maxlength="10" size="10" />sq.m.<br> <font size="-1">■半角数字のみ入力して下さい。","(カンマ)は使用しないで下さい。例：1000</font></td>
+							<td nowrap>
+								<input type="text" name="gross_floor_area" id="gross_floor_area" value="{$form.gross_floor_area}" maxlength="10" size="10" />sq.m.
+								<font size="-1">&nbsp;&nbsp;※ブース割り当て面積をご記載ください。</font>
+								<br /><font size="-1">■半角数字のみ入力して下さい。","(カンマ)は使用しないで下さい。例：1000</font>
+							</td>
 						</tr>
 
 						<tr>
@@ -1056,7 +1060,7 @@
 *}
 
 						<tr>
-							<td nowrap rowspan="1">入場方法 <font color="#CC3333">●</font></td>
+							<td nowrap rowspan="1">入場方法</td>
 							<!-- 入場方法(日) -->
 							<!-- 入場方法(英) -->
 							<!-- その他の入場方法(日) -->
@@ -1073,14 +1077,19 @@
 							<td><input type="checkbox" name="admission_ticket_2_jp" id="admission_ticket_2_jp" value="1" {if ("1" == $form.admission_ticket_2_jp)}checked{/if} />公式ウェブサイトからの事前登録</td>
 							</tr>
 							<tr>
-							<td><input type="checkbox" name="admission_ticket_3_jp" id="admission_ticket_3_jp" value="1" {if ("1" == $form.admission_ticket_3_jp)}checked{/if} />主催者もしくは日本国内の連絡先への問い合わせ</td>
-							<td><input type="checkbox" name="admission_ticket_4_jp" id="admission_ticket_4_jp" value="1" {if ("1" == $form.admission_ticket_4_jp)}checked{/if} />当日会場でチケット入手</td>
+							{if ("change" == $form.mode || "copy" == $form.mode)}
+								<td><input type="checkbox" name="admission_ticket_3_jp" id="admission_ticket_3_jp" value="1" {if ("1" == $form.admission_ticket_3_jp)}checked{/if} />主催者もしくは日本国内の連絡先への問い合わせ</td>
+							{/if}
+							<td><input type="checkbox" name="admission_ticket_4_jp" id="admission_ticket_4_jp" value="1" {if ("1" == $form.admission_ticket_4_jp)}checked{/if} />当日会場で登録もしくはチケット入手</td>
 							</tr>
 							<tr>
 							<td colspan="2"><input type="checkbox" name="admission_ticket_5_jp" id="admission_ticket_5_jp" value="1" {if ("1" == $form.admission_ticket_5_jp)}checked{/if} />その他 <input type="text" name="other_admission_ticket_jp" id="other_admission_ticket_jp" value="{$form.other_admission_ticket_jp}" maxlenth="500" size="100" /></td>
 							</tr>
 							<tr>
 							<td colspan="2"><input type="checkbox" name="admission_ticket_5_en" id="admission_ticket_5_en" value="1" {if ("1" == $form.admission_ticket_5_en)}checked{/if} />Others <input type="text" name="other_admission_ticket_en" id="other_admission_ticket_en" value="{$form.other_admission_ticket_en}" maxlenth="500" size="100" /></td>
+							</tr>
+							<tr>
+							<td colspan="2">■フロントサイトではメッセージ「詳細は主催者へ直接お問い合わせください」が自動的に表示されます。</td>
 							</tr>
 							</table>
 							</td>

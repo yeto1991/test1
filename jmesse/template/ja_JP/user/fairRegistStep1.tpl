@@ -630,12 +630,13 @@
 						{else}
 							<tr>
 						{/if}
-								<th class="bg_gray_lv1 nobdr">開催予定規模</th>
+								<th class="bg_gray_lv1 nobdr">開催予定規模(Net)</th>
 								<th class="bg_gray_lv1"></th>
 								<td class="bg_gray_lv2">
 									<div class="elem_custom_input pt0 pb0">
 										<input type="text" value="{$form.gross_floor_area}" size="5" name="gross_floor_area" id="gross_floor_area" maxlength="10" class="var_bg_white var_size_mini"/>
-										 sq.m. <br />半角数字のみ入力して下さい。","(カンマ)は使用しないで下さい。例：1000
+										 sq.m. &nbsp;&nbsp;※ブース割り当て面積をご記載ください。
+										 <br />半角数字のみ入力して下さい。","(カンマ)は使用しないで下さい。例：1000
 									</div>
 									{if is_error('gross_floor_area')}
 										<span class="error-message">{message name="gross_floor_area"}</span><br />
@@ -674,7 +675,7 @@
 							<tr>
 						{/if}
 								<th class="bg_gray_lv1 nobdr">入場方法</th>
-								<th class="bg_gray_lv1"><span class="cate">必須</span></th>
+								<th class="bg_gray_lv1"></th>
 								<td class="bg_gray_lv2">
 									<div class="elem_form_list pt0 pb0">
 										<ul class="liner">
@@ -690,16 +691,18 @@
 													<span>公式ウェブサイトからの事前登録</span>
 												</label>
 											</li>
+{*
 											<li>
 												<label>
 													<input name="admission_ticket_3" id="admission_ticket_3" value="1" type="checkbox" {if ('1' == $form.admission_ticket_3)}checked{/if} />
 													<span>主催者もしくは日本国内の連絡先への問い合わせ</span></label></li>
 												</label>
 											</li>
+*}
 											<li>
 												<label>
 													<input name="admission_ticket_4" id="admission_ticket_4" value="1" type="checkbox" {if ('1' == $form.admission_ticket_4)}checked{/if} />
-													<span>当日会場でチケット入手</span>
+													<span>当日会場で登録もしくはチケット入手</span>
 												</label>
 											</li>
 											<li>
@@ -715,12 +718,14 @@
 											</li>
 										</ul>
 									</div>
+									「詳細は主催者へ直接お問い合わせください」が自動的に表示されます。<br />
 									{if is_error('admission_ticket_1')}
 										<span class="error-message">{message name="admission_ticket_1"}</span><br />
 									{/if}
 									{if is_error('other_admission_ticket_jp')}
 										<span class="error-message">{message name="other_admission_ticket_jp"}</span><br />
 									{/if}
+
 								</td>
 							</tr>
 						</tbody>

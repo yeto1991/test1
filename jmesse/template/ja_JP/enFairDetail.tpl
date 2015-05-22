@@ -127,7 +127,7 @@
 										<th>For Visitors</th>
 										<td>
 											Eligibility:{$app.fair_detail.open_to_name}<br />
-											{if ('1' == $app.fair_detail.admission_ticket_1 || '1' == $app.fair_detail.admission_ticket_2 || '1' == $app.fair_detail.admission_ticket_3 || '1' == $app.fair_detail.admission_ticket_4 || '' != $app.fair_detail.other_admission_ticket_en)}
+											{if ('1' == $app.fair_detail.admission_ticket_1 || '1' == $app.fair_detail.admission_ticket_2 || '1' == $app.fair_detail.admission_ticket_4 || '' != $app.fair_detail.other_admission_ticket_en)}
 											Method of admission:
 												{if ('1' == $app.fair_detail.admission_ticket_1)}
 												Free
@@ -138,25 +138,28 @@
 												{if ('1' == $app.fair_detail.admission_ticket_2)}
 												Apply/register online
 												{/if}
-												{if (('1' == $app.fair_detail.admission_ticket_1 || '1' == $app.fair_detail.admission_ticket_2) && '1' == $app.fair_detail.admission_ticket_3)}
+												{if (('1' == $app.fair_detail.admission_ticket_1 || '1' == $app.fair_detail.admission_ticket_2) && '1' == $app.fair_detail.admission_ticket_4)}
 												/
 												{/if}
+{*
 												{if ('1' == $app.fair_detail.admission_ticket_3)}
 												Contact organizer/agency in Japan
 												{/if}
 												{if (('1' == $app.fair_detail.admission_ticket_1 || '1' == $app.fair_detail.admission_ticket_2 || '1' == $app.fair_detail.admission_ticket_3) && '1' == $app.fair_detail.admission_ticket_4)}
 												/
 												{/if}
+*}
 												{if ('1' == $app.fair_detail.admission_ticket_4)}
-												Tickets available at event
+												Registration/tickets available at event
 												{/if}
-												{if (('1' == $app.fair_detail.admission_ticket_1 || '1' == $app.fair_detail.admission_ticket_2 || '1' == $app.fair_detail.admission_ticket_3 || '1' == $app.fair_detail.admission_ticket_4) && '' != $app.fair_detail.other_admission_ticket_en)}
+												{if (('1' == $app.fair_detail.admission_ticket_1 || '1' == $app.fair_detail.admission_ticket_2 || '1' == $app.fair_detail.admission_ticket_4) && '' != $app.fair_detail.other_admission_ticket_en)}
 												/
 												{/if}
 												{if ('' != $app.fair_detail.other_admission_ticket_en)}
 												Other:{$app.fair_detail.other_admission_ticket_en}
 												{/if}
 											{/if}
+										<br/>For details, please contact the organizer directly.
 										</td>
 									</tr>
 									<tr>

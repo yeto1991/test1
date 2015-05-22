@@ -677,7 +677,7 @@
 									</tr>
 									<tr>
 										<td><input type="checkbox" name="admission_ticket_3" id="admission_ticket_3" value="1" {if ("1" == $form.admission_ticket_3)}checked{/if} />主催者もしくは日本国内の連絡先への問い合わせ</td>
-										<td><input type="checkbox" name="admission_ticket_4" id="admission_ticket_4" value="1" {if ("1" == $form.admission_ticket_4)}checked{/if} />当日会場でチケット入手</td>
+										<td><input type="checkbox" name="admission_ticket_4" id="admission_ticket_4" value="1" {if ("1" == $form.admission_ticket_4)}checked{/if} />当日会場で登録もしくはチケット入手</td>
 									</tr>
 								</table>
 								<table>

@@ -430,7 +430,7 @@ $form.mode
 								<td class="bg_gray_lv2">{$form.venue_jp}</td>
 							</tr>
 							<tr>
-								<th class="bg_gray_lv1 nobdr">同展示会で使用する面積</th>
+								<th class="bg_gray_lv1 nobdr">開催予定規模(Net)</th>
 								<th class="bg_gray_lv1"></th>
 								<td class="bg_gray_lv2">
 									{if ('' != $form.gross_floor_area)}
@@ -445,7 +445,7 @@ $form.mode
 							</tr>
 							<tr>
 								<th class="bg_gray_lv1 nobdr">入場方法</th>
-								<th class="bg_gray_lv1"><span class="cate">必須</span></th>
+								<th class="bg_gray_lv1"></th>
 								<td class="bg_gray_lv2">
 									{if ('1' == $form.admission_ticket_1)}
 										登録の必要なし<br />
@@ -453,11 +453,13 @@ $form.mode
 									{if ('1' == $form.admission_ticket_2)}
 										公式ウェブサイトからの事前登録<br />
 									{/if}
+{*
 									{if ('1' == $form.admission_ticket_3)}
 										主催者もしくは日本国内の連絡先への問い合わせ<br />
 									{/if}
+*}
 									{if ('1' == $form.admission_ticket_4)}
-										当日会場でチケット入手<br />
+										当日会場で登録もしくはチケット入手<br />
 									{/if}
 									{if ('1' == $form.admission_ticket_5)}
 										その他 ({$form.other_admission_ticket_jp})<br />

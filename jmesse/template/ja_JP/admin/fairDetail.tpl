@@ -405,7 +405,7 @@
 							{/if}
 							{if ("1" == $form.admission_ticket_4_jp)}
 								{if ("1" == $form.admission_ticket_1_jp || "1" == $form.admission_ticket_2_jp || "1" == $form.admission_ticket_3_jp)} / {/if}
-								当日会場でチケット入手
+								当日会場で登録もしくはチケット入手
 							{/if}
 							{if ("1" == $form.admission_ticket_5_jp)}
 								{if ("1" == $form.admission_ticket_1_jp || "1" == $form.admission_ticket_2_jp || "1" == $form.admission_ticket_3_jp || "1" == $form.admission_ticket_4_jp)} / {/if}
