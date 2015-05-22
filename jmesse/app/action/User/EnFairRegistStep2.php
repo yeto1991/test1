@@ -163,14 +163,15 @@ class Jmesse_Action_UserEnFairRegistStep2 extends Jmesse_ActionClass
 		}
 
 		// 入場方法
-		if ('1' != $this->af->get('admission_ticket_1')
-			&& '1' != $this->af->get('admission_ticket_2')
-			&& '1' != $this->af->get('admission_ticket_3')
-			&& '1' != $this->af->get('admission_ticket_4')
-			&& '1' != $this->af->get('admission_ticket_5')
-			&& '' == $this->af->get('other_admission_ticket_en')) {
-			$this->ae->add('admission_ticket_1', 'The method of admission has not been selected.');
-		} elseif ('1' == $this->af->get('admission_ticket_5') && '' == $this->af->get('other_admission_ticket_en')) {
+// 		if ('1' != $this->af->get('admission_ticket_1')
+// 			&& '1' != $this->af->get('admission_ticket_2')
+// 			&& '1' != $this->af->get('admission_ticket_3')
+// 			&& '1' != $this->af->get('admission_ticket_4')
+// 			&& '1' != $this->af->get('admission_ticket_5')
+// 			&& '' == $this->af->get('other_admission_ticket_en')) {
+// 			$this->ae->add('admission_ticket_1', 'The method of admission has not been selected.');
+// 		} elseif ('1' == $this->af->get('admission_ticket_5') && '' == $this->af->get('other_admission_ticket_en')) {
+		if ('1' == $this->af->get('admission_ticket_5') && '' == $this->af->get('other_admission_ticket_en')) {
 			$this->ae->add('other_admission_ticket_en', 'The method of admission has not been entered.');
 		} elseif ('1' != $this->af->get('admission_ticket_5') && '' != $this->af->get('other_admission_ticket_en')) {
 			$this->ae->add('other_admission_ticket_en', 'The method of admission etc. has not been selected.');
@@ -298,7 +299,7 @@ class Jmesse_Action_UserEnFairRegistStep2 extends Jmesse_ActionClass
 		$regist_param_1['open_to'] = $this->af->get('open_to');
 		$regist_param_1['admission_ticket_1'] = $this->af->get('admission_ticket_1');
 		$regist_param_1['admission_ticket_2'] = $this->af->get('admission_ticket_2');
-		$regist_param_1['admission_ticket_3'] = $this->af->get('admission_ticket_3');
+//		$regist_param_1['admission_ticket_3'] = $this->af->get('admission_ticket_3');
 		$regist_param_1['admission_ticket_4'] = $this->af->get('admission_ticket_4');
 		$regist_param_1['admission_ticket_5'] = $this->af->get('admission_ticket_5');
 		if ('1' == $this->af->get('admission_ticket_5')) {

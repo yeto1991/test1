@@ -165,7 +165,7 @@ class Jmesse_Action_UserFairRegistDone extends Jmesse_ActionClass
 		$jm_fair->set('open_to', $regist_param_1['open_to']);
 		$jm_fair->set('admission_ticket_1', $regist_param_1['admission_ticket_1']);
 		$jm_fair->set('admission_ticket_2', $regist_param_1['admission_ticket_2']);
-		$jm_fair->set('admission_ticket_3', $regist_param_1['admission_ticket_3']);
+// 		$jm_fair->set('admission_ticket_3', $regist_param_1['admission_ticket_3']);
 		$jm_fair->set('admission_ticket_4', $regist_param_1['admission_ticket_4']);
 		$jm_fair->set('other_admission_ticket_jp', $regist_param_1['other_admission_ticket_jp']);
 		$jm_fair->set('sum_ticket', $this->_getSumTicket($regist_param_1));
@@ -580,11 +580,11 @@ class Jmesse_Action_UserFairRegistDone extends Jmesse_ActionClass
 		if ('1' == $jm_fair->get('admission_ticket_2')) {
 			$search_key .= '公式ウェブサイトからの事前登録 ';
 		}
-		if ('1' == $jm_fair->get('admission_ticket_3')) {
-			$search_key .= '主催者もしくは日本国内の連絡先への問い合わせ ';
-		}
-		if ('1' == $jm_fair->get('admission_ticket_3')) {
-			$search_key .= '当日会場でチケット入手 ';
+// 		if ('1' == $jm_fair->get('admission_ticket_3')) {
+// 			$search_key .= '主催者もしくは日本国内の連絡先への問い合わせ ';
+// 		}
+		if ('1' == $jm_fair->get('admission_ticket_4')) {
+			$search_key .= '当日会場で登録もしくはチケット入手 ';
 		}
 		$search_key .= $jm_fair->get('other_admission_ticket_jp').' ';
 		$search_key .= $jm_fair->get('other_admission_ticket_en').' ';
@@ -635,8 +635,8 @@ class Jmesse_Action_UserFairRegistDone extends Jmesse_ActionClass
 			$ret = '1';
 		} elseif ('1' == $regist_param_1['admission_ticket_2']) {
 			$ret = '2';
-		} elseif ('1' == $regist_param_1['admission_ticket_3']) {
-			$ret = '3';
+// 		} elseif ('1' == $regist_param_1['admission_ticket_3']) {
+// 			$ret = '3';
 		} elseif ('1' == $regist_param_1['admission_ticket_4']) {
 			$ret = '4';
 		} elseif ('' != $regist_param_1['other_admission_ticket_jp']) {

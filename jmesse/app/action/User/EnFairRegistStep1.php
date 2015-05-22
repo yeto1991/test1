@@ -1039,24 +1039,24 @@ class Jmesse_Form_UserEnFairRegistStep1 extends Jmesse_ActionForm
 			'max_error'      => '{form} is incorrect.',
 			'regexp_error'   => '{form} is incorrect.',
 		),
-		'admission_ticket_3' => array(
-			'type'        => VAR_TYPE_STRING, // Input type
-			'form_type'   => FORM_TYPE_CHECKBOX,  // Form type
-			'name'        => 'Contact organizer/agency in Japan', // Display name
-			'required'    => false,           // Required Option(true/false)
-			'min'         => null,            // Minimum value
-			'max'         => null,            // Maximum value
-			'regexp'      => null,            // String by Regexp
-			'mbregexp'    => null,            // Multibype string by Regexp
-			'mbregexp_encoding' => 'UTF-8',   // Matching encoding when using mbregexp
-			'filter'      => null,            // Optional Input filter to convert input
-			'custom'      => null,            // Optional method name which
-			'required_error' => '{form} is incorrect.',
-			'type_error'     => '{form} is incorrect.',
-			'min_error'      => '{form} is incorrect.',
-			'max_error'      => '{form} is incorrect.',
-			'regexp_error'   => '{form} is incorrect.',
-		),
+// 		'admission_ticket_3' => array(
+// 			'type'        => VAR_TYPE_STRING, // Input type
+// 			'form_type'   => FORM_TYPE_CHECKBOX,  // Form type
+// 			'name'        => 'Contact organizer/agency in Japan', // Display name
+// 			'required'    => false,           // Required Option(true/false)
+// 			'min'         => null,            // Minimum value
+// 			'max'         => null,            // Maximum value
+// 			'regexp'      => null,            // String by Regexp
+// 			'mbregexp'    => null,            // Multibype string by Regexp
+// 			'mbregexp_encoding' => 'UTF-8',   // Matching encoding when using mbregexp
+// 			'filter'      => null,            // Optional Input filter to convert input
+// 			'custom'      => null,            // Optional method name which
+// 			'required_error' => '{form} is incorrect.',
+// 			'type_error'     => '{form} is incorrect.',
+// 			'min_error'      => '{form} is incorrect.',
+// 			'max_error'      => '{form} is incorrect.',
+// 			'regexp_error'   => '{form} is incorrect.',
+// 		),
 		'admission_ticket_4' => array(
 			'type'        => VAR_TYPE_STRING, // Input type
 			'form_type'   => FORM_TYPE_CHECKBOX,  // Form type
@@ -2023,7 +2023,7 @@ class Jmesse_Action_UserEnFairRegistStep1 extends Jmesse_ActionClass
 		$this->af->set('open_to', $regist_param_1['open_to']);
 		$this->af->set('admission_ticket_1', $regist_param_1['admission_ticket_1']);
 		$this->af->set('admission_ticket_2', $regist_param_1['admission_ticket_2']);
-		$this->af->set('admission_ticket_3', $regist_param_1['admission_ticket_3']);
+// 		$this->af->set('admission_ticket_3', $regist_param_1['admission_ticket_3']);
 		$this->af->set('admission_ticket_4', $regist_param_1['admission_ticket_4']);
 		$this->af->set('admission_ticket_5', $regist_param_1['admission_ticket_5']);
 		$this->af->set('other_admission_ticket_en', $regist_param_1['other_admission_ticket_en']);
@@ -2070,7 +2070,7 @@ class Jmesse_Action_UserEnFairRegistStep1 extends Jmesse_ActionClass
 		$regist_param_1['open_to'] = $obj->get('open_to');
 		$regist_param_1['admission_ticket_1'] = $obj->get('admission_ticket_1');
 		$regist_param_1['admission_ticket_2'] = $obj->get('admission_ticket_2');
-		$regist_param_1['admission_ticket_3'] = $obj->get('admission_ticket_3');
+//		$regist_param_1['admission_ticket_3'] = $obj->get('admission_ticket_3');
 		$regist_param_1['admission_ticket_4'] = $obj->get('admission_ticket_4');
 		if ('' != $obj->get('other_admission_ticket_en')) {
 			$regist_param_1['admission_ticket_5'] = '1';

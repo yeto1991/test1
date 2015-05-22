@@ -165,7 +165,7 @@ class Jmesse_Action_UserEnFairRegistDone extends Jmesse_ActionClass
 		$jm_fair->set('open_to', $regist_param_1['open_to']);
 		$jm_fair->set('admission_ticket_1', $regist_param_1['admission_ticket_1']);
 		$jm_fair->set('admission_ticket_2', $regist_param_1['admission_ticket_2']);
-		$jm_fair->set('admission_ticket_3', $regist_param_1['admission_ticket_3']);
+// 		$jm_fair->set('admission_ticket_3', $regist_param_1['admission_ticket_3']);
 		$jm_fair->set('admission_ticket_4', $regist_param_1['admission_ticket_4']);
 		$jm_fair->set('other_admission_ticket_en', $regist_param_1['other_admission_ticket_en']);
 		$jm_fair->set('sum_ticket', $this->_getSumTicket($regist_param_1));
@@ -589,11 +589,11 @@ class Jmesse_Action_UserEnFairRegistDone extends Jmesse_ActionClass
 		if ('1' == $jm_fair->get('admission_ticket_2')) {
 			$search_key .= 'Apply/register online';
 		}
-		if ('1' == $jm_fair->get('admission_ticket_3')) {
-			$search_key .= 'Contact organizer/agency in Japan';
-		}
-		if ('1' == $jm_fair->get('admission_ticket_3')) {
-			$search_key .= 'Tickets available at event';
+// 		if ('1' == $jm_fair->get('admission_ticket_3')) {
+// 			$search_key .= 'Contact organizer/agency in Japan';
+// 		}
+		if ('1' == $jm_fair->get('admission_ticket_4')) {
+			$search_key .= 'Registration/tickets available at event';
 		}
 // 		$search_key .= $jm_fair->get('other_admission_ticket_jp').' ';
 		$search_key .= $jm_fair->get('other_admission_ticket_en').' ';
@@ -644,8 +644,8 @@ class Jmesse_Action_UserEnFairRegistDone extends Jmesse_ActionClass
 			$ret = '1';
 		} elseif ('1' == $regist_param_1['admission_ticket_2']) {
 			$ret = '2';
-		} elseif ('1' == $regist_param_1['admission_ticket_3']) {
-			$ret = '3';
+// 		} elseif ('1' == $regist_param_1['admission_ticket_3']) {
+// 			$ret = '3';
 		} elseif ('1' == $regist_param_1['admission_ticket_4']) {
 			$ret = '4';
 		} elseif ('' != $regist_param_1['other_admission_ticket_en']) {

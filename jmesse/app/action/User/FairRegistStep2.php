@@ -163,14 +163,15 @@ class Jmesse_Action_UserFairRegistStep2 extends Jmesse_ActionClass
 		}
 
 		// 入場方法
-		if ('1' != $this->af->get('admission_ticket_1')
-			&& '1' != $this->af->get('admission_ticket_2')
-			&& '1' != $this->af->get('admission_ticket_3')
-			&& '1' != $this->af->get('admission_ticket_4')
-			&& '1' != $this->af->get('admission_ticket_5')
-			&& '' == $this->af->get('other_admission_ticket_jp')) {
-			$this->ae->add('admission_ticket_1', '入場方法が選択されていません');
-		} elseif ('1' == $this->af->get('admission_ticket_5') && '' == $this->af->get('other_admission_ticket_jp')) {
+// 		if ('1' != $this->af->get('admission_ticket_1')
+// 			&& '1' != $this->af->get('admission_ticket_2')
+// 			&& '1' != $this->af->get('admission_ticket_3')
+// 			&& '1' != $this->af->get('admission_ticket_4')
+// 			&& '1' != $this->af->get('admission_ticket_5')
+// 			&& '' == $this->af->get('other_admission_ticket_jp')) {
+// 			$this->ae->add('admission_ticket_1', '入場方法が選択されていません');
+// 		} elseif ('1' == $this->af->get('admission_ticket_5') && '' == $this->af->get('other_admission_ticket_jp')) {
+		if ('1' == $this->af->get('admission_ticket_5') && '' == $this->af->get('other_admission_ticket_jp')) {
 			$this->ae->add('other_admission_ticket_jp', '入場方法(その他)が入力されていません');
 		} elseif ('1' != $this->af->get('admission_ticket_5') && '' != $this->af->get('other_admission_ticket_jp')) {
 			$this->ae->add('other_admission_ticket_jp', '入場方法(その他)が選択されていません');
@@ -308,7 +309,7 @@ class Jmesse_Action_UserFairRegistStep2 extends Jmesse_ActionClass
 		$regist_param_1['open_to'] = $this->af->get('open_to');
 		$regist_param_1['admission_ticket_1'] = $this->af->get('admission_ticket_1');
 		$regist_param_1['admission_ticket_2'] = $this->af->get('admission_ticket_2');
-		$regist_param_1['admission_ticket_3'] = $this->af->get('admission_ticket_3');
+// 		$regist_param_1['admission_ticket_3'] = $this->af->get('admission_ticket_3');
 		$regist_param_1['admission_ticket_4'] = $this->af->get('admission_ticket_4');
 		$regist_param_1['admission_ticket_5'] = $this->af->get('admission_ticket_5');
 		if ('1' == $this->af->get('admission_ticket_5')) {
