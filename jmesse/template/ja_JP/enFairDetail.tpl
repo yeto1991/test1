@@ -183,6 +183,10 @@
 											{/if}
 											{if ('' != $app.fair_detail.organizer_email)}
 											E-mail : <a href="mailto:{$app.fair_detail.organizer_email}">{$app.fair_detail.organizer_email}</a><br />
+											{else}
+												{if ('' != $app.fair_detail.inquiry_form_url)}
+													Inquiry Form :<a class="link_blank" target="_blank" href="{$app.fair_detail.inquiry_form_url}">{$app.fair_detail.inquiry_form_url}</a><br />
+												{/if}
 											{/if}
 										</td>
 									</tr>

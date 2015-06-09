@@ -823,6 +823,7 @@
 							<!-- 問合わせ先・運営機関ＴＥＬ -->
 							<!-- 問合わせ先・運営機関ＦＡＸ -->
 							<!-- 問合わせ先・運営機関Ｅ－ＭＡＩＬ -->
+							<!-- 問合せフォームURL -->
 							<td nowrap>
 								<table border="0">
 									<tr>
@@ -853,7 +854,7 @@
 										</td>
 									</tr>
 									<tr>
-										<td nowrap>ＴＥＬ</td>
+										<td nowrap>TEL</td>
 										<td>
 											<input type="text" name="organizer_tel" id="organizer_tel" value="{$form.organizer_tel}" size="50" />
 											<select name="organizer_tel_cond" id="organizer_tel_cond">
@@ -868,7 +869,7 @@
 										<td>（半角数字）</td>
 									</tr>
 									<tr>
-										<td nowrap>ＦＡＸ</td>
+										<td nowrap>FAX</td>
 										<td>
 											<input type="text" name="organizer_fax" id="organizer_fax" value="{$form.organizer_fax}" size="50" />
 											<select name="organizer_fax_cond" id="organizer_fax_cond">
@@ -882,7 +883,7 @@
 										</td>
 									</tr>
 									<tr>
-										<td nowrap>Ｅ－Ｍａｉｌ</td>
+										<td nowrap>E-Mail</td>
 										<td>
 											<input type="text" name="organizer_email" id="organizer_email" value="{$form.organizer_email}" size="50" />
 											<select name="organizer_email_cond" id="organizer_email_cond">
@@ -892,6 +893,20 @@
 												<option value="4" {if ('4' == $form.organizer_email_cond)}selected{/if}>前不一</option>
 												<option value="5" {if ('5' == $form.organizer_email_cond || '' == $form.organizer_email_cond)}selected{/if}>含む</option>
 												<option value="6" {if ('6' == $form.organizer_email_cond)}selected{/if}>含まず</option>
+											</select>
+										</td>
+									</tr>
+									<tr>
+										<td nowrap>問合せフォームURL</td>
+										<td nowrap>
+											<input type="text" name="inquiry_form_url" id="inquiry_form_url" value="{$form.inquiry_form_url}" size="50" />
+											<select name="inquiry_form_url_cond" id="inquiry_form_url_cond">
+												<option value="1" {if ('1' == $form.inquiry_form_url_cond)}selected{/if}>一致</option>
+												<option value="2" {if ('2' == $form.inquiry_form_url_cond)}selected{/if}>不一致</option>
+												<option value="3" {if ('3' == $form.inquiry_form_url_cond)}selected{/if}>前一致</option>
+												<option value="4" {if ('4' == $form.inquiry_form_url_cond)}selected{/if}>前不一</option>
+												<option value="5" {if ('5' == $form.inquiry_form_url_cond || '' == $form.inquiry_form_url_cond)}selected{/if}>含む</option>
+												<option value="6" {if ('6' == $form.inquiry_form_url_cond)}selected{/if}>含まず</option>
 											</select>
 										</td>
 									</tr>
@@ -936,7 +951,7 @@
 										</td>
 									</tr>
 									<tr>
-										<td nowrap>ＴＥＬ</td>
+										<td nowrap>TEL</td>
 										<td>
 											<input type="text" name="agency_in_japan_tel" id="agency_in_japan_tel" value="{$form.agency_in_japan_tel}" size="50" />
 											<select name="agency_in_japan_tel_cond" id="agency_in_japan_tel">
@@ -950,7 +965,7 @@
 										</td>
 									</tr>
 									<tr>
-										<td nowrap>ＦＡＸ</td>
+										<td nowrap>FAX</td>
 										<td>
 											<input type="text" name="agency_in_japan_fax" id="agency_in_japan_fax" value="{$form.agency_in_japan_fax}" size="50" />
 											<select name="agency_in_japan_fax_cond" id="agency_in_japan_fax">
@@ -964,7 +979,7 @@
 										</td>
 									</tr>
 									<tr>
-										<td nowrap>Ｅ－Ｍａｉｌ</td>
+										<td nowrap>E-Mail</td>
 										<td>
 											<input type="text" name="agency_in_japan_email" id="agency_in_japan_email" value="{$form.agency_in_japan_email}" size="50" />
 											<select name="agency_in_japan_email_cond" id="agency_in_japan_email_cond">
@@ -1266,28 +1281,29 @@
 									<option value="54" {if ('54' == form.summary_key1)}selected{/if}>主催者・問合せ先住所</option>
 									<option value="55" {if ('55' == form.summary_key1)}selected{/if}>主催者・問合せ先担当部課</option>
 									<option value="56" {if ('56' == form.summary_key1)}selected{/if}>主催者・問合せ先担当者</option>
-									<option value="57" {if ('57' == form.summary_key1)}selected{/if}>日本国内の連絡先名称(日)</option>
-									<option value="58" {if ('58' == form.summary_key1)}selected{/if}>日本国内の連絡先名称(英)</option>
-									<option value="59" {if ('59' == form.summary_key1)}selected{/if}>日本国内の連絡先TEL</option>
-									<option value="60" {if ('60' == form.summary_key1)}selected{/if}>日本国内の連絡先FAX</option>
-									<option value="61" {if ('61' == form.summary_key1)}selected{/if}>日本国内の連絡先Email</option>
-									<option value="62" {if ('62' == form.summary_key1)}selected{/if}>日本国内の連絡先住所</option>
-									<option value="63" {if ('63' == form.summary_key1)}selected{/if}>日本国内の連絡先担当部課</option>
-									<option value="64" {if ('64' == form.summary_key1)}selected{/if}>日本国内の連絡先担当者</option>
-									<option value="65" {if ('65' == form.summary_key1)}selected{/if}>見本市レポートURL</option>
-									<option value="66" {if ('66' == form.summary_key1)}selected{/if}>展示会に係わる画像名称1</option>
-									<option value="67" {if ('67' == form.summary_key1)}selected{/if}>展示会に係わる画像名称2</option>
-									<option value="68" {if ('68' == form.summary_key1)}selected{/if}>展示会に係わる画像名称3</option>
-									<option value="69" {if ('69' == form.summary_key1)}selected{/if}>システム管理者備考欄</option>
-									<option value="70" {if ('70' == form.summary_key1)}selected{/if}>データ管理者備考欄</option>
-									<option value="71" {if ('71' == form.summary_key1)}selected{/if}>登録カテゴリ</option>
-									<option value="72" {if ('72' == form.summary_key1)}selected{/if}>削除フラグ</option>
-									<option value="73" {if ('73' == form.summary_key1)}selected{/if}>JECC認証フラグ</option>
-									<option value="74" {if ('74' == form.summary_key1)}selected{/if}>JECC認証年月日</option>
-									<option value="75" {if ('75' == form.summary_key1)}selected{/if}>JETRO出展支援URL</option>
-									<option value="76" {if ('76' == form.summary_key1)}selected{/if}>JETRO出展支援フラグ</option>
-									<option value="77" {if ('77' == form.summary_key1)}selected{/if}>登録者ID</option>
-									<option value="78" {if ('78' == form.summary_key1)}selected{/if}>更新者ID</option>
+									<option value="57" {if ('57' == form.summary_key1)}selected{/if}>問い合わせフォームURL</option>
+									<option value="58" {if ('58' == form.summary_key1)}selected{/if}>日本国内の連絡先名称(日)</option>
+									<option value="59" {if ('59' == form.summary_key1)}selected{/if}>日本国内の連絡先名称(英)</option>
+									<option value="60" {if ('60' == form.summary_key1)}selected{/if}>日本国内の連絡先TEL</option>
+									<option value="61" {if ('61' == form.summary_key1)}selected{/if}>日本国内の連絡先FAX</option>
+									<option value="62" {if ('62' == form.summary_key1)}selected{/if}>日本国内の連絡先Email</option>
+									<option value="63" {if ('63' == form.summary_key1)}selected{/if}>日本国内の連絡先住所</option>
+									<option value="64" {if ('64' == form.summary_key1)}selected{/if}>日本国内の連絡先担当部課</option>
+									<option value="65" {if ('65' == form.summary_key1)}selected{/if}>日本国内の連絡先担当者</option>
+									<option value="66" {if ('66' == form.summary_key1)}selected{/if}>見本市レポートURL</option>
+									<option value="67" {if ('67' == form.summary_key1)}selected{/if}>展示会に係わる画像名称1</option>
+									<option value="68" {if ('68' == form.summary_key1)}selected{/if}>展示会に係わる画像名称2</option>
+									<option value="69" {if ('69' == form.summary_key1)}selected{/if}>展示会に係わる画像名称3</option>
+									<option value="70" {if ('70' == form.summary_key1)}selected{/if}>システム管理者備考欄</option>
+									<option value="71" {if ('71' == form.summary_key1)}selected{/if}>データ管理者備考欄</option>
+									<option value="72" {if ('72' == form.summary_key1)}selected{/if}>登録カテゴリ</option>
+									<option value="73" {if ('73' == form.summary_key1)}selected{/if}>削除フラグ</option>
+									<option value="74" {if ('74' == form.summary_key1)}selected{/if}>JECC認証フラグ</option>
+									<option value="75" {if ('75' == form.summary_key1)}selected{/if}>JECC認証年月日</option>
+									<option value="76" {if ('76' == form.summary_key1)}selected{/if}>JETRO出展支援URL</option>
+									<option value="77" {if ('77' == form.summary_key1)}selected{/if}>JETRO出展支援フラグ</option>
+									<option value="78" {if ('78' == form.summary_key1)}selected{/if}>登録者ID</option>
+									<option value="79" {if ('79' == form.summary_key1)}selected{/if}>更新者ID</option>
 								</select>
 							</td>
 							<td>
@@ -1356,28 +1372,29 @@
 									<option value="54" {if ('54' == form.summary_key2)}selected{/if}>主催者・問合せ先住所</option>
 									<option value="55" {if ('55' == form.summary_key2)}selected{/if}>主催者・問合せ先担当部課</option>
 									<option value="56" {if ('56' == form.summary_key2)}selected{/if}>主催者・問合せ先担当者</option>
-									<option value="57" {if ('57' == form.summary_key2)}selected{/if}>日本国内の連絡先名称(日)</option>
-									<option value="58" {if ('58' == form.summary_key2)}selected{/if}>日本国内の連絡先名称(英)</option>
-									<option value="59" {if ('59' == form.summary_key2)}selected{/if}>日本国内の連絡先TEL</option>
-									<option value="60" {if ('60' == form.summary_key2)}selected{/if}>日本国内の連絡先FAX</option>
-									<option value="61" {if ('61' == form.summary_key2)}selected{/if}>日本国内の連絡先Email</option>
-									<option value="62" {if ('62' == form.summary_key2)}selected{/if}>日本国内の連絡先住所</option>
-									<option value="63" {if ('63' == form.summary_key2)}selected{/if}>日本国内の連絡先担当部課</option>
-									<option value="64" {if ('64' == form.summary_key2)}selected{/if}>日本国内の連絡先担当者</option>
-									<option value="65" {if ('65' == form.summary_key2)}selected{/if}>見本市レポートURL</option>
-									<option value="66" {if ('66' == form.summary_key2)}selected{/if}>展示会に係わる画像名称1</option>
-									<option value="67" {if ('67' == form.summary_key2)}selected{/if}>展示会に係わる画像名称2</option>
-									<option value="68" {if ('68' == form.summary_key2)}selected{/if}>展示会に係わる画像名称3</option>
-									<option value="69" {if ('69' == form.summary_key2)}selected{/if}>システム管理者備考欄</option>
-									<option value="70" {if ('70' == form.summary_key2)}selected{/if}>データ管理者備考欄</option>
-									<option value="71" {if ('71' == form.summary_key2)}selected{/if}>登録カテゴリ</option>
-									<option value="72" {if ('72' == form.summary_key2)}selected{/if}>削除フラグ</option>
-									<option value="73" {if ('73' == form.summary_key2)}selected{/if}>JECC認証フラグ</option>
-									<option value="74" {if ('74' == form.summary_key2)}selected{/if}>JECC認証年月日</option>
-									<option value="75" {if ('75' == form.summary_key2)}selected{/if}>JETRO出展支援URL</option>
-									<option value="76" {if ('76' == form.summary_key2)}selected{/if}>JETRO出展支援フラグ</option>
-									<option value="77" {if ('77' == form.summary_key2)}selected{/if}>登録者ID</option>
-									<option value="78" {if ('78' == form.summary_key2)}selected{/if}>更新者ID</option>
+									<option value="57" {if ('57' == form.summary_key2)}selected{/if}>問い合わせフォームURL</option>
+									<option value="58" {if ('58' == form.summary_key2)}selected{/if}>日本国内の連絡先名称(日)</option>
+									<option value="59" {if ('59' == form.summary_key2)}selected{/if}>日本国内の連絡先名称(英)</option>
+									<option value="60" {if ('60' == form.summary_key2)}selected{/if}>日本国内の連絡先TEL</option>
+									<option value="61" {if ('61' == form.summary_key2)}selected{/if}>日本国内の連絡先FAX</option>
+									<option value="62" {if ('62' == form.summary_key2)}selected{/if}>日本国内の連絡先Email</option>
+									<option value="63" {if ('63' == form.summary_key2)}selected{/if}>日本国内の連絡先住所</option>
+									<option value="64" {if ('64' == form.summary_key2)}selected{/if}>日本国内の連絡先担当部課</option>
+									<option value="65" {if ('65' == form.summary_key2)}selected{/if}>日本国内の連絡先担当者</option>
+									<option value="66" {if ('66' == form.summary_key2)}selected{/if}>見本市レポートURL</option>
+									<option value="67" {if ('67' == form.summary_key2)}selected{/if}>展示会に係わる画像名称1</option>
+									<option value="68" {if ('68' == form.summary_key2)}selected{/if}>展示会に係わる画像名称2</option>
+									<option value="69" {if ('69' == form.summary_key2)}selected{/if}>展示会に係わる画像名称3</option>
+									<option value="70" {if ('70' == form.summary_key2)}selected{/if}>システム管理者備考欄</option>
+									<option value="71" {if ('71' == form.summary_key2)}selected{/if}>データ管理者備考欄</option>
+									<option value="72" {if ('72' == form.summary_key2)}selected{/if}>登録カテゴリ</option>
+									<option value="73" {if ('73' == form.summary_key2)}selected{/if}>削除フラグ</option>
+									<option value="74" {if ('74' == form.summary_key2)}selected{/if}>JECC認証フラグ</option>
+									<option value="75" {if ('75' == form.summary_key2)}selected{/if}>JECC認証年月日</option>
+									<option value="76" {if ('76' == form.summary_key2)}selected{/if}>JETRO出展支援URL</option>
+									<option value="77" {if ('77' == form.summary_key2)}selected{/if}>JETRO出展支援フラグ</option>
+									<option value="78" {if ('78' == form.summary_key2)}selected{/if}>登録者ID</option>
+									<option value="79" {if ('79' == form.summary_key2)}selected{/if}>更新者ID</option>
 								</select>
 							</td>
 							<td>
@@ -1446,28 +1463,29 @@
 									<option value="54" {if ('54' == form.summary_key3)}selected{/if}>主催者・問合せ先住所</option>
 									<option value="55" {if ('55' == form.summary_key3)}selected{/if}>主催者・問合せ先担当部課</option>
 									<option value="56" {if ('56' == form.summary_key3)}selected{/if}>主催者・問合せ先担当者</option>
-									<option value="57" {if ('57' == form.summary_key3)}selected{/if}>日本国内の連絡先名称(日)</option>
-									<option value="58" {if ('58' == form.summary_key3)}selected{/if}>日本国内の連絡先名称(英)</option>
-									<option value="59" {if ('59' == form.summary_key3)}selected{/if}>日本国内の連絡先TEL</option>
-									<option value="60" {if ('60' == form.summary_key3)}selected{/if}>日本国内の連絡先FAX</option>
-									<option value="61" {if ('61' == form.summary_key3)}selected{/if}>日本国内の連絡先Email</option>
-									<option value="62" {if ('62' == form.summary_key3)}selected{/if}>日本国内の連絡先住所</option>
-									<option value="63" {if ('63' == form.summary_key3)}selected{/if}>日本国内の連絡先担当部課</option>
-									<option value="64" {if ('64' == form.summary_key3)}selected{/if}>日本国内の連絡先担当者</option>
-									<option value="65" {if ('65' == form.summary_key3)}selected{/if}>見本市レポートURL</option>
-									<option value="66" {if ('66' == form.summary_key3)}selected{/if}>展示会に係わる画像名称1</option>
-									<option value="67" {if ('67' == form.summary_key3)}selected{/if}>展示会に係わる画像名称2</option>
-									<option value="68" {if ('68' == form.summary_key3)}selected{/if}>展示会に係わる画像名称3</option>
-									<option value="69" {if ('69' == form.summary_key3)}selected{/if}>システム管理者備考欄</option>
-									<option value="70" {if ('70' == form.summary_key3)}selected{/if}>データ管理者備考欄</option>
-									<option value="71" {if ('71' == form.summary_key3)}selected{/if}>登録カテゴリ</option>
-									<option value="72" {if ('72' == form.summary_key3)}selected{/if}>削除フラグ</option>
-									<option value="73" {if ('73' == form.summary_key3)}selected{/if}>JECC認証フラグ</option>
-									<option value="74" {if ('74' == form.summary_key3)}selected{/if}>JECC認証年月日</option>
-									<option value="75" {if ('75' == form.summary_key3)}selected{/if}>JETRO出展支援URL</option>
-									<option value="76" {if ('76' == form.summary_key3)}selected{/if}>JETRO出展支援フラグ</option>
-									<option value="77" {if ('77' == form.summary_key3)}selected{/if}>登録者ID</option>
-									<option value="78" {if ('78' == form.summary_key3)}selected{/if}>更新者ID</option>
+									<option value="57" {if ('57' == form.summary_key3)}selected{/if}>問い合わせフォームURL</option>
+									<option value="58" {if ('58' == form.summary_key3)}selected{/if}>日本国内の連絡先名称(日)</option>
+									<option value="59" {if ('59' == form.summary_key3)}selected{/if}>日本国内の連絡先名称(英)</option>
+									<option value="60" {if ('60' == form.summary_key3)}selected{/if}>日本国内の連絡先TEL</option>
+									<option value="61" {if ('61' == form.summary_key3)}selected{/if}>日本国内の連絡先FAX</option>
+									<option value="62" {if ('62' == form.summary_key3)}selected{/if}>日本国内の連絡先Email</option>
+									<option value="63" {if ('63' == form.summary_key3)}selected{/if}>日本国内の連絡先住所</option>
+									<option value="64" {if ('64' == form.summary_key3)}selected{/if}>日本国内の連絡先担当部課</option>
+									<option value="65" {if ('65' == form.summary_key3)}selected{/if}>日本国内の連絡先担当者</option>
+									<option value="66" {if ('66' == form.summary_key3)}selected{/if}>見本市レポートURL</option>
+									<option value="67" {if ('67' == form.summary_key3)}selected{/if}>展示会に係わる画像名称1</option>
+									<option value="68" {if ('68' == form.summary_key3)}selected{/if}>展示会に係わる画像名称2</option>
+									<option value="69" {if ('69' == form.summary_key3)}selected{/if}>展示会に係わる画像名称3</option>
+									<option value="70" {if ('70' == form.summary_key3)}selected{/if}>システム管理者備考欄</option>
+									<option value="71" {if ('71' == form.summary_key3)}selected{/if}>データ管理者備考欄</option>
+									<option value="72" {if ('72' == form.summary_key3)}selected{/if}>登録カテゴリ</option>
+									<option value="73" {if ('73' == form.summary_key3)}selected{/if}>削除フラグ</option>
+									<option value="74" {if ('74' == form.summary_key3)}selected{/if}>JECC認証フラグ</option>
+									<option value="75" {if ('75' == form.summary_key3)}selected{/if}>JECC認証年月日</option>
+									<option value="76" {if ('76' == form.summary_key3)}selected{/if}>JETRO出展支援URL</option>
+									<option value="77" {if ('77' == form.summary_key3)}selected{/if}>JETRO出展支援フラグ</option>
+									<option value="78" {if ('78' == form.summary_key3)}selected{/if}>登録者ID</option>
+									<option value="79" {if ('79' == form.summary_key3)}selected{/if}>更新者ID</option>
 								</select>
 							</td>
 							<td>
@@ -1536,28 +1554,29 @@
 									<option value="54" {if ('54' == form.summary_key4)}selected{/if}>主催者・問合せ先住所</option>
 									<option value="55" {if ('55' == form.summary_key4)}selected{/if}>主催者・問合せ先担当部課</option>
 									<option value="56" {if ('56' == form.summary_key4)}selected{/if}>主催者・問合せ先担当者</option>
-									<option value="57" {if ('57' == form.summary_key4)}selected{/if}>日本国内の連絡先名称(日)</option>
-									<option value="58" {if ('58' == form.summary_key4)}selected{/if}>日本国内の連絡先名称(英)</option>
-									<option value="59" {if ('59' == form.summary_key4)}selected{/if}>日本国内の連絡先TEL</option>
-									<option value="60" {if ('60' == form.summary_key4)}selected{/if}>日本国内の連絡先FAX</option>
-									<option value="61" {if ('61' == form.summary_key4)}selected{/if}>日本国内の連絡先Email</option>
-									<option value="62" {if ('62' == form.summary_key4)}selected{/if}>日本国内の連絡先住所</option>
-									<option value="63" {if ('63' == form.summary_key4)}selected{/if}>日本国内の連絡先担当部課</option>
-									<option value="64" {if ('64' == form.summary_key4)}selected{/if}>日本国内の連絡先担当者</option>
-									<option value="65" {if ('65' == form.summary_key4)}selected{/if}>見本市レポートURL</option>
-									<option value="66" {if ('66' == form.summary_key4)}selected{/if}>展示会に係わる画像名称1</option>
-									<option value="67" {if ('67' == form.summary_key4)}selected{/if}>展示会に係わる画像名称2</option>
-									<option value="68" {if ('68' == form.summary_key4)}selected{/if}>展示会に係わる画像名称3</option>
-									<option value="69" {if ('69' == form.summary_key4)}selected{/if}>システム管理者備考欄</option>
-									<option value="70" {if ('70' == form.summary_key4)}selected{/if}>データ管理者備考欄</option>
-									<option value="71" {if ('71' == form.summary_key4)}selected{/if}>登録カテゴリ</option>
-									<option value="72" {if ('72' == form.summary_key4)}selected{/if}>削除フラグ</option>
-									<option value="73" {if ('73' == form.summary_key4)}selected{/if}>JECC認証フラグ</option>
-									<option value="74" {if ('74' == form.summary_key4)}selected{/if}>JECC認証年月日</option>
-									<option value="75" {if ('75' == form.summary_key4)}selected{/if}>JETRO出展支援URL</option>
-									<option value="76" {if ('76' == form.summary_key4)}selected{/if}>JETRO出展支援フラグ</option>
-									<option value="77" {if ('77' == form.summary_key4)}selected{/if}>登録者ID</option>
-									<option value="78" {if ('78' == form.summary_key4)}selected{/if}>更新者ID</option>
+									<option value="57" {if ('57' == form.summary_key4)}selected{/if}>問い合わせフォームURL</option>
+									<option value="58" {if ('58' == form.summary_key4)}selected{/if}>日本国内の連絡先名称(日)</option>
+									<option value="59" {if ('59' == form.summary_key4)}selected{/if}>日本国内の連絡先名称(英)</option>
+									<option value="60" {if ('60' == form.summary_key4)}selected{/if}>日本国内の連絡先TEL</option>
+									<option value="61" {if ('61' == form.summary_key4)}selected{/if}>日本国内の連絡先FAX</option>
+									<option value="62" {if ('62' == form.summary_key4)}selected{/if}>日本国内の連絡先Email</option>
+									<option value="63" {if ('63' == form.summary_key4)}selected{/if}>日本国内の連絡先住所</option>
+									<option value="64" {if ('64' == form.summary_key4)}selected{/if}>日本国内の連絡先担当部課</option>
+									<option value="65" {if ('65' == form.summary_key4)}selected{/if}>日本国内の連絡先担当者</option>
+									<option value="66" {if ('66' == form.summary_key4)}selected{/if}>見本市レポートURL</option>
+									<option value="67" {if ('67' == form.summary_key4)}selected{/if}>展示会に係わる画像名称1</option>
+									<option value="68" {if ('68' == form.summary_key4)}selected{/if}>展示会に係わる画像名称2</option>
+									<option value="69" {if ('69' == form.summary_key4)}selected{/if}>展示会に係わる画像名称3</option>
+									<option value="70" {if ('70' == form.summary_key4)}selected{/if}>システム管理者備考欄</option>
+									<option value="71" {if ('71' == form.summary_key4)}selected{/if}>データ管理者備考欄</option>
+									<option value="72" {if ('72' == form.summary_key4)}selected{/if}>登録カテゴリ</option>
+									<option value="73" {if ('73' == form.summary_key4)}selected{/if}>削除フラグ</option>
+									<option value="74" {if ('74' == form.summary_key4)}selected{/if}>JECC認証フラグ</option>
+									<option value="75" {if ('75' == form.summary_key4)}selected{/if}>JECC認証年月日</option>
+									<option value="76" {if ('76' == form.summary_key4)}selected{/if}>JETRO出展支援URL</option>
+									<option value="77" {if ('77' == form.summary_key4)}selected{/if}>JETRO出展支援フラグ</option>
+									<option value="78" {if ('78' == form.summary_key4)}selected{/if}>登録者ID</option>
+									<option value="79" {if ('79' == form.summary_key4)}selected{/if}>更新者ID</option>
 								</select>
 							</td>
 							<td>
@@ -1626,28 +1645,29 @@
 									<option value="54" {if ('54' == form.summary_key5)}selected{/if}>主催者・問合せ先住所</option>
 									<option value="55" {if ('55' == form.summary_key5)}selected{/if}>主催者・問合せ先担当部課</option>
 									<option value="56" {if ('56' == form.summary_key5)}selected{/if}>主催者・問合せ先担当者</option>
-									<option value="57" {if ('57' == form.summary_key5)}selected{/if}>日本国内の連絡先名称(日)</option>
-									<option value="58" {if ('58' == form.summary_key5)}selected{/if}>日本国内の連絡先名称(英)</option>
-									<option value="59" {if ('59' == form.summary_key5)}selected{/if}>日本国内の連絡先TEL</option>
-									<option value="60" {if ('60' == form.summary_key5)}selected{/if}>日本国内の連絡先FAX</option>
-									<option value="61" {if ('61' == form.summary_key5)}selected{/if}>日本国内の連絡先Email</option>
-									<option value="62" {if ('62' == form.summary_key5)}selected{/if}>日本国内の連絡先住所</option>
-									<option value="63" {if ('63' == form.summary_key5)}selected{/if}>日本国内の連絡先担当部課</option>
-									<option value="64" {if ('64' == form.summary_key5)}selected{/if}>日本国内の連絡先担当者</option>
-									<option value="65" {if ('65' == form.summary_key5)}selected{/if}>見本市レポートURL</option>
-									<option value="66" {if ('66' == form.summary_key5)}selected{/if}>展示会に係わる画像名称1</option>
-									<option value="67" {if ('67' == form.summary_key5)}selected{/if}>展示会に係わる画像名称2</option>
-									<option value="68" {if ('68' == form.summary_key5)}selected{/if}>展示会に係わる画像名称3</option>
-									<option value="69" {if ('69' == form.summary_key5)}selected{/if}>システム管理者備考欄</option>
-									<option value="70" {if ('70' == form.summary_key5)}selected{/if}>データ管理者備考欄</option>
-									<option value="71" {if ('71' == form.summary_key5)}selected{/if}>登録カテゴリ</option>
-									<option value="72" {if ('72' == form.summary_key5)}selected{/if}>削除フラグ</option>
-									<option value="73" {if ('73' == form.summary_key5)}selected{/if}>JECC認証フラグ</option>
-									<option value="74" {if ('74' == form.summary_key5)}selected{/if}>JECC認証年月日</option>
-									<option value="75" {if ('75' == form.summary_key5)}selected{/if}>JETRO出展支援URL</option>
-									<option value="76" {if ('76' == form.summary_key5)}selected{/if}>JETRO出展支援フラグ</option>
-									<option value="77" {if ('77' == form.summary_key5)}selected{/if}>登録者ID</option>
-									<option value="78" {if ('78' == form.summary_key5)}selected{/if}>更新者ID</option>
+									<option value="57" {if ('57' == form.summary_key5)}selected{/if}>問い合わせフォームURL</option>
+									<option value="58" {if ('58' == form.summary_key5)}selected{/if}>日本国内の連絡先名称(日)</option>
+									<option value="59" {if ('59' == form.summary_key5)}selected{/if}>日本国内の連絡先名称(英)</option>
+									<option value="60" {if ('60' == form.summary_key5)}selected{/if}>日本国内の連絡先TEL</option>
+									<option value="61" {if ('61' == form.summary_key5)}selected{/if}>日本国内の連絡先FAX</option>
+									<option value="62" {if ('62' == form.summary_key5)}selected{/if}>日本国内の連絡先Email</option>
+									<option value="63" {if ('63' == form.summary_key5)}selected{/if}>日本国内の連絡先住所</option>
+									<option value="64" {if ('64' == form.summary_key5)}selected{/if}>日本国内の連絡先担当部課</option>
+									<option value="65" {if ('65' == form.summary_key5)}selected{/if}>日本国内の連絡先担当者</option>
+									<option value="66" {if ('66' == form.summary_key5)}selected{/if}>見本市レポートURL</option>
+									<option value="67" {if ('67' == form.summary_key5)}selected{/if}>展示会に係わる画像名称1</option>
+									<option value="68" {if ('68' == form.summary_key5)}selected{/if}>展示会に係わる画像名称2</option>
+									<option value="69" {if ('69' == form.summary_key5)}selected{/if}>展示会に係わる画像名称3</option>
+									<option value="70" {if ('70' == form.summary_key5)}selected{/if}>システム管理者備考欄</option>
+									<option value="71" {if ('71' == form.summary_key5)}selected{/if}>データ管理者備考欄</option>
+									<option value="72" {if ('72' == form.summary_key5)}selected{/if}>登録カテゴリ</option>
+									<option value="73" {if ('73' == form.summary_key5)}selected{/if}>削除フラグ</option>
+									<option value="74" {if ('74' == form.summary_key5)}selected{/if}>JECC認証フラグ</option>
+									<option value="75" {if ('75' == form.summary_key5)}selected{/if}>JECC認証年月日</option>
+									<option value="76" {if ('76' == form.summary_key5)}selected{/if}>JETRO出展支援URL</option>
+									<option value="77" {if ('77' == form.summary_key5)}selected{/if}>JETRO出展支援フラグ</option>
+									<option value="78" {if ('78' == form.summary_key5)}selected{/if}>登録者ID</option>
+									<option value="79" {if ('79' == form.summary_key5)}selected{/if}>更新者ID</option>
 								</select>
 							</td>
 							<td>

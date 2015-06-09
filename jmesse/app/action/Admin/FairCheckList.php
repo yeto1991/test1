@@ -395,6 +395,8 @@ class Jmesse_Action_AdminFairCheckList extends Jmesse_ActionClass
 				$search_cond['organizer_fax_cond'] = $this->af->get('organizer_fax_cond');
 				$search_cond['organizer_email'] = $this->af->get('organizer_email');
 				$search_cond['organizer_email_cond'] = $this->af->get('organizer_email_cond');
+				$search_cond['inquiry_form_url'] = $this->af->get('inquiry_form_url');
+				$search_cond['inquiry_form_url_cond'] = $this->af->get('inquiry_form_url_cond');
 				$search_cond['agency_in_japan_jp'] = $this->af->get('agency_in_japan_jp');
 				$search_cond['agency_in_japan_jp_cond'] = $this->af->get('agency_in_japan_jp_cond');
 				$search_cond['agency_in_japan_en'] = $this->af->get('agency_in_japan_en');

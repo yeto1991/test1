@@ -180,6 +180,10 @@
 											{/if}
 											{if ('' != $app.fair_detail.organizer_email)}
 											E-mail : <a href="mailto:{$app.fair_detail.organizer_email}">{$app.fair_detail.organizer_email}</a><br />
+											{else}
+												{if ('' != $app.fair_detail.inquiry_form_url)}
+													問い合わせフォーム : <a class="link_blank" target="_blank" href="{$app.fair_detail.inquiry_form_url}">{$app.fair_detail.inquiry_form_url}</a><br />
+												{/if}
 											{/if}
 											TEL・FAXは国際電話用の国番号から表示されています。<br />
 											例 : 東京の場合 +81-3-1234-5678<br />

@@ -1591,7 +1591,32 @@ class Jmesse_Form_AdminFairSearch extends Jmesse_ActionForm
 			'filter'      => null,            // Optional Input filter to convert input
 			'custom'      => null,            // Optional method name which
 		),
-
+		'inquiry_form_url' => array(
+			'type'        => VAR_TYPE_STRING, // Input type
+			'form_type'   => FORM_TYPE_TEXT,  // Form type
+			'name'        => '問い合わせフォームURL', // Display name
+			'required'    => false,           // Required Option(true/false)
+			'min'         => null,            // Minimum value
+			'max'         => 255,             // Maximum value
+			'regexp'      => null,            // String by Regexp
+			'mbregexp'    => null,            // Multibype string by Regexp
+			'mbregexp_encoding' => 'UTF-8',   // Matching encoding when using mbregexp
+			'filter'      => null,            // Optional Input filter to convert input
+			'custom'      => 'checkHalfWidthChar', // Optional method name which
+		),
+		'inquiry_form_url_cond' => array(
+			'type'        => VAR_TYPE_STRING, // Input type
+			'form_type'   => FORM_TYPE_SELECT, // Form type
+			'name'        => '問い合わせフォームURL（条件）', // Display name
+			'required'    => false,           // Required Option(true/false)
+			'min'         => null,            // Minimum value
+			'max'         => null,            // Maximum value
+			'regexp'      => null,            // String by Regexp
+			'mbregexp'    => null,            // Multibype string by Regexp
+			'mbregexp_encoding' => 'UTF-8',   // Matching encoding when using mbregexp
+			'filter'      => null,            // Optional Input filter to convert input
+			'custom'      => null,            // Optional method name which
+		),
 		'agency_in_japan_jp' => array(
 			'type'        => VAR_TYPE_STRING, // Input type
 			'form_type'   => FORM_TYPE_TEXT,  // Form type

@@ -1163,6 +1163,7 @@
 							<!-- 問合わせ先・運営機関ＴＥＬ -->
 							<!-- 問合わせ先・運営機関ＦＡＸ -->
 							<!-- 問合わせ先・運営機関Ｅ－ＭＡＩＬ -->
+							<!-- 問合せフォームURL -->
 							<td>
 								<table border="0">
 									<tr>
@@ -1186,19 +1187,26 @@
 										<td><input type="text" name="organizer_pers" id="organizer_pers" value="{$form.organizer_pers}" maxlength="100" size="100" /></td>
 									</tr>
 									<tr>
-										<td nowrap>ＴＥＬ <font color="#CC3333">●</font></td>
+										<td nowrap>TEL<font color="#CC3333">●</font></td>
 										<td><input type="text" name="organizer_tel" id="organizer_tel" value="{$form.organizer_tel}" maxlength="100" size="100" /> （半角数字）</td>
 									</tr>
 									<tr>
-										<td nowrap>ＦＡＸ</td>
+										<td nowrap>FAX</td>
 										<td><input type="text" name="organizer_fax" id="organizer_fax" value="{$form.organizer_fax}" maxlength="100" size="100" /> （半角数字）</td>
 									</tr>
 									<tr>
-										<td nowrap>Ｅ－Ｍａｉｌ</td>
+										<td nowrap>E-Mail</td>
 										<td nowrap><input type="text" name="organizer_email" id="organizer_email" value="{$form.organizer_email}" maxlength="255" size="100" /> （半角英数）</td>
 									</tr>
-								</table> <font size="-1"> ■TEL・FAX はハイフン区切り、国番号から入力してください。 <br> 例：東京の場合 +81-3-1234-5678 <br>
-							</font>
+									<tr>
+										<td nowrap>問合せフォームURL</td>
+										<td nowrap><input type="text" name="inquiry_form_url" id="inquiry_form_url" value="{$form.inquiry_form_url}" maxlength="255" size="100" /></td>
+									</tr>
+								</table>
+								<font size="-1">
+									■TEL・FAX はハイフン区切り、国番号から入力してください。 <br> 例：東京の場合 +81-3-1234-5678 <br />
+									■問い合わせフォームURLは代行登録項目です。<br />
+								</font>
 							</td>
 						</tr>
 
@@ -1232,15 +1240,15 @@
 										<td><input type="text" name="agency_in_japan_pers" id="agency_in_japan_pers" value="{$form.agency_in_japan_pers}" maxlength="100" size="100" /></td>
 									</tr>
 									<tr>
-										<td nowrap>ＴＥＬ</td>
+										<td nowrap>TEL</td>
 										<td><input type="text" name="agency_in_japan_tel" id="agency_in_japan_tel" value="{$form.agency_in_japan_tel}" maxlength="100" size="100" /> （半角数字）</td>
 									</tr>
 									<tr>
-										<td nowrap>ＦＡＸ</td>
+										<td nowrap>FAX</td>
 										<td><input type="text" name="agency_in_japan_fax" id="agency_in_japan_fax" value="{$form.agency_in_japan_fax}" maxlength="100" size="100" /> （半角数字）</td>
 									</tr>
 									<tr>
-										<td nowrap>Ｅ－Ｍａｉｌ</td>
+										<td nowrap>E-Mail</td>
 										<td nowrap><input type="text" name="agency_in_japan_email" id="agency_in_japan_email" value="{$form.agency_in_japan_email}" maxlength="255" size="100" /> （半角英数）</td>
 									</tr>
 								</table> <font size="-1"> ■海外で開催される見本市で、日本国内に問合せ先がある場合のみ入力してください。 <br> ■TEL・FAX はハイフン区切り、国番号から入力してください。 <br> 例：東京の場合 +81-3-1234-5678

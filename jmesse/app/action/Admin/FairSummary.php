@@ -341,31 +341,32 @@ class Jmesse_Action_AdminFairSummary extends Jmesse_ActionClass
 	 * '54':主催者・問合せ先住所
 	 * '55':主催者・問合せ先担当部課
 	 * '56':主催者・問合せ先担当者
-	 * '57':日本国内の連絡先名称(日)
-	 * '58':日本国内の連絡先名称(英)
-	 * '59':日本国内の連絡先TEL
-	 * '60':日本国内の連絡先FAX
-	 * '61':日本国内の連絡先Email
-	 * '62':日本国内の連絡先住所
-	 * '63':日本国内の連絡先担当部課
-	 * '64':日本国内の連絡先担当者
-	 * '65':見本市レポートURL
-	 * '66':展示会に係わる画像名称1
-	 * '67':展示会に係わる画像名称2
-	 * '68':展示会に係わる画像名称3
-	 * '69':システム管理者備考欄
-	 * '70':データ管理者備考欄
-	 * '71':登録カテゴリ
-	 * '72':削除フラグ
-	 * '73':JECC認証フラグ
-	 * '74':JECC認証年月日
-	 * '75':JETRO出展支援URL
-	 * '76':JETRO出展支援フラグ
-	 * '77':登録者ID
-	 * '78':更新者ID
-	 * '79':削除日時
-	 * '80':登録日
-	 * '81':更新日
+	 * '57':問い合わせフォームURL
+	 * '58':日本国内の連絡先名称(日)
+	 * '59':日本国内の連絡先名称(英)
+	 * '60':日本国内の連絡先TEL
+	 * '61':日本国内の連絡先FAX
+	 * '62':日本国内の連絡先Email
+	 * '63':日本国内の連絡先住所
+	 * '64':日本国内の連絡先担当部課
+	 * '65':日本国内の連絡先担当者
+	 * '66':見本市レポートURL
+	 * '67':展示会に係わる画像名称1
+	 * '68':展示会に係わる画像名称2
+	 * '69':展示会に係わる画像名称3
+	 * '70':システム管理者備考欄
+	 * '71':データ管理者備考欄
+	 * '72':登録カテゴリ
+	 * '73':削除フラグ
+	 * '74':JECC認証フラグ
+	 * '75':JECC認証年月日
+	 * '76':JETRO出展支援URL
+	 * '77':JETRO出展支援フラグ
+	 * '78':登録者ID
+	 * '79':更新者ID
+	 * '80':削除日時
+	 * '81':登録日
+	 * '82':更新日
 	 *
 	 */
 	var $sort_column_name = array(
@@ -426,6 +427,7 @@ class Jmesse_Action_AdminFairSummary extends Jmesse_ActionClass
 		'主催者・問合せ先住所',
 		'主催者・問合せ先担当部課',
 		'主催者・問合せ先担当者',
+		'問い合わせフォームURL',
 		'日本国内の連絡先名称(日)',
 		'日本国内の連絡先名称(英)',
 		'日本国内の連絡先TEL',
@@ -511,6 +513,7 @@ class Jmesse_Action_AdminFairSummary extends Jmesse_ActionClass
 		'jf.organizer_addr',
 		'jf.organizer_div',
 		'jf.organizer_pers',
+		'jf.inquiry_form_url',
 		'jf.agency_in_japan_jp',
 		'jf.agency_in_japan_en',
 		'jf.agency_in_japan_tel',
@@ -930,6 +933,8 @@ class Jmesse_Action_AdminFairSummary extends Jmesse_ActionClass
 		$search_cond['organizer_fax_cond'] = $this->af->get('organizer_fax_cond');
 		$search_cond['organizer_email'] = $this->af->get('organizer_email');
 		$search_cond['organizer_email_cond'] = $this->af->get('organizer_email_cond');
+		$search_cond['inquiry_form_url'] = $this->af->get('inquiry_form_url');
+		$search_cond['inquiry_form_url_cond'] = $this->af->get('inquiry_form_url_cond');
 		$search_cond['agency_in_japan_jp'] = $this->af->get('agency_in_japan_jp');
 		$search_cond['agency_in_japan_jp_cond'] = $this->af->get('agency_in_japan_jp_cond');
 		$search_cond['agency_in_japan_en'] = $this->af->get('agency_in_japan_en');

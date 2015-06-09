@@ -466,6 +466,7 @@
 							<!-- 問合わせ先・運営機関ＴＥＬ -->
 							<!-- 問合わせ先・運営機関ＦＡＸ -->
 							<!-- 問合わせ先・運営機関Ｅ－ＭＡＩＬ -->
+							<!-- 問い合わせフォームURL -->
 							<td>
 								<table border="0">
 									<tr>
@@ -489,16 +490,20 @@
 										<td>{$form.organizer_pers}</td>
 									</tr>
 									<tr>
-										<td nowrap>ＴＥＬ</td>
+										<td nowrap>TEL</td>
 										<td>{$form.organizer_tel}</td>
 									</tr>
 									<tr>
-										<td nowrap>ＦＡＸ</td>
+										<td nowrap>FAX</td>
 										<td>{$form.organizer_fax}</td>
 									</tr>
 									<tr>
-										<td nowrap>Ｅ－Ｍａｉｌ</td>
+										<td nowrap>E-Mail</td>
 										<td>{$form.organizer_email}</td>
+									</tr>
+									<tr>
+										<td nowrap>問い合わせフォームURL</td>
+										<td>{$form.inquiry_form_url}</td>
 									</tr>
 								</table>
 							</td>
@@ -534,15 +539,15 @@
 										<td>{$form.agency_in_japan_pers}</td>
 									</tr>
 									<tr>
-										<td nowrap>ＴＥＬ</td>
+										<td nowrap>TEL</td>
 										<td>{$form.agency_in_japan_tel}</td>
 									</tr>
 									<tr>
-										<td nowrap>ＦＡＸ</td>
+										<td nowrap>FAX</td>
 										<td>{$form.agency_in_japan_fax}</td>
 									</tr>
 									<tr>
-										<td nowrap>Ｅ－Ｍａｉｌ</td>
+										<td nowrap>E-Mail</td>
 										<td>{$form.agency_in_japan_email}</td>
 									</tr>
 								</table>

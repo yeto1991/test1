@@ -232,6 +232,13 @@ class Jmesse_Action_AdminFairChangeDo extends Jmesse_ActionClass
 			}
 		}
 
+		// 問い合わせフォームURL
+		if (null != $this->af->get('inquiry_form_url') && '' != $this->af->get('inquiry_form_url')) {
+			if (0 !== strpos($this->af->get('inquiry_form_url'), 'http')) {
+				$this->ae->add('error', '問い合わせフォームURLはhttp～として下さい');
+			}
+		}
+
 		// Eメールチェック
 		// 主催者・問合せ先 E-Mail
 		if (null != $this->af->get('organizer_email') && '' != $this->af->get('organizer_email')) {
@@ -641,6 +648,7 @@ class Jmesse_Action_AdminFairChangeDo extends Jmesse_ActionClass
 		$jm_fair->set('organizer_tel', $this->af->get('organizer_tel'));
 		$jm_fair->set('organizer_fax', $this->af->get('organizer_fax'));
 		$jm_fair->set('organizer_email', $this->af->get('organizer_email'));
+		$jm_fair->set('inquiry_form_url', $this->af->get('inquiry_form_url'));
 
 		// 日本国内の連絡先
 		$jm_fair->set('agency_in_japan_jp', $this->af->get('agency_in_japan_jp'));
@@ -835,6 +843,7 @@ class Jmesse_Action_AdminFairChangeDo extends Jmesse_ActionClass
 		$search_key .= $this->af->get('organizer_addr').' ';
 		$search_key .= $this->af->get('organizer_div').' ';
 		$search_key .= $this->af->get('organizer_pers').' ';
+		$search_key .= $this->af->get('inquiry_form_url').' ';
 		// 日本国内の連絡先
 		$search_key .= $this->af->get('agency_in_japan_jp').' ';
 		$search_key .= $this->af->get('agency_in_japan_en').' ';

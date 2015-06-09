@@ -258,6 +258,7 @@ class Jmesse_Action_AdminFairChange extends Jmesse_ActionClass
 		$this->af->set('organizer_tel', $jm_fair->get('organizer_tel'));
 		$this->af->set('organizer_fax', $jm_fair->get('organizer_fax'));
 		$this->af->set('organizer_email', $jm_fair->get('organizer_email'));
+		$this->af->set('inquiry_form_url', $jm_fair->get('inquiry_form_url'));
 
 		// 日本国内の連絡先
 		$this->af->set('agency_in_japan_jp', $jm_fair->get('agency_in_japan_jp'));
