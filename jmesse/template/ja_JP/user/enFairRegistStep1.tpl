@@ -2,7 +2,6 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja">
 <head>
 {$app_ne.headtagu}
-<link type="text/css" rel="stylesheet" href="https://www.jetro.go.jp/asset/content/j-messe/j-messe.css" media="all" />
 {include file="user/include_common_head.tpl"}
 <script type="text/javascript">
 <!--

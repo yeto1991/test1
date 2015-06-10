@@ -2,7 +2,6 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja">
 <head>
 {$app_ne.headtagu}
-<link type="text/css" rel="stylesheet" href="http://www.jetro.go.jp/asset/content/j-messe/j-messe.css" media="all" />
 {include file="include_common_head.tpl"}
 <meta name="Keywords" content="見本市,展示会,商談会,見本市　検索,展示会　検索,世界の見本市,世界の展示会,{$app.meta_keyword}" />
 <script type="text/javascript">
