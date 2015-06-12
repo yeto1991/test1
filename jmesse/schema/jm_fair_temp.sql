@@ -101,6 +101,7 @@ create table jmesse.jm_fair_temp(
   , jecc_flag char (1)
   , jecc_date datetime not null
   , exhibit_support_flag char (1)
+  , inquiry_form_url varchar (255) not null
   , regist_user_id int not null
   , regist_date datetime not null
   , update_user_id int
