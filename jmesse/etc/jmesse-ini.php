@@ -8,8 +8,7 @@ $config = array(
 	// site
 	'url'         => 'https://localhost/jmesse/www/',
 	'url_pub'     => 'http://localhost/jmesse/www/',
-	//test akamoto
-	'akamoto'     => 'sinjin',
+
 
 //2015/3廃止
 //	// base
