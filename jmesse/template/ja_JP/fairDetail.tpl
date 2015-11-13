@@ -23,7 +23,7 @@
 			<div id="elem_topic_path_pad">
 				<ul class="clearfix">
 					<li><a href="http://www.jetro.go.jp/indexj.html"><img alt="home" src="http://www.jetro.go.jp/images/en/new/content_images/icon/icon_home.gif" /></a></li>
-					<li><a href="http://www.jetro.go.jp/j-messe">見本市・展示会データベース（J-messe）</a></li>
+					<li><a href="http://www.jetro.go.jp/j-messe">世界の見本市・展示会情報（J-messe）</a></li>
 					{if (''!= $app.fair_detail.abbrev_title)}
 						<li>{$app.fair_detail.abbrev_title|mb_truncate:15:'...'} ({$app.fair_detail.fair_title_jp|mb_truncate:15:'...'})</li>
 					{else}

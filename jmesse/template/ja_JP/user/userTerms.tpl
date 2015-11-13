@@ -30,7 +30,7 @@
 			<div id="elem_topic_path_pad">
 				<ul>
 					<li><a href="http://www.jetro.go.jp/indexj.html"><img alt="home" src="http://www.jetro.go.jp/images/en/new/content_images/icon/icon_home.gif" /></a></li>
-					<li><a href="http://www.jetro.go.jp/j-messe">見本市・展示会データベース（J-messe）</a></li>
+					<li><a href="http://www.jetro.go.jp/j-messe">世界の見本市・展示会情報（J-messe）</a></li>
 					<li>ユーザー登録（利用規約）</li>
 				</ul>
 			</div>
@@ -50,7 +50,7 @@
 			</div>
 			<div class="elem_paragraph">
 				<p class="text">
-					見本市・展示会データベース（J-messe）への見本市情報の登録および掲載は無料です。<br />
+					世界の見本市・展示会情報（J-messe）への見本市情報の登録および掲載は無料です。<br />
 					次の利用規約・免責事項をよくお読みになり、同意の上でご登録いただきますようお願い申し上げます。
 				</p>
 			</div>

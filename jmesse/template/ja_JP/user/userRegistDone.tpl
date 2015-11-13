@@ -22,7 +22,7 @@
 			<div id="elem_topic_path_pad">
 				<ul>
 					<li><a href="http://www.jetro.go.jp/indexj.html"><img alt="home" src="http://www.jetro.go.jp/images/en/new/content_images/icon/icon_home.gif" /></a></li>
-					<li><a href="http://www.jetro.go.jp/j-messe">見本市・展示会データベース（J-messe）</a></li>
+					<li><a href="http://www.jetro.go.jp/j-messe">世界の見本市・展示会情報（J-messe）</a></li>
 					{if ("regist" == $form.mode)}
 						<li>ユーザー登録完了</li>
 					{elseif ("change" == $form.mode)}
@@ -109,7 +109,7 @@
 											</div>
 										</li>
 									</ul>
-									「見本市・展示会データベース」のトップページに戻ります。
+									「世界の見本市・展示会情報」のトップページに戻ります。
 								{/if}
 							</div>
 						</div>

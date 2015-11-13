@@ -465,7 +465,7 @@ $form.mode
 										Registration/tickets available at event<br />
 									{/if}
 									{if ('1' == $form.admission_ticket_5)}
-										Other ({$form.other_admission_ticket_en})<br />
+										Others ({$form.other_admission_ticket_en})<br />
 									{/if}
 								</td>
 							</tr>

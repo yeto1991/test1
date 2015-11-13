@@ -16,7 +16,7 @@
 			<div id="elem_topic_path_pad">
 				<ul>
 					<li><a href="http://www.jetro.go.jp/indexj.html"><img alt="home" src="http://www.jetro.go.jp/images/en/new/content_images/icon/icon_home.gif" /></a></li>
-					<li><a href="http://www.jetro.go.jp/j-messe">見本市・展示会データベース（J-messe）</a></li>
+					<li><a href="http://www.jetro.go.jp/j-messe">世界の見本市・展示会情報（J-messe）</a></li>
 					<li>ユーザログイン</li>
 				</ul>
 			</div>
@@ -40,7 +40,7 @@
 									</div>
 									<div class="elem_paragraph">
 										<p class="text">
-											世界の見本市・展示会データベース(J-messe)の主催者向け管理ページにログインします。
+											世界の見本市・展示会情報(J-messe)の主催者向け管理ページにログインします。
 										</p>
 									</div>
 									<form name="form_user_login" id="form_user_login" method="post" action="">

@@ -79,7 +79,7 @@
 			<div id="elem_topic_path_pad">
 				<ul>
 					<li><a href="http://www.jetro.go.jp/indexj.html"><img alt="home" src="http://www.jetro.go.jp/images/en/new/content_images/icon/icon_home.gif" /></a></li>
-					<li><a href="http://www.jetro.go.jp/j-messe">見本市・展示会データベース（J-messe）</a></li>
+					<li><a href="http://www.jetro.go.jp/j-messe">世界の見本市・展示会情報（J-messe）</a></li>
 					{if ('1' != $form.all)}
 						{if ('1' == $form.detail)}
 							<li><a href="{$config.url_pub}tradefair/">詳細検索</a></li>

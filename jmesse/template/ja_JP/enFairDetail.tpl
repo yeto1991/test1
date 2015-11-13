@@ -156,7 +156,7 @@
 												/
 												{/if}
 												{if ('' != $app.fair_detail.other_admission_ticket_en)}
-												Other:{$app.fair_detail.other_admission_ticket_en}
+												Others:{$app.fair_detail.other_admission_ticket_en}
 												{/if}
 											{/if}
 										<br/>For details, please contact the organizer directly.

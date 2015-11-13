@@ -705,7 +705,7 @@
 											<li>
 												<label>
 													<input name="admission_ticket_5" id="admission_ticket_5" value="1" type="checkbox" {if ('1' == $form.admission_ticket_5)}checked{/if} />
-													<span>Other</span>
+													<span>Others</span>
 												</label>
 											</li>
 											<li>
