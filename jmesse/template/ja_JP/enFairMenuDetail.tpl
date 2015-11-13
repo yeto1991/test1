@@ -159,7 +159,7 @@
 				<ul>
 					<li>
 						<div class="linkBox">
-							<a href="javascript:search('form_enFairMenuDetail');" class="var_small"><span>Narrow</span></a>
+							<a href="javascript:search('form_enFairMenuDetail');" class="var_small"><span>Search</span></a>
 						</div>
 					</li>
 				</ul>

@@ -31,7 +31,7 @@
 <div class="right_box elem_content_divide_box">
 	<div class="elem_column_block">
 		<div class="color_base elem_column_block_pad">
-			<div class="elem_heading_lv3"><h3>絞り込む</h3></div>
+			<div class="elem_heading_lv3"><h3>検索</h3></div>
 			{* エラー表示 *}
 			{if count($errors)}
 				<p class="error-message" id="error-pagetop">入力に誤りがあります。ご確認ください。</p>
@@ -160,7 +160,7 @@
 				<ul>
 					<li>
 						<div class="linkBox">
-							<a href="javascript:search('form_fairMenuDetail');" class="var_small"><span>絞り込む</span></a>
+							<a href="javascript:search('form_fairMenuDetail');" class="var_small"><span>検索</span></a>
 						</div>
 					</li>
 				</ul>
