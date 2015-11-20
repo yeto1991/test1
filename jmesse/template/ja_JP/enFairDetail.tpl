@@ -70,7 +70,7 @@
 			{/if}
 			{if ('' != $app.fair_detail.fair_url)}
 				<div class="elem_heading_lv3">
-					<h3><a class="link_blank" target="_blank" href="{$app.fair_detail.fair_url}">official site</a></h3>
+					<h3><a class="link_blank" target="_blank" href="{$app.fair_detail.fair_url}">To Official Web Site</a></h3>
 				</div>
 			{/if}
 			<div class="elem_pic_text_block">
