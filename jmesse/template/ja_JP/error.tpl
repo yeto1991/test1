@@ -15,7 +15,7 @@
 		<div id="elem_topic_path">
 			<div id="elem_topic_path_pad">
 				<ul>
-					<li><a href="http://www.jetro.go.jp/indexj.html"><img alt="home" src="http://www.jetro.go.jp/images/en/new/content_images/icon/icon_home.gif" /></a></li>
+					<li><a href="/"><img alt="home" src="http://www.jetro.go.jp/images/en/new/content_images/icon/icon_home.gif" /></a></li>
 					<li><a href="http://www.jetro.go.jp/j-messe">世界の見本市・展示会情報（J-messe）</a></li>
 					<li>システムエラー</li>
 				</ul>
@@ -47,7 +47,7 @@
 							<p>お手数ですが、世界の見本市・展示会情報トップページから、該当するページをお探しください。</p>
 							<ul class="icon_arrow">
 								<li><a href="/j-messe/">世界の見本市・展示会情報トップページに戻る</a></li>
-								<li><a href="/indexj.html">日本語トップページに戻る</a></li>
+								<li><a href="/">日本語トップページに戻る</a></li>
 							</ul>
 						</div>
 					</div>

@@ -62,7 +62,7 @@
 					{$app.industory_list[it]}<br/>
 				{/section}
 			</div>
-			<button class="modalInputIndustory" rel="#prompt_industory">Change Industory</button>
+			<button class="modalInputIndustory" rel="#prompt_industory">Change Industry</button>
 		</td>
 	</tr>
 	<tr>

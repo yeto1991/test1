@@ -36,7 +36,7 @@
 			{if count($errors)}
 				<p class="error-message" id="error-pagetop">The data you have entered is invalid. Please re-enter.</p>
 			{/if}
-			<div class="elem_heading_lv4"><h4>Industory</h4></div>
+			<div class="elem_heading_lv4"><h4>Industry</h4></div>
 			<div id="industory_disp">
 				{section name=it loop=$app.industory_list}
 					・{$app.industory_list[it]}<br />
@@ -48,7 +48,7 @@
 				<ul>
 					<li>
 						<div class="linkBox">
-							<button class="modalInputIndustory"rel="#prompt_industory" /><span>Select Industory</span></button>
+							<button class="modalInputIndustory"rel="#prompt_industory" /><span>Select Industry</span></button>
 						</div>
 					</li>
 				</ul>

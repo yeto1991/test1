@@ -15,9 +15,9 @@
 		<div id="elem_topic_path">
 			<div id="elem_topic_path_pad">
 				<ul>
-					<li><a href="http://www.jetro.go.jp/indexj.html"><img alt="home" src="http://www.jetro.go.jp/images/en/new/content_images/icon/icon_home.gif" /></a></li>
+					<li><a href="/"><img alt="home" src="http://www.jetro.go.jp/images/en/new/content_images/icon/icon_home.gif" /></a></li>
 					<li><a href="http://www.jetro.go.jp/j-messe">世界の見本市・展示会情報（J-messe）</a></li>
-					<li>ユーザログイン</li>
+					<li>ユーザーログイン</li>
 				</ul>
 			</div>
 		</div>
@@ -27,7 +27,7 @@
 
 		<div id="area_content_main">
 			<div id="elem_heading_lv1">
-				<h1>ユーザログイン</h1>
+				<h1>ユーザーログイン</h1>
 			</div>
 			<div class="elem_content_divide_block">
 				<div class="color_base content_divide_col2 elem_content_divide_block_pad">

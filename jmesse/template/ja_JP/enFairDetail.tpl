@@ -22,7 +22,7 @@
 		<div id="elem_topic_path">
 			<div id="elem_topic_path_pad">
 				<ul class="clearfix">
-					<li><a href="http://www.jetro.go.jp/"><img alt="home" src="http://www.jetro.go.jp/images/en/new/content_images/icon/icon_home.gif" /></a></li>
+					<li><a href="/en/"><img alt="home" src="http://www.jetro.go.jp/images/en/new/content_images/icon/icon_home.gif" /></a></li>
 					<li><a href="http://www.jetro.go.jp/en/database/j-messe/">Online Trade Fair Database (J-messe)</a></li>
 					<li><a href="http://www.jetro.go.jp/en/database/j-messe/tradefair/">Trade Fairs held in Japan and the World</a></li>
 					{if (''!= $app.fair_detail.abbrev_title)}

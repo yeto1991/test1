@@ -9,7 +9,7 @@
 	<div class="elem_column_block">
 		<div class="color_base elem_column_block_pad">
 			<div class="elem_heading_lv3"><h3>Refine the Search</h3></div>
-			<div class="elem_heading_lv4"><h4>Sub Industory</h4></div>
+			<div class="elem_heading_lv4"><h4>Sub Industry</h4></div>
 			<p>
 				{section name=it loop=$app.sub_industory_cnt}
 					<input type="checkbox" name="check_sub_industory[]" id="check_sub_industory_{$app.sub_industory_cnt[it].kbn_3}" value="{$app.sub_industory_cnt[it].kbn_3}"
