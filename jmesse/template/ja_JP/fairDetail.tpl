@@ -6,9 +6,9 @@
 <meta name="Keywords" content="見本市,展示会,商談会,見本市　検索,展示会　検索,世界の見本市,世界の展示会,{$app.fair_detail.exhibits_jp|replace:'&lt;br/&gt;':''}, {$app.fair_detail.keyword}" />
 <title>
 	{if ('' != $app.fair_detail.abbrev_title)}
-		{$app.fair_detail.abbrev_title} - {$app.fair_detail.fair_title_jp} - 世界の見本市・展示会 - ジェトロ
+		{$app.fair_detail.abbrev_title} - {$app.fair_detail.fair_title_jp} - {$app.fair_detail.date_from_yyyy}年{$app.fair_detail.date_from_mm}月 - 世界の見本市・展示会 - ジェトロ
 	{else}
-		{$app.fair_detail.fair_title_jp} - 世界の見本市・展示会 - ジェトロ
+		{$app.fair_detail.fair_title_jp} - {$app.fair_detail.date_from_yyyy}年{$app.fair_detail.date_from_mm}月 - 世界の見本市・展示会 - ジェトロ
 	{/if}
 </title>
 {include file="jetro_gtm_snippet.tpl"}

@@ -6,9 +6,9 @@
 <meta name="Keywords" content="trade fair database,trade show database,exhibition database,trade fair search,trade show search,exhibition search,trade show  Japan,trade fair  Japan,exhibition  Japan,trade fair worldwide,{$app.fair_detail.exhibits_en|replace:'&lt;br/&gt;':''}, {$app.fair_detail.keyword}" />
 <title>
 	{if ('' != $app.fair_detail.abbrev_title)}
-		{$app.fair_detail.abbrev_title} - {$app.fair_detail.fair_title_en} - Online Trade Fair Database (J-messe) - JETRO
+		{$app.fair_detail.abbrev_title} - {$app.fair_detail.fair_title_en} - {$app.fair_detail.date_from_yyyy}/{$app.fair_detail.date_from_mm} - Online Trade Fair Database (J-messe) - JETRO
 	{else}
-		{$app.fair_detail.fair_title_en} - Online Trade Fair Database (J-messe) - JETRO
+		{$app.fair_detail.fair_title_en} - {$app.fair_detail.date_from_yyyy}/{$app.fair_detail.date_from_mm} - Online Trade Fair Database (J-messe) - JETRO
 	{/if}
 </title>
 {include file="jetro_gtm_snippet.tpl"}
