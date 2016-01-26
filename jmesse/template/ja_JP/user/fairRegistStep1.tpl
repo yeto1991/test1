@@ -134,8 +134,8 @@
 		<div id="elem_topic_path">
 			<div id="elem_topic_path_pad">
 				<ul>
-					<li><a href="/"><img alt="home" src="http://www.jetro.go.jp/images/en/new/content_images/icon/icon_home.gif" /></a></li>
-					<li><a href="http://www.jetro.go.jp/j-messe">世界の見本市・展示会情報（J-messe）</a></li>
+					<li><a href="/"><img alt="home" src="/images/en/new/content_images/icon/icon_home.gif" /></a></li>
+					<li><a href="/j-messe">世界の見本市・展示会情報（J-messe）</a></li>
 					<li><a href="{$config.url}?action_user_top=true">管理者メニュー</a></li>
 					{if ('' == $form.mode) || ('e' == $form.mode)}
 						<li>見本市登録(step1)</li>
@@ -159,7 +159,7 @@
 			</div>
 			<div class="elem_pic">
 				<div class="center elem_pic_pad">
-					<img src="http://www.jetro.go.jp/library/j-messe/images/db/fair02.jpg" alt="fairstep1" />
+					<img src="/library/j-messe/images/db/fair02.jpg" alt="fairstep1" />
 				</div>
 			</div>
 

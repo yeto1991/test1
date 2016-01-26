@@ -15,8 +15,8 @@
 		<div id="elem_topic_path">
 			<div id="elem_topic_path_pad">
 				<ul>
-					<li><a href="/"><img alt="home" src="http://www.jetro.go.jp/images/en/new/content_images/icon/icon_home.gif" /></a></li>
-					<li><a href="http://www.jetro.go.jp/j-messe">世界の見本市・展示会情報（J-messe）</a></li>
+					<li><a href="/"><img alt="home" src="/images/en/new/content_images/icon/icon_home.gif" /></a></li>
+					<li><a href="/j-messe">世界の見本市・展示会情報（J-messe）</a></li>
 					<li>パスワードお問い合わせ</li>
 				</ul>
 			</div>

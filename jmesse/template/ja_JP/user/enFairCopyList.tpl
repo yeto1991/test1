@@ -15,8 +15,8 @@
 		<div id="elem_topic_path">
 			<div id="elem_topic_path_pad">
 				<ul>
-					<li><a href="/en/"><img alt="home" src="http://www.jetro.go.jp/images/en/new/content_images/icon/icon_home.gif" /></a></li>
-					<li><a href="http://www.jetro.go.jp/en/database/j-messe/">Online Trade Fair Database (J-messe)</a></li>
+					<li><a href="/en/"><img alt="home" src="/images/en/new/content_images/icon/icon_home.gif" /></a></li>
+					<li><a href="/en/database/j-messe/">Online Trade Fair Database (J-messe)</a></li>
 					<li><a href="{$config.url}?action_user_enTop=true">Administration Menus</a></li>
 					<li>Copying registered information</li>
 				</ul>

@@ -29,8 +29,8 @@
 		<div id="elem_topic_path">
 			<div id="elem_topic_path_pad">
 				<ul>
-					<li><a href="/en/"><img alt="home" src="http://www.jetro.go.jp/images/en/new/content_images/icon/icon_home.gif" /></a></li>
-					<li><a href="http://www.jetro.go.jp/en/database/j-messe/">Online Trade Fair Database (J-messe)</a></li>
+					<li><a href="/en/"><img alt="home" src="/images/en/new/content_images/icon/icon_home.gif" /></a></li>
+					<li><a href="/en/database/j-messe/">Online Trade Fair Database (J-messe)</a></li>
 					<li>User Registration(Terms of Use)</li>
 				</ul>
 			</div>
@@ -45,7 +45,7 @@
 			</div>
 			<div class="elem_pic">
 				<div class="center elem_pic_pad">
-					<img alt="Terms of Use" src="http://www.jetro.go.jp/library/en/database/j-messe/images/db/user01.jpg" />
+					<img alt="Terms of Use" src="/library/en/database/j-messe/images/db/user01.jpg" />
 				</div>
 			</div>
 			<form name="userTermForm">
@@ -101,7 +101,7 @@
 					</li>
 					<li>
 						Privacy Policy<br />
-						Your personal information is treated properly according to JETRO's <a href="https://www.jetro.go.jp/en/privacy/">Privacy Policy.</a><br /><br />
+						Your personal information is treated properly according to JETRO's <a href="/en/privacy/">Privacy Policy.</a><br /><br />
 					</li>
 				</ol>
 				<p class="t_center">

@@ -21,8 +21,8 @@
 		<div id="elem_topic_path">
 			<div id="elem_topic_path_pad">
 				<ul>
-					<li><a href="/en/"><img alt="home" src="http://www.jetro.go.jp/images/en/new/content_images/icon/icon_home.gif" /></a></li>
-					<li><a href="http://www.jetro.go.jp/en/database/j-messe/">Online Trade Fair Database (J-messe)</a></li>
+					<li><a href="/en/"><img alt="home" src="/images/en/new/content_images/icon/icon_home.gif" /></a></li>
+					<li><a href="/en/database/j-messe/">Online Trade Fair Database (J-messe)</a></li>
 					{if ("regist" == $form.mode)}
 						<li><a href="{$config.url}?action_user_enUserRegist=true&back=1">User Registration</a></li>
 						<li>User Registration Confirm</li>
@@ -53,7 +53,7 @@
 			</div>
 			<div class="elem_pic">
 				<div class="center elem_pic_pad">
-					<img src="http://www.jetro.go.jp/library/en/database/j-messe/images/db/user03.jpg" alt="userconfirm" />
+					<img src="/library/en/database/j-messe/images/db/user03.jpg" alt="userconfirm" />
 				</div>
 			</div>
 			<div class="elem_paragraph">

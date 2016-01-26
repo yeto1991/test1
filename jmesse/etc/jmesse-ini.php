@@ -18,8 +18,8 @@ $config = array(
 // 	'base_pub_en' => 'http://www.jetro.go.jp/',
 
 	// css,js,base
-	'css_js_base'     => 'https://www.jetro.go.jp/',
-	'css_js_base_pub' => 'http://www.jetro.go.jp/',
+	'css_js_base'     => '/',
+	'css_js_base_pub' => '/',
 
 	// path
 	'host_path'      => 'https://localhost',

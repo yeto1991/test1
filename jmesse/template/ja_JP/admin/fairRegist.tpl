@@ -1365,7 +1365,7 @@
 						<tr>
 							<td nowrap>JETRO出展支援URL</td>
 							<!-- JETRO出展支援URL -->
-							<td nowrap><input type="text" name="jetro_suport_url" id="jetro_suport_url" value="{if ('' == $form.jetro_suport_url)}http://www.jetro.go.jp/services/tradefair/list/{else}{$form.jetro_suport_url}{/if}" maxlength="255" size="100" /></td>
+							<td nowrap><input type="text" name="jetro_suport_url" id="jetro_suport_url" value="{if ('' == $form.jetro_suport_url)}https://www.jetro.go.jp/services/tradefair/list/{else}{$form.jetro_suport_url}{/if}" maxlength="255" size="100" /></td>
 						</tr>
 					</table>
 					<hr>

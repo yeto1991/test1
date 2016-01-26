@@ -22,8 +22,8 @@
 		<div id="elem_topic_path">
 			<div id="elem_topic_path_pad">
 				<ul class="clearfix">
-					<li><a href="/"><img alt="home" src="http://www.jetro.go.jp/images/en/new/content_images/icon/icon_home.gif" /></a></li>
-					<li><a href="http://www.jetro.go.jp/j-messe">世界の見本市・展示会情報（J-messe）</a></li>
+					<li><a href="/"><img alt="home" src="/images/en/new/content_images/icon/icon_home.gif" /></a></li>
+					<li><a href="/j-messe">世界の見本市・展示会情報（J-messe）</a></li>
 					{if (''!= $app.fair_detail.abbrev_title)}
 						<li>{$app.fair_detail.abbrev_title|mb_truncate:15:'...'} ({$app.fair_detail.fair_title_jp|mb_truncate:15:'...'})</li>
 					{else}
@@ -50,9 +50,9 @@
 			{if ('2' == $app.fair_detail.jecc_flag)}
 				<div class="elem_pic">
 					<div class="right elem_pic_pad">
-						<img src="http://www.jetro.go.jp/library/j-messe/images/JECC_UFI_Logo.jpg" alt="new_JECC" />
+						<img src="/library/j-messe/images/JECC_UFI_Logo.jpg" alt="new_JECC" />
 						<p class="pic_caption">
-							<a href="http://www.jetro.go.jp/j-messe/jecc/" />展示会認証制度について</a>
+							<a href="/j-messe/jecc/" />展示会認証制度について</a>
 						</p>
 					</div>
 				</div>
@@ -60,9 +60,9 @@
 			{if ('1' == $app.fair_detail.jecc_flag)}
 				<div class="elem_pic">
 					<div class="right elem_pic_pad">
-						<img src="http://www.jetro.go.jp/library/j-messe/images/approved_exhibition.jpg" alt="old_JECC" />
+						<img src="/library/j-messe/images/approved_exhibition.jpg" alt="old_JECC" />
 						<p class="pic_caption">
-							<a href="http://www.jetro.go.jp/j-messe/jecc/" />展示会認証制度について</a>
+							<a href="/j-messe/jecc/" />展示会認証制度について</a>
 						</p>
 					</div>
 				</div>

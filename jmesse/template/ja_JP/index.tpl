@@ -4,7 +4,7 @@
 <script type="text/javascript">
 {literal}
 function init() {
-	document.location.href = "http://www.jetro.go.jp/";
+	document.location.href = "https://www.jetro.go.jp/";
 }
 {/literal}
 </script>

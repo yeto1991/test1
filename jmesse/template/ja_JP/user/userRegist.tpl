@@ -19,8 +19,8 @@
 		<div id="elem_topic_path">
 			<div id="elem_topic_path_pad">
 				<ul>
-					<li><a href="/"><img alt="home" src="http://www.jetro.go.jp/images/en/new/content_images/icon/icon_home.gif" /></a></li>
-					<li><a href="http://www.jetro.go.jp/j-messe">世界の見本市・展示会情報（J-messe）</a></li>
+					<li><a href="/"><img alt="home" src="/images/en/new/content_images/icon/icon_home.gif" /></a></li>
+					<li><a href="/j-messe">世界の見本市・展示会情報（J-messe）</a></li>
 					{if ("regist" == $form.mode)}
 						<li>ユーザー登録</li>
 					{else}
@@ -44,7 +44,7 @@
 			</div>
 			<div class="elem_pic">
 				<div class="center elem_pic_pad">
-					<img src="http://www.jetro.go.jp/library/j-messe/images/db/user02.jpg" alt="userenter" />
+					<img src="/library/j-messe/images/db/user02.jpg" alt="userenter" />
 				</div>
 			</div>
 			<form name="form_user_userRegist" id="form_user_userRegist" method="post" action="">

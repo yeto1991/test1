@@ -29,8 +29,8 @@
 		<div id="elem_topic_path">
 			<div id="elem_topic_path_pad">
 				<ul>
-					<li><a href="/"><img alt="home" src="http://www.jetro.go.jp/images/en/new/content_images/icon/icon_home.gif" /></a></li>
-					<li><a href="http://www.jetro.go.jp/j-messe">世界の見本市・展示会情報（J-messe）</a></li>
+					<li><a href="/"><img alt="home" src="/images/en/new/content_images/icon/icon_home.gif" /></a></li>
+					<li><a href="/j-messe">世界の見本市・展示会情報（J-messe）</a></li>
 					<li>ユーザー登録（利用規約）</li>
 				</ul>
 			</div>
@@ -45,7 +45,7 @@
 			</div>
 			<div class="elem_pic">
 				<div class="center elem_pic_pad">
-					<img src="http://www.jetro.go.jp/library/j-messe/images/db/user01.jpg" alt="userTerm">
+					<img src="/library/j-messe/images/db/user01.jpg" alt="userTerm">
 				</div>
 			</div>
 			<div class="elem_paragraph">
@@ -89,7 +89,7 @@
 							<li>その他、ジェトロが不適切と判断する行為</li>
 						</ol><br />
 					</li>
-					<li><strong>個人情報保護方針</strong><br /> ご登録いただきました個人情報は、ジェトロの<a href="http://www.jetro.go.jp/privacy/">個人情報保護方針</a>に基づき、取り扱います。<br /> <br /></li>
+					<li><strong>個人情報保護方針</strong><br /> ご登録いただきました個人情報は、ジェトロの<a href="/privacy/">個人情報保護方針</a>に基づき、取り扱います。<br /> <br /></li>
 				</ol>
 				<p class="t_center">
 					<input type="checkbox" name="agreement" id="agreement" />「見本市登録に関する利用規約・免責事項」に同意する<br />
