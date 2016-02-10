@@ -4,6 +4,38 @@
 {$app_ne.headtagu}
 {include file="include_common_head.tpl"}
 <meta name="Keywords" content="見本市,展示会,商談会,見本市　検索,展示会　検索,世界の見本市,世界の展示会,{$app.fair_detail.exhibits_jp|replace:'&lt;br/&gt;':''}, {$app.fair_detail.keyword}" />
+<script type="text/javascript">
+{literal}
+
+	function answer() {
+		if($("input[name=a_id]").filter(":checked").val()){
+ 			//チェックされていた場合
+			$.ajax({
+		        url: "https://www.jetro.go.jp/j-messe/www/index.php" ,
+		        type: "GET",
+		        data: {action_fairDetailQuestionnaire : true, a_id : $("input[name=a_id]").filter(":checked").val(), lang : "J"},
+		        beforeSend: function(){
+		        	$("#questionnaire").attr("disabled",true);
+		        },
+		        success: function(response) {
+					if(response.trim()=='success'){
+						$("#question_area").hide();
+						$("#thank_you_area").show();
+						$("#thank_you").html("<br />&nbsp<br /><span><b>ご回答いただきまして、ありがとうございました。</b></span><br />&nbsp");
+					} else {
+						//エラーの場合はなにもしない
+						$("#questionnaire").removeAttr("disabled");
+					}
+		        },
+		        error:function() {
+					//なにもしない
+					$("#questionnaire").removeAttr("disabled");
+		        }
+		    });
+	    }
+	}
+{/literal}
+</script>
 <title>
 	{if ('' != $app.fair_detail.abbrev_title)}
 		{$app.fair_detail.abbrev_title} - {$app.fair_detail.fair_title_jp} - {$app.fair_detail.date_from_yyyy}年{$app.fair_detail.date_from_mm}月 - 世界の見本市・展示会 - ジェトロ
@@ -17,7 +49,6 @@
 
 	<!-- **************** jetro_header **************** -->
 	{$app_ne.jetroheader}
-
 	<div id="area_content_wrap">
 		<div id="elem_topic_path">
 			<div id="elem_topic_path_pad">
@@ -337,6 +368,44 @@
 								</tbody>
 							</table>
 						</div>
+						{if (null != $app.fair_qa)}
+						<div id="question_area">
+							<div id="elem_topic_path">
+							<ul>
+								<div class="elem_paragraph">
+									<center>
+										<p class="center text">
+											<br />
+											{$app.fair_qa[0].q_jp}<br /><br />
+											{section name=it loop=$app.fair_qa}
+												<label>
+													<input name="a_id" id="a_id" value="{$app.fair_qa[it].a_id}" type="radio"/>{$app.fair_qa[it].a_jp}&nbsp;&nbsp;
+												</label>
+											{/section}
+											<br /><br />
+											<div style="width:100px" class="linkBox">
+												<button type="button" id="questionnaire" onclick="answer()"><span style="padding:0">回答する&nbsp&nbsp&nbsp</span></button>
+											</div>
+
+										</p>
+									</center>
+								</div>
+							</ul>
+							</div>
+						</div>
+						<div id="thank_you_area" style="display: none;">
+							<div id="elem_topic_path">
+							<ul>
+								<div class="elem_paragraph">
+								{$app.a_id}
+									<center><div id="thank_you"></div></center>
+								</div>
+							</ul>
+							</div>
+						</div>
+
+						{/if}
+
 						<div class="elem_column_block pt30">
 							<div class="color_gray elem_column_block_pad">
 								<div class="elem_paragraph">
@@ -407,3 +476,4 @@
 	{$app_ne.jetrofooter}
 </body>
 </html>
+

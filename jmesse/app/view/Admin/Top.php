@@ -28,6 +28,11 @@ class Jmesse_View_AdminTop extends Jmesse_ViewClass
 
 		// Fairの件数を取得(承認/未削除/Web表示する 対象)
 		$this->af->setApp('fair_count_front_fairs', $this->backend->getManager('JmFair')->getCountFrontFairs());
+
+		// アンケート回答件数を取得
+		$this->backend->getLogger()->log(LOG_DEBUG, 'アンケート回答件数を取得');
+		$this->af->setApp('fair_qa_result', $this->backend->getManager('JmQA')->getFairQAResult());
+
 	}
 }
 

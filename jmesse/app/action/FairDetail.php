@@ -132,6 +132,12 @@ class Jmesse_Action_FairDetail extends Jmesse_ActionClass
 			return 'error';
 		}
 
+		// お役立ち機能
+		$jm_fair_qa_obj =& $this->backend->getManager('JmQA');
+		$fair_qa = $jm_fair_qa_obj->getFairQA();
+		$this->af->setApp('fair_qa', $fair_qa);
+
+
 		return 'fairDetail';
 	}
 
