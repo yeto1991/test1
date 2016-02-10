@@ -259,7 +259,7 @@
 					<!-- **************** /detail_search_Menu **************** -->
 				</div>
 			</div>
-		</div>
+
 		<!-- **************** jmesse_faqlogin **************** -->
 		{$app_ne.jmessefaqlogin}
 	</div>

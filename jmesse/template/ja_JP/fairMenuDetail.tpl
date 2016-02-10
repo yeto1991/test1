@@ -165,6 +165,8 @@
 					</li>
 				</ul>
 			</div>
+		</div>
+	</div>
 
 	<!-- 業種選択 -->
 	<script type="text/javascript">
