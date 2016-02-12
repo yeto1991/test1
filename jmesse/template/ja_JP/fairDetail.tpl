@@ -7,11 +7,11 @@
 <script type="text/javascript">
 {literal}
 
-	function answer() {
+	function answer(url) {
 		if($("input[name=a_id]").filter(":checked").val()){
  			//チェックされていた場合
 			$.ajax({
-		        url: "https://www.jetro.go.jp/j-messe/www/index.php" ,
+		        url: url,
 		        type: "GET",
 		        data: {action_fairDetailQuestionnaire : true, a_id : $("input[name=a_id]").filter(":checked").val(), lang : "J"},
 		        beforeSend: function(){
@@ -384,7 +384,7 @@
 											{/section}
 											<br /><br />
 											<div style="width:100px" class="linkBox">
-												<button type="button" id="questionnaire" onclick="answer()"><span style="padding:0">回答する&nbsp&nbsp&nbsp</span></button>
+												<button type="button" id="questionnaire" onclick="answer('{$config.url}')"><span style="padding:0">回答する&nbsp&nbsp&nbsp</span></button>
 											</div>
 
 										</p>
