@@ -336,7 +336,7 @@
 											Net square meters : {$app.fair_detail.net_square_meters} sq.m.<br/>
 											{/if}
 											{if ('' != $app.fair_detail.spare_field1)}
-											Data verified : {$app.fair_detail.spare_field1}<br/>
+											Data Certified : {$app.fair_detail.spare_field1}<br/>
 											{/if}
 											The past records may include concurrent/joint exhibits.
 										</td>

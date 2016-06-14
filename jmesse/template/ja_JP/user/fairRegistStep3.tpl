@@ -313,12 +313,12 @@
 						{else}
 							<tr>
 						{/if}
-								<th class="bg_gray_lv1 nobdr">Details of last fair audited by<br />承認機関</th>
+								<th class="bg_gray_lv1 nobdr">Details of last fair audited by<br />認証機関</th>
 								<th class="bg_gray_lv1"></th>
 								<td class="bg_gray_lv2">
 									<div class="elem_custom_input pt0 pb0">
 										<input type="text" value="{$form.spare_field1}" size="50" name="spare_field1" id="spare_field1" maxlength="255" class="var_bg_white" />
-										<br />「過去の実績」について承認機関がある場合は入力してください。例：FKM, OJS
+										<br />「過去の実績」について認証機関がある場合は入力してください。例：FKM, OJS
 									</div>
 									{if is_error('spare_field1')}
 										<span class="error-message">{message name="spare_field1"}</span><br />

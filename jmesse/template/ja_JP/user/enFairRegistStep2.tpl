@@ -307,7 +307,7 @@
 						{else}
 							<tr>
 						{/if}
-								<th class="bg_gray_lv1 nobdr">Data verified by</th>
+								<th class="bg_gray_lv1 nobdr">Data Certified by</th>
 								<th class="bg_gray_lv1"></th>
 								<td class="bg_gray_lv2">
 									<div class="elem_custom_input pt0 pb0">

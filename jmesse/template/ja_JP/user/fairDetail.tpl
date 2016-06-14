@@ -683,7 +683,7 @@ $form.mode
 								<td class="bg_gray_lv2">{$form.other_admission_ticket_en}</td>
 							</tr>
 							<tr>
-								<th class="bg_gray_lv1 nobdr">Details of last fair audited by<br />承認機関</th>
+								<th class="bg_gray_lv1 nobdr">Details of last fair audited by<br />認証機関</th>
 								<th class="bg_gray_lv1"></th>
 								<td class="bg_gray_lv2">{$form.spare_field1}</td>
 							</tr>

@@ -1149,7 +1149,7 @@
 										<td colspan="4"><input type="text" name="net_square_meters" id="net_square_meters" value="{$form.net_square_meters}" maxlength="50" size="50">sq.m.<br> <font size="-1">■半角数字のみ入力して下さい。","(カンマ)は使用しないで下さい。例：1000</font></td>
 									</tr>
 									<tr>
-										<td>承認機関</td>
+										<td>認証機関</td>
 										<td colspan="4">英：<input type="text" name="spare_field1" id="spare_field1" value="{$form.spare_field1}" maxlength="255" size="100" /></td>
 									</tr>
 								</table> <font size="-1">■出展社数の多いデータが検索結果で上位に表示されます。</font>

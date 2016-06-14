@@ -343,7 +343,7 @@
 											展示面積 : {$app.fair_detail.net_square_meters} sq.m.<br/>
 											{/if}
 											{if ('' != $app.fair_detail.spare_field1)}
-											承認機関 : {$app.fair_detail.spare_field1}<br/>
+											認証機関 : {$app.fair_detail.spare_field1}<br/>
 											{/if}
 											過去の実績は同時開催/併催展を含む場合もあります。
 										</td>

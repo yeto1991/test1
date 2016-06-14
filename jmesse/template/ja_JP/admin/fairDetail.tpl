@@ -452,7 +452,7 @@
 										<td colspan="4">{$form.net_square_meters} sq.m.</td>
 									</tr>
 									<tr>
-										<td>承認機関</td>
+										<td>認証機関</td>
 										<td colspan="4">{$form.spare_field1}</td>
 									</tr>
 								</table>

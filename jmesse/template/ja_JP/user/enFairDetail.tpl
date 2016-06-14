@@ -437,7 +437,7 @@ $form.mode
 								</td>
 							</tr>
 							<tr>
-								<th class="bg_gray_lv1 nobdr">Data verified by</th>
+								<th class="bg_gray_lv1 nobdr">Data Certified by</th>
 								<th class="bg_gray_lv1"></th>
 								<td class="bg_gray_lv2">{$form.spare_field1}</td>
 							</tr>
