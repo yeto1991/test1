@@ -61,7 +61,21 @@
 										</div>
 									</li>
 								</ul>
-								Click the button above to register your new trade fair information by Copying and editing your existing record.
+								Click the button above to register your new trade fair information by Copying and editing your existing record.<br /><br />
+								<div style="font-size:90%;">
+									To all agents<br />
+											In order to verify the relationship between you and the organizer,
+											 we ask for additional information before registering the trade fair<br />
+											 on our database. Please send relevant information and documents(web page, a letter of attorney, part of copied contract, etc.)which<br />
+											 show that you are the official agent delegated by the organizer to the following address:
+											<a href="mailto:{$config.mail_to_top_menu_regist_en}?subject={$config.mail_title_top_menu_regist_en}&amp;body={$config.mail_body_top_menu_regist_en}">j-messe@totec-net.com</a>.
+										  <br />
+									Required information:<br />
+									1. Fair title<br />
+									2. Name of organizer<br />
+									3. Documents that show your relationship with the organizer (web page, a letter of attorney, part of copied contract, etc.)<br />
+									4. Name of agency
+								</div>
 							</div>
 						</div>
 					</div>

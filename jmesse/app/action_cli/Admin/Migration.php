@@ -586,7 +586,7 @@ class Jmesse_Cli_Action_AdminMigration extends Jmesse_ActionClass
 		} elseif ('ビジネス関係者＆一般' == $open_to ||  'Trade & general public' == $open_to
 			|| '業者＆一般' == $open_to || 'Trade Visitors & Public' == $open_to) {
 			$ret = '002';
-		} elseif ('ビジネス関係者のみ' == $open_to || 'ビジネス関係者' == $open_to || 'Trade only' == $open_to
+		} elseif ('ビジネス関係者' == $open_to || 'Trade only' == $open_to
 			|| '業者専用' == $open_to || 'Trade Visitors' == $open_to) {
 			$ret = '003';
 		}

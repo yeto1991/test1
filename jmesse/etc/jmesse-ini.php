@@ -185,6 +185,32 @@ $config = array(
 	'mail_title_fair_change'  => 'J-messe 見本市更新受付のお知らせ',
 	'mail_title_fair_rejection'  => 'J-messe 見本市一般公開否認のお知らせ',
 	'mail_title_fair_approved'  => 'J-messe 見本市一般公開のお知らせ',
+	//ユーザ管理画面メール起動時の文言
+	'mail_to_top_menu_regist'  => 'j-messe@totec-net.com',
+	'mail_title_top_menu_regist'  => urlencode('【J-messe】代理店情報の送付'),
+	'mail_body_top_menu_regist'   => urlencode('※代理店の皆さま'.PHP_EOL
+			.'見本市・展示会主催者から委託を受けた代理店におかれましては、'
+			.'見本市・展示会情報をご登録いただく前に、主催者との委任関係が分かる情報'
+			.'（ウェブページ、委任状、契約書コピーの一部等）のご提示をお願いしております。'
+			.'j-messe@totec-net.comまで、下記必要情報をご連絡願います。'.PHP_EOL
+			.'＜ご連絡いただく内容＞'.PHP_EOL
+			.'①登録予定の見本市・展示会名'.PHP_EOL
+			.'②主催者名'.PHP_EOL
+			.'③主催者との関係が分かる情報（ウェブページ、委任状、契約書コピーの一部等）'.PHP_EOL
+			.'④代理店名'),
+			'mail_to_top_menu_regist_en'  => 'j-messe@totec-net.com',
+			'mail_title_top_menu_regist_en'  => rawurlencode('[J-messe] Agency Information'),
+			'mail_body_top_menu_regist_en'   => rawurlencode('To all agents,'.PHP_EOL
+					.'In order to verify the relationship between you and the organizer,'
+					.' we ask for additional information before registering the trade fair on our database. '
+					.'Please send relevant information and documents(web page, a letter of attorney, part of copied contract, etc.)'
+					.' which show that you are the official agent delegated by the organizer to the following address:j-messe@totec-net.com .'.PHP_EOL
+					.'Required information:'.PHP_EOL
+					.'1. Fair title'.PHP_EOL
+					.'2. Name of organizer'.PHP_EOL
+					.'3. Documents that show your relationship with the organizer (web page, a letter of attorney, part of copied contract, etc.)'.PHP_EOL
+					.'4. Name of agency'),
+
 	'mail_title_user_regist_en'  => 'Notice of completion of your user registration for J-messe',
 	'mail_title_user_change_en'  => 'Notice of completion of updating your user information for J-messe',
 	'mail_title_user_confirm_en' => 'Notice of reissue of your password for J-messe',
