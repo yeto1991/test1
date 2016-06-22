@@ -69,7 +69,7 @@
 									<a href="mailto:{$config.mail_to_top_menu_regist}?subject={$config.mail_title_top_menu_regist}&amp;body={$config.mail_body_top_menu_regist}">j-messe@totec-net.com</a>
 									まで、必要情報をご連絡いただきますようお願い致します。<br />
 									＜ご連絡いただく内容＞<br />
-									①登録予定の見本市・展示会名、②主催者名、③主催者との関係が分かる情報（ウェブページ、委任状、契約書コピーの一部等）、④代理店名
+									(1)登録予定の見本市・展示会名、(2)主催者名、(3)主催者との関係が分かる情報（ウェブページ、委任状、契約書コピーの一部等）、(4)代理店名
 								</div>
 							</div>
 						</div>
