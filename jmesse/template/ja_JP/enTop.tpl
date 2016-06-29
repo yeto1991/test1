@@ -298,6 +298,22 @@
 						{/if}
 					{/section}
 				</ul>
+				<h5>Agriculture, Forestry, Fishery and Food</h5>
+				<ul>
+					{section name=it loop=$app.main_sub_industory_list}
+						{if ('013' == $app.main_sub_industory_list[it].kbn_2)}
+					<li>
+						<input type="checkbox" value="{$app.main_sub_industory_list[it].sub_industory_code}" name="check_main_sub_industory[]" id="check_main_sub_industory{$app.main_sub_industory_list[it].kbn_2}{$app.main_sub_industory_list[it].kbn_3}"
+							{section name=it2 loop=$form.check_main_sub_industory}
+								{if ($app.main_sub_industory_list[it].sub_industory_code == $form.check_main_sub_industory[it2])}
+						checked
+								{/if}
+							{/section}
+						/> {$app.main_sub_industory_list[it].sub_industory_name}
+					</li>
+						{/if}
+					{/section}
+				</ul>
 				<h5>Building, Construction</h5>
 				<ul>
 					{section name=it loop=$app.main_sub_industory_list}
