@@ -65,11 +65,16 @@
 									※代理店の皆さま<br>
 									見本市・展示会主催者から委託を受けた代理店におかれましては、
 									見本市・展示会情報をご登録いただく前に、主催者との委任関係が分かる情報（ウェブページ、<br />
-									委任状、契約書コピーの一部等）のご提示をお願いしております。
-									<a href="mailto:{$config.mail_to_top_menu_regist}?subject={$config.mail_title_top_menu_regist}&amp;body={$config.mail_body_top_menu_regist}">j-messe@totec-net.com</a>
-									まで、必要情報をご連絡いただきますようお願い致します。<br />
+									委任状、契約書コピーの一部等）のご提示をお願いしております。以下宛先に、必要情報をご連絡いただきますようお願い致します。<br />
 									＜ご連絡いただく内容＞<br />
 									(1)登録予定の見本市・展示会名、(2)主催者名、(3)主催者との関係が分かる情報（ウェブページ、委任状、契約書コピーの一部等）、(4)代理店名
+								</div>
+								<div style="font-size:95%;">
+									<br />
+									宛先：
+									<a href="mailto:{$config.mail_to_top_menu_regist}?subject={$config.mail_title_top_menu_regist}&amp;body={$config.mail_body_top_menu_regist}">j-messe@totec-net.com</a>
+									（Windows live mailをご利用の方は
+									<a href="mailto:{$config.mail_to_top_menu_regist}?subject={$config.mail_title_top_menu_regist}&amp;body={$config.mail_body_top_menu_regist_sjis}">こちら</a>をご利用ください。）
 								</div>
 							</div>
 						</div>
