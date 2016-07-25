@@ -213,6 +213,16 @@ $config = array(
 							.'(2)主催者名'.PHP_EOL
 							.'(3)主催者との関係が分かる情報（ウェブページ、委任状、契約書コピーの一部等）'.PHP_EOL
 							.'(4)代理店名'),
+	'mail_body_top_menu_regist_sjis'   => urlencode(mb_convert_encoding('※代理店の皆さま'.PHP_EOL
+							.'見本市・展示会主催者から委託を受けた代理店におかれましては、'
+							.'見本市・展示会情報をご登録いただく前に、主催者との委任関係が分かる情報'
+							.'（ウェブページ、委任状、契約書コピーの一部等）のご提示をお願いしております。'
+							.'j-messe@totec-net.comまで、下記必要情報をご連絡願います。'.PHP_EOL
+							.'＜ご連絡いただく内容＞'.PHP_EOL
+							.'(1)登録予定の見本市・展示会名'.PHP_EOL
+							.'(2)主催者名'.PHP_EOL
+							.'(3)主催者との関係が分かる情報（ウェブページ、委任状、契約書コピーの一部等）'.PHP_EOL
+							.'(4)代理店名','Shift-JIS' ,'UTF-8')),
 	'mail_to_top_menu_regist_en'  => 'j-messe@totec-net.com',
 	'mail_title_top_menu_regist_en'  => rawurlencode('[J-messe] Agency Information'),
 	'mail_body_top_menu_regist_en'   => rawurlencode('To all agents,'.PHP_EOL
