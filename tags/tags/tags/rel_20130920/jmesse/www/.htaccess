@@ -1,0 +1,22 @@
+RewriteEngine On
+
+RewriteCond %{SERVER_PORT} !^443$
+RewriteCond %{QUERY_STRING} action_user_(.+)
+RewriteRule ^.*$ https://%{HTTP_HOST}%{REQUEST_URI} [L]
+
+RewriteCond %{SERVER_PORT} !^443$
+RewriteCond %{QUERY_STRING} action_admin_(.+)
+RewriteRule ^.*$ https://%{HTTP_HOST}%{REQUEST_URI} [L]
+
+RewriteBase /jmesse/www
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^tradefair/([0-9]+)/print/1/$ ?action_fairDetail=true&mihon_no=$1&print=1 [L]
+RewriteRule ^tradefair/([0-9]+)$ ?action_fairDetail=true&mihon_no=$1 [L]
+RewriteRule ^tradefair/(.+)_([0-9]+)/print/1/$ ?action_fairDetail=true&mihon_no=$2&print=1 [L]
+RewriteRule ^tradefair/(.+)_([0-9]+)$ ?action_fairDetail=true&mihon_no=$2 [L]
+RewriteRule ^tradefair_en/([0-9]+)/print/1/$ ?action_enFairDetail=true&mihon_no=$1&print=1 [L]
+RewriteRule ^tradefair_en/([0-9]+)$ ?action_enFairDetail=true&mihon_no=$1 [L]
+RewriteRule ^tradefair_en/(.+)_([0-9]+)/print/1/$ ?action_enFairDetail=true&mihon_no=$2&print=1 [L]
+RewriteRule ^tradefair_en/(.+)_([0-9]+)$ ?action_enFairDetail=true&mihon_no=$2 [L]
